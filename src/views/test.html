@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="D:\web\pro2\sun-ui-client\node_modules\pako\dist\pako.min.js"></script>
+  <script>
+    // K 线相关
+    let hburl = 'wss://api.huobipro.com/ws' // 实时币种价格
+    let haurl = 'wss://api.hadax.com/ws' // wss://api.huobiasia.vip/ws
+    let haurl2 = 'wss://api.huobiasia.vip/ws'
+
+    let requestK = {
+      // 请求对应信息的数据
+      req: 'market.ethusdt.kline.1min',
+      // id: 'ethusdt',
+      // from: Math.round(new Date().getTime() / 1000) - 60,
+      // to: Math.round(new Date().getTime() / 1000),
+    }
+
+    let subK = {
+      // 订阅数据
+      sub: 'market.ethusdt.kline.1min',
+      // id: 'ethusdt',
+    }
+
+    let socketK = new WebSocket(haurl2)
+    socketK.onopen = function () {
+      console.log('connection establish')
+      socketK.send(JSON.stringify(subK))
+      socketK.send(JSON.stringify(requestK))
+    }
+    socketK.onmessage = function (event) {
+      let blob = event.data
+      let reader = new FileReader()
+      reader.onload = function (e) {
+        // console.log(e.target.result,'eeeeeeeeeeeeeee')
+        let ploydata = new Uint8Array(e.target.result)
+        let msg = pako.inflate(ploydata, {
+          to: 'string'
+        })
+        // handleData(msg)
+        console.log(JSON.parse(msg), 'msgmsgmsgmsgmsg')
+        document.writeln(JSON.parse(msg))
+      }
+      reader.readAsArrayBuffer(blob, 'utf-8')
+    }
+    socketK.onclose = function () {
+      console.log('connection closed')
+    }
+
+    // 处理接收到的信息
+    function handleData(msg) {
+      let data = JSON.parse(msg)
+      if (data.ping) {
+        // 如果是 ping 消息
+        sendHeartMessage(data.ping)
+      } else if (data.status === 'ok') {
+        // 响应数据
+        handleReponseData(data)
+      } else {
+        // 数据体
+        console.log(data)
+      }
+    }
+
+    // 发送响应信息
+    function sendHeartMessage(ping) {
+      socketK.send(JSON.stringify({
+        pong: ping
+      }))
+    }
+
+    function handleReponseData(data) {}
+  </script>
+</body>
+
+</html>
