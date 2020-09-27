@@ -1,11 +1,11 @@
 <template>
   <div class="sun-doc-nav" :class="{'sun-doc-nav-fiexd':isFiexd}">
-    <div class="sun-doc-nav-group" v-for="(item,index) in list" :key="index">
-      <div class="sun-doc-nav-title">{{item.title}}</div>
+    <div class="sun-doc-nav-group" v-for="(item,index) in navList" :key="index">
+      <div class="sun-doc-nav-title">{{item.desc}}</div>
       <div class="sun-doc-nav-item" :class="{active:activeNav.groupIndex==index&&activeNav.navIndex===index2}"
-        v-for="(navItem,index2) in item.list" :key="index2" @click="handleNavClick(index,index2)">
+        v-for="(navItem,index2) in item.group" :key="index2" @click="handleNavClick(navItem,index,index2)">
         <a href="javascript:;">
-          {{navItem.title}}
+          {{navItem.text}}
         </a>
       </div>
     </div>
@@ -13,22 +13,17 @@
 </template>
 
 <script>
+  import data from '../assets/data/index.js'
   export default {
-    props: {
-      list: {
-        type: Array,
-        default () {
-          return []
-        }
-      }
-    },
     data() {
       return {
         activeNav: {
           groupIndex: 0,
-          navIndex: 0
+          navIndex: 0,
+
         },
-        isFiexd: false
+        isFiexd: false,
+        navList: data.navList
       }
     },
     mounted() {
@@ -43,9 +38,11 @@
       })
     },
     methods: {
-      handleNavClick(index, index2) {
+      handleNavClick(item, index, index2) {
         this.activeNav.groupIndex = index
         this.activeNav.navIndex = index2
+
+        this.$router.push(item.path)
       }
     }
   }

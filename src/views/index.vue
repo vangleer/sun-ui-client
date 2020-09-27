@@ -187,18 +187,4 @@
     box-shadow: #ebedf0 0 4px 12px;
     height: 600px;
   }
-
-  p {
-    code {
-      display: inline;
-      margin: 2px 3px;
-      padding: 0px 5px 4px;
-      font-size: 13px;
-      font-family: inherit;
-      word-break: keep-all;
-      background-color: #f0f2f5;
-      border-radius: 4px;
-      -webkit-font-smoothing: antialiased;
-    }
-  }
 </style>
