@@ -35,14 +35,20 @@
 </script>
 
 <style lang="less">
+  .sun-doc {
+    width: 100%;
+  }
+
   .sun-doc-container {
     padding-left: 220px;
     overflow: hidden;
     width: 100%;
+    height: 100%;
   }
 
   .sun-doc-content {
     max-width: 66%;
+    min-width: 500px;
   }
 
   .sun-doc-content section {

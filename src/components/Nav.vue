@@ -1,5 +1,6 @@
 <template>
-  <div class="sun-doc-nav" :class="{'sun-doc-nav-fiexd':isFiexd}">
+  <!-- <div class="sun-doc-nav" :class="{'sun-doc-nav-fiexd':isFiexd}"> -->
+  <div class="sun-doc-nav" :style="{top:scrollTop+'px'}">
     <div class="sun-doc-nav-group" v-for="(item,index) in navList" :key="index">
       <div class="sun-doc-nav-title">{{item.desc}}</div>
       <div class="sun-doc-nav-item" :class="{active:activeNav.groupIndex==index&&activeNav.navIndex===index2}"
@@ -23,18 +24,19 @@
 
         },
         isFiexd: false,
-        navList: data.navList
+        navList: data.navList,
+        scrollTop: 60
       }
     },
     mounted() {
       document.addEventListener('scroll', (e) => {
         let top = document.documentElement.scrollTop
+        this.scrollTop = 60 - top
         // if (top > 61) return
         if (top >= 60) {
-          this.isFiexd = true
-        } else {
-          this.isFiexd = false
+          this.scrollTop = 0
         }
+        console.log(this.scrollTop)
       })
     },
     methods: {
@@ -58,7 +60,7 @@
     min-width: 220px;
     max-width: 220px;
     padding: 24px 0 72px;
-    // overflow-y: scroll;
+    overflow-y: scroll;
     background-color: #fff;
     box-shadow: 0 8px 12px #ebedf0;
   }

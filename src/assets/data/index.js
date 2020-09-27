@@ -1,5 +1,11 @@
 let data = {
   navList: [{
+      desc: '开发指南',
+      group: [{
+        text: '介绍',
+        path: '/'
+      }]
+    }, {
       desc: '基础组件',
       group: [{
         text: 'Button 按钮',
