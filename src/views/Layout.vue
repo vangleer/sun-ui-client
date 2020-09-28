@@ -29,7 +29,7 @@
       <!-- API介绍 -->
       <h2>API</h2>
       <div class="card">
-        <h3>Props</h3>
+        <h3>Row Props</h3>
         <table>
           <thead>
             <tr>
@@ -40,7 +40,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(item, index) in propsList" :key="index">
+            <tr v-for="(item, index) in rowPropsList" :key="index">
               <td>{{ item.propName }}</td>
               <td v-html="item.desc"></td>
               <td>
@@ -54,6 +54,35 @@
           </tbody>
         </table>
       </div>
+
+      <div class="card">
+        <h3>Col Props</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>参数</th>
+              <th>说明</th>
+              <th>类型</th>
+              <th>默认值</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(item, index) in colPropsList" :key="index">
+              <td>{{ item.propName }}</td>
+              <td v-html="item.desc"></td>
+              <td>
+                <span class="info-string">{{ item.type }}</span>
+              </td>
+              <td>
+                <span v-if="item.default === '-'">{{ item.default }}</span>
+                <code v-else>{{ item.default }}</code>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
       <div class="card">
         <h3>Events</h3>
         <table>
@@ -90,50 +119,57 @@
   export default {
     data() {
       return {
-        importCode: `import Vue from 'vue'; \nimport { Icon } from 'vue-sun-ui'; \n \nVue.use(Icon);`,
-        propsList: [{
-            propName: 'name',
-            desc: '图标名称或图片链接	',
+        importCode: `import Vue from 'vue';\nimport { Col, Row } from 'vue-sun-ui';\n\nVue.use(Col);\nVue.use(Row);`,
+        rowPropsList: [{
+            propName: 'type',
+            desc: '布局方式，可选值为<code>flex</code>',
             type: 'string',
             default: '-',
           },
           {
-            propName: 'dot',
-            desc: '	是否显示图标右上角小红点	',
-            type: 'boolean',
-            default: 'false',
-          },
-          {
-            propName: 'badge',
-            desc: '图标右上角徽标的内容	',
+            propName: 'gutter',
+            desc: '	列元素之间的间距（单位为 px）',
             type: 'number | string',
             default: '-',
           },
           {
-            propName: 'color',
-            desc: '图标颜色	',
+            propName: 'justify',
+            desc: 'Flex 主轴对齐方式，可选值为 <code>end</code> <code>center</code> <code>space-around</code> <code>space-between</code>',
             type: 'string',
-            default: 'inherit',
+            default: 'start',
           },
           {
-            propName: 'size',
-            desc: '图标大小，如 <code>20px</code> <code>2em</code>，默认单位为<code>px</code>',
-            type: 'number | string',
-            default: 'inherit',
-          },
-          {
-            propName: 'dot-color',
-            desc: '徽标的颜色',
+            propName: 'align',
+            desc: 'Flex 交叉轴对齐方式，可选值为 <code>center</code> <code>bottom</code>	',
             type: 'string',
-            default: '#f10',
+            default: 'inherit',
           },
           {
             propName: 'tag',
             desc: 'HTML 标签',
             type: 'string',
-            default: 'i',
+            default: 'div',
           },
 
+        ],
+        colPropsList: [{
+            propName: 'span',
+            desc: '列元素宽度',
+            type: 'number | string',
+            default: '-',
+          },
+          {
+            propName: 'offset',
+            desc: '列元素偏移距离	',
+            type: 'number | string',
+            default: '-',
+          },
+          {
+            propName: 'tag',
+            desc: 'HTML 标签',
+            type: 'string',
+            default: 'div',
+          },
         ],
         eventsList: [{
           eventName: 'click',
@@ -141,26 +177,72 @@
           callParams: 'event: Event',
         }],
         cartList: [{
-            title: '基础用法',
-            desc: '<code>Icon</code>的<code>name</code>属性支持传入图标名称或图片链接，所有可用的图标名称见右侧示例',
-            code: `<sun-icon name="message-o" />\n<sun-icon name="star-o" />`,
-          },
-          {
-            title: '徽标提示',
-            desc: '设置<code>dot</code>属性后，会在图标右上角展示一个小红点。设置<code>badge</code>属性后，会在图标右上角展示相应的徽标',
-            code: `<sun-icon name="message-o" dot />\n<sun-icon name="message-o" badge="8" />\n<sun-icon name="message-o" badge="88+" />`,
-          },
-          {
-            title: '图标颜色',
-            desc: '<code>Icon</code>的<code>color</code>属性用来设置图标的颜色',
-            code: `<sun-icon name="message-o" color="#1989fa" />\n<sun-icon name="message-o" color="#07c160" />`,
+            title: '基础展示',
+            desc: 'Layout 组件提供了<code>24列栅格</code>，通过在<code>Col</code>上添加<code>span</code>属性设置列所占的宽度百分比此外，添加<code>offset</code>属性可以设置列的偏移宽度，计算方式与 span 相同',
+            code: `<sun-row>
+  <sun-col span="8">span: 8</sun-col>
+  <sun-col span="8">span: 8</sun-col>
+  <sun-col span="8">span: 8</sun-col>
+</sun-row>
+
+<sun-row>
+  <sun-col span="4">span: 4</sun-col>
+  <sun-col span="10" offset="4">offset: 4, span: 10</sun-col>
+</sun-row>
+
+<sun-row>
+  <sun-col offset="12" span="12">offset: 12, span: 12</sun-col>
+</sun-row>
+`,
           },
 
           {
-            title: '图标大小',
-            desc: '<code>Icon</code>的<code>size</code>属性用来设置图标的尺寸大小，默认单位为px',
-            code: `<sun-icon name="message-o" size="40" />\n<sun-icon name="message-o" size="3rem" />`,
-          }
+            title: '设置列元素间距',
+            desc: '通过<code>gutter</code>属性可以设置列元素之间的间距，默认间距为 0',
+            code: `<sun-row gutter="20">
+  <sun-col span="8">span: 8</sun-col>
+  <sun-col span="8">span: 8</sun-col>
+  <sun-col span="8">span: 8</sun-col>
+</sun-row>`,
+          },
+          {
+            title: 'Flex 布局',
+            desc: '将 <code>type</code> 属性设置为 flex 可以启用 flex 布局，便于进行灵活的对齐',
+            code: `<!-- 左对齐 -->
+<sun-row type="flex">
+  <sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
+</sun-row>
+
+<!-- 居中 -->
+<sun-row type="flex" justify="center">
+  <sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
+</sun-row>
+
+<!-- 右对齐 -->
+<sun-row type="flex" justify="end">
+  <sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
+</sun-row>
+
+<!-- 两端对齐 -->
+<sun-row type="flex" justify="space-between">
+  <sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
+</sun-row>
+
+<!-- 每个元素的两侧间隔相等 -->
+<sun-row type="flex" justify="space-around">
+  <sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
+</sun-row>`,
+          },
         ],
       }
     },
