@@ -38,9 +38,28 @@
         }
         console.log(this.scrollTop)
       })
+      this.changeRouter()
     },
     methods: {
+      changeRouter() {
+        const path = location.hash.substring(1)
+        // 根据当前路由选择nav高亮
+        this.navList.forEach((item, index1) => {
+          let flag = item.group.some((item2, index2) => {
+            if (item2.path === path) {
+              this.activeNav.navIndex = index2
+              return true
+            }
+            console.log(index2)
+          })
+          if (flag) {
+            this.activeNav.groupIndex = index1
+            return
+          }
+        })
+      },
       handleNavClick(item, index, index2) {
+        document.documentElement.scrollTop = 0
         this.activeNav.groupIndex = index
         this.activeNav.navIndex = index2
 

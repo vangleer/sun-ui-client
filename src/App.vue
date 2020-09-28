@@ -3,7 +3,9 @@
     <sun-doc-header />
     <sun-doc-nav />
     <div class="sun-doc-container">
-      <router-view></router-view>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
     </div>
   </div>
 </template>
@@ -22,6 +24,9 @@
       return {
 
       }
+    },
+    activated() {
+      console.log('切换页面了')
     },
     async mounted() {
       const res = await axios.get(
@@ -89,7 +94,6 @@
   .sun-doc-content h5,
   .sun-doc-content h6 {
     color: #323233;
-    font-weight: normal;
     line-height: 1.5;
     cursor: pointer;
   }

@@ -28,7 +28,7 @@ html,
 body {
   height: 100%;
   width: 100%;
-  font-family: 'Microsoft YaHei', '宋体', 'Arial', '黑体', sans-serif;
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
   color: #34495e;
   font-size: 14px;
   background-color: #f8f8f8;

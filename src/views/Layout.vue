@@ -2,7 +2,7 @@
   <div class="sun-doc-layout sun-doc-content">
 
     <section>
-      <h1>Icon 图标</h1>
+      <h1>Layout 布局</h1>
       <div class="card">
         <h3>介绍</h3>
         <div>
