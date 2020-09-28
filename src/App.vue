@@ -37,6 +37,10 @@
 <style lang="less">
   .sun-doc {
     width: 100%;
+
+    pre {
+      margin-bottom: 0;
+    }
   }
 
   .sun-doc-container {
@@ -49,6 +53,13 @@
   .sun-doc-content {
     max-width: 66%;
     min-width: 500px;
+
+    [class^=language-],
+    .hljs.clean {
+      background-color: #fafafa;
+      border-radius: 10px;
+      padding: 16px;
+    }
   }
 
   .sun-doc-content section {
@@ -150,18 +161,6 @@
         border-top: 1px solid #f1f4f8;
       }
     }
-
-    code {
-      display: inline;
-      margin: 2px 3px;
-      padding: 0px 5px 4px;
-      font-size: 13px;
-      font-family: inherit;
-      word-break: keep-all;
-      background-color: #f0f2f5;
-      border-radius: 4px;
-      -webkit-font-smoothing: antialiased;
-    }
   }
 
   code {
@@ -176,6 +175,7 @@
     white-space: pre-wrap;
     word-wrap: break-word;
     -webkit-font-smoothing: auto;
+
   }
 
   // 移动手机样式
@@ -194,7 +194,8 @@
     height: 600px;
   }
 
-  p {
+  p,
+  td {
     code {
       display: inline;
       margin: 2px 3px;

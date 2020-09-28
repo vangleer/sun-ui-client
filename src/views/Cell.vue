@@ -1,5 +1,5 @@
 <template>
-  <div class="sun-doc-content sun-doc-content-cell">
+  <div class="sun-doc-content sun-doc-cell">
     <section>
       <h1>Cell 单元格</h1>
       <div class="card">

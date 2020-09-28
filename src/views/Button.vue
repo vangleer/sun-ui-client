@@ -1,5 +1,5 @@
 <template>
-  <div class="sun-doc-content sun-doc-content-button">
+  <div class="sun-doc-content sun-doc-button">
     <section>
       <h1>Button 按钮</h1>
       <div class="card">

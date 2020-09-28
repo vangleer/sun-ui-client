@@ -1,5 +1,5 @@
 <template>
-  <div class="sun-demo-icon sun-doc-content">
+  <div class="sun-doc-icon sun-doc-content">
 
     <section>
       <h1>Icon 图标</h1>
