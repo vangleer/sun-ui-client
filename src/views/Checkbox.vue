@@ -14,10 +14,8 @@
         <h3>{{ item.title }}</h3>
         <p v-html="item.desc"></p>
         <div v-highlight>
-          <pre>
-            <code v-if="item.code" class="language-html" v-text="item.code"></code>
-            <code v-if="item.jsCode" class="language-js" v-text="item.jsCode"></code>
-          </pre>
+          <pre v-if="item.code"><code  class="language-html" v-text="item.code"></code></pre>
+          <pre v-if="item.jsCode"><code class="language-js" v-text="item.jsCode"></code></pre>
         </div>
       </div>
 
