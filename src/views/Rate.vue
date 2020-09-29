@@ -1,7 +1,7 @@
 <template>
   <div class="sun-doc-rate sun-doc-content">
     <section>
-      <h1>Cell 单元格</h1>
+      <h1>Rate 评分</h1>
       <div class="card">
         <h3>引入</h3>
         <div v-highlight>
