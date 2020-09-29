@@ -1,5 +1,5 @@
 <template>
-  <div class="sun-doc-content sun-doc-cell">
+  <div class="sun-doc-cell sun-doc-content">
     <section>
       <h1>Cell 单元格</h1>
       <div class="card">
@@ -101,7 +101,7 @@
     data() {
       return {
 
-        importCode: `import Vue from 'vue'; \nimport { Cell }from 'vue-sun-ui'; \n \nVue.use(Cell);`,
+        importCode: `import Vue from 'vue'; \nimport { Cell } from 'vue-sun-ui'; \n \nVue.use(Cell);`,
         propsList: [{
             propName: 'title',
             desc: '左侧标题',

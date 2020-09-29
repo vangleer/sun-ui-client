@@ -43,9 +43,7 @@
   .sun-doc {
     width: 100%;
 
-    pre {
-      margin-bottom: 0;
-    }
+
   }
 
   .sun-doc-container {
@@ -53,6 +51,10 @@
     overflow: hidden;
     width: 100%;
     height: 100%;
+
+    pre {
+      margin-bottom: 0px;
+    }
   }
 
   .sun-doc-content {
@@ -106,6 +108,8 @@
     box-shadow: 0 8px 12px #ebedf0;
   }
 
+  .hljs-built_in,
+  .hljs-attribute,
   .hljs-keyword,
   .hljs-name,
   .hljs-attr {
@@ -126,6 +130,10 @@
 
   .hljs {
     color: #58727e !important;
+  }
+
+  .hljs-literal {
+    color: #eb6f6f !important;
   }
 
   // 表格样式
