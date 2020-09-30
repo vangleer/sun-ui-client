@@ -10,7 +10,9 @@
       </div>
       <div class="card">
         <h3>引入</h3>
-        <p>引入Message可以使用Vue.use(Message)在所有实例添加$message方法，也可以单独使用Message方法。</p>
+        <p>
+          引入<code>Message</code>可以使用<code>Vue.use(Message)</code>在所有实例添加<code>$message</code>方法，也可以单独使用<code>Message</code>方法。
+        </p>
         <div v-highlight>
           <pre><code v-html="importCode"></code></pre>
         </div>
