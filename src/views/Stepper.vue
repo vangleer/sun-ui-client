@@ -1,5 +1,5 @@
 <template>
-  <div class="sun-doc-stepper sun-doc-content">
+  <div class="sun-doc-swipe sun-doc-content">
     <section>
       <h1>Stepper 步进器</h1>
       <div class="card">
@@ -87,7 +87,6 @@
   export default {
     data() {
       return {
-
         importCode: `import Vue from 'vue'; \nimport { Stepper } from 'vue-sun-ui'; \n \nVue.use(Stepper);`,
         propsList: [{
             propName: 'v-model',

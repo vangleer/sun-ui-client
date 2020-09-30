@@ -132,6 +132,7 @@
     color: #58727e !important;
   }
 
+  .hljs-number,
   .hljs-literal {
     color: #eb6f6f !important;
   }
