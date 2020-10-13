@@ -62,7 +62,6 @@
         document.documentElement.scrollTop = 0
         this.activeNav.groupIndex = index
         this.activeNav.navIndex = index2
-
         this.$router.push(item.path)
       }
     }
@@ -82,6 +81,19 @@
     overflow-y: scroll;
     background-color: #fff;
     box-shadow: 0 8px 12px #ebedf0;
+     &::-webkit-scrollbar {
+      width: 6px;     /*高宽分别对应横竖滚动条的尺寸*/
+      height: 6px;
+      background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+     border-radius: 12px;
+    }
+  }
+  .sun-doc-nav:hover {
+    &::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+     background-color: rgba(69, 90, 100, 0.2);
+    }
   }
 
   .sun-doc-nav-fiexd {
@@ -114,5 +126,6 @@
   .sun-doc-nav-item a:hover,
   .sun-doc-nav-item.active a {
     color: #4fc08d;
+    background-color: #ebfff0;
   }
 </style>

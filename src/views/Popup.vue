@@ -79,13 +79,6 @@
       </div>
     </section>
 
-    <!-- <div class="sun-doc-mobile">
-      <sun-button type="primary" @click="$toast({message:'啦啦啦',position:'bottom'})">点我呀</sun-button>
-      <sun-button type="info">点我呀</sun-button>
-      <sun-button type="danger">点我呀</sun-button>
-      
-    </div> -->
-    <!-- <iframe src="https://java0088.github.io/sun-ui-client/mobile/button.html" frameborder="0"></iframe> -->
   </div>
 </template>
 

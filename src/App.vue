@@ -1,18 +1,21 @@
 <template>
   <div class="sun-doc">
     <sun-doc-header />
-    <sun-doc-nav />
+    <sun-doc-nav ref="navRef"/>
     <div class="sun-doc-container">
       <keep-alive>
         <router-view></router-view>
       </keep-alive>
+        <!-- 移动端页面 -->
+        <div class="sun-doc-mobile">
+          <!-- <iframe src="https://java0088.github.io/sun/dist/#/button" frameborder="0"></iframe> -->
+          <iframe :src="childtPath" frameborder="0"></iframe>
+        </div>
     </div>
   </div>
 </template>
 
 <script>
-  import axios from 'axios'
-  import pako from 'pako'
   import Header from './components/Header.vue'
   import Nav from './components/Nav'
   export default {
@@ -22,19 +25,20 @@
     },
     data() {
       return {
-
+        childtPath:''
+      }
+    },
+     watch:{
+      $route(to,from){
+        this.$refs.navRef.changeRouter()
+        this.childtPath = 'https://java0088.github.io/sun/dist/#'+to.path
       }
     },
     activated() {
       console.log('切换页面了')
     },
-    async mounted() {
-      const res = await axios.get(
-        'https://otc-api.eiijo.cn/v1/data/config/purchase-price?coinId=2&currencyId=1&matchType=0'
-      )
-      // let ploydata = new Uint8Array(res.data)
-      // console.log(JSON.parse(res.data))
-      console.log(res.data)
+    mounted() {
+      
     },
   }
 </script>
@@ -42,8 +46,6 @@
 <style lang="less">
   .sun-doc {
     width: 100%;
-
-
   }
 
   .sun-doc-container {
@@ -190,7 +192,6 @@
     -webkit-font-smoothing: auto;
 
   }
-
   // 移动手机样式
   .sun-doc-mobile {
     position: fixed;
@@ -199,12 +200,20 @@
     z-index: 1;
     box-sizing: border-box;
     width: 360px;
-    min-width: 360px;
     overflow: hidden;
-    background: red;
     border-radius: 12px;
     box-shadow: #ebedf0 0 4px 12px;
-    height: 600px;
+    background-attachment: scroll;
+    // background-color: #fff;
+    iframe {
+      width: 100%;
+      height: 600px;
+      overflow: hidden; 
+      &::-webkit-scrollbar {
+        width: 0;
+        background: transparent;
+      }
+    }
   }
 
   p,
