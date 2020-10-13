@@ -31,7 +31,9 @@
      watch:{
       $route(to,from){
         this.$refs.navRef.changeRouter()
-        this.childtPath = 'https://java0088.github.io/sun/dist/#'+to.path
+
+        this.childtPath = 'https://java0088.github.io/sun/dist/#'+to.path // 线上
+        // this.childtPath = 'http://localhost:8080/#'+to.path // 测试
       }
     },
     activated() {
