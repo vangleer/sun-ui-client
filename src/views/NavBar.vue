@@ -1,7 +1,7 @@
 <template>
   <div class="sun-doc-content sun-doc-nav-bar">
     <section>
-      <h1>NavBar 导航栏</h1>
+      <h1>{{title}}</h1>
       <div class="card">
         <h3>引入</h3>
         <div v-highlight>
@@ -92,107 +92,11 @@
   </div>
 </template>
 <script>
+  import data from '../assets/data/index'
   export default {
     data() {
       return {
-        importCode: `import Vue from 'vue';\nimport { NavBar } from 'vue-sun-ui';\n\nVue.use(NavBar);`,
-        propsList: [{
-            propName: 'title',
-            desc: '标题',
-            type: 'string',
-            default: '"',
-          },
-          {
-            propName: 'left-text',
-            desc: '左侧文案',
-            type: 'string',
-            default: '"',
-          },
-          {
-            propName: 'right-text',
-            desc: '右侧文案',
-            type: 'string',
-            default: '"',
-          },
-          {
-            propName: 'left-arrow',
-            desc: '是否显示左侧箭头',
-            type: 'boolean',
-            default: 'false',
-          },
-          {
-            propName: 'border',
-            desc: '是否显示下边框',
-            type: 'boolean',
-            default: 'true',
-          },
-          {
-            propName: 'fixed',
-            desc: '是否固定在顶部	',
-            type: 'boolean',
-            default: 'false',
-          },
-          {
-            propName: 'z-index',
-            desc: '元素 z-index',
-            type: 'number | string',
-            default: '1',
-          },
-        ],
-        eventsList: [{
-            eventName: 'click-left',
-            desc: '点击左侧按钮时触发	',
-            callParams: '-',
-          },
-          {
-            eventName: 'click-right',
-            desc: '点击右侧按钮时触发',
-            callParams: '-',
-          },
-        ],
-        slotsList: [{
-          slotName: 'title',
-          desc: '自定义标题'
-        }, {
-          slotName: 'left',
-          desc: '自定义左侧区域内容'
-        }, {
-          slotName: 'right',
-          desc: '自定义右侧区域内容'
-        }],
-        cartList: [{
-            title: '基础用法',
-            code: `<sun-nav-bar 
-    title="标题" 
-    left-text="返回" 
-    right-text="按钮" 
-    left-arrow 
-    @click-left="onClickLeft" 
-    @click-right="onClickRight" 
-/>`,
-            jsCode: `import { Toast } from 'vue-sun-ui';
-
-export default {
-  methods: {
-    onClickLeft() {
-      Toast('返回');
-    },
-    onClickRight() {
-      Toast('按钮');
-    },
-  },
-};`
-          },
-          {
-            title: '使用插槽',
-            desc: '通过插槽自定义导航栏两侧的内容。',
-            code: `<sun-nav-bar title="标题" left-text="返回" left-arrow>
-  <template #right>
-    <sun-icon name="plus" size="18" />
-  </template>
-</sun-nav-bar>`,
-          }
-        ],
+        ...data.navBarData
       }
     },
   }

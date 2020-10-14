@@ -74,92 +74,11 @@
   </div>
 </template>
 <script>
+  import data from '../assets/data/index'
   export default {
     data() {
       return {
-
-        importCode: `import Vue from 'vue'; \nimport { Switch } from 'vue-sun-ui'; \n \nVue.use(Switch);`,
-        propsList: [{
-            propName: 'v-model',
-            desc: '开关选中状态',
-            type: 'boolean',
-            default: 'false',
-          },
-          {
-            propName: 'loading',
-            desc: '	是否为加载状态	',
-            type: 'boolean',
-            default: 'false',
-          },
-          {
-            propName: 'disabled',
-            desc: '是否为禁用状态',
-            type: 'boolean',
-            default: 'false',
-          },
-          {
-            propName: 'size',
-            desc: '开关尺寸，默认单位为<code>px</code>',
-            type: 'number | string',
-            default: '30px',
-          },
-          {
-            propName: 'active-color',
-            desc: '打开时的背景色	',
-            type: 'string',
-            default: '#1989fa',
-          },
-          {
-            propName: 'inactive-color',
-            desc: '关闭时的背景色',
-            type: 'string',
-            default: 'white',
-          }
-        ],
-        eventsList: [{
-          eventName: 'change',
-          desc: '开关状态切换时触发',
-          callParams: 'value: boolean',
-        }, {
-          eventName: 'click',
-          desc: '点击时触发',
-          callParams: 'event: Event',
-        }],
-        cartList: [{
-            title: '基础用法',
-            desc: '通过 <code>v-model</code> 绑定开关的选中状态，<code>true</code> 表示开，<code>false</code> 表示关。',
-            code: `<sun-switch v-model="checked" />`,
-            jsCode: `export default {
-  data() {
-    return {
-      checked: true,
-    };
-  },
-};`
-          },
-          {
-            title: '禁用状态',
-            desc: '通过 <code>disabled</code> 属性来禁用开关，禁用状态下开关不可点击。',
-            code: `<sun-switch v-model="checked" disabled />`,
-          },
-          {
-            title: '加载状态',
-            desc: '通过 <code>loading</code> 属性设置开关为加载状态，加载状态下开关不可点击。',
-            code: `<sun-switch v-model="checked" loading />`,
-          },
-
-          {
-            title: '自定义大小',
-            desc: '通过 <code>size</code> 属性自定义开关的大小。',
-            code: `<sun-switch v-model="checked" size="24px" />`,
-          },
-
-          {
-            title: '自定义颜色',
-            desc: '<code>active-color</code> 属性表示打开时的背景色，<code>inactive-color</code> 表示关闭时的背景色。',
-            code: `<sun-switch v-model="checked" active-color="#07c160" inactive-color="#ee0a24" />`,
-          }
-        ],
+        ...data.switchData
       }
     },
   }

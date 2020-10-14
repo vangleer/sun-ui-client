@@ -1,7 +1,7 @@
 <template>
   <div class="sun-doc-content sun-doc-tab-bar">
     <section>
-      <h1>Tabbar 标签栏</h1>
+      <h1>{{title}}</h1>
       <div class="card">
         <h3>引入</h3>
         <div v-highlight>
@@ -121,164 +121,11 @@
   </div>
 </template>
 <script>
+  import data from '../assets/data/index'
   export default {
     data() {
       return {
-        importCode: `import Vue from 'vue';\nimport { Tabbar, TabbarItem } from 'vue-sun-ui';\n\nVue.use(Tabbar);\nVue.use(TabbarItem);`,
-        propsList: [{
-            propName: 'v-model',
-            desc: '当前选中标签的索引值',
-            type: 'number | string',
-            default: '0',
-          },
-          {
-            propName: 'fixed',
-            desc: '是否固定在底部',
-            type: 'boolean',
-            default: 'true',
-          },
-          {
-            propName: 'border',
-            desc: '是否显示外边框',
-            type: 'boolean',
-            default: 'true',
-          },
-          {
-            propName: 'z-index',
-            desc: '元素 z-index',
-            type: 'number | string',
-            default: '1',
-          },
-          {
-            propName: 'active-color',
-            desc: '选中标签的颜色',
-            type: 'string',
-            default: '#1989fa',
-          },
-          {
-            propName: 'inactive-color',
-            desc: '未选中标签的颜色',
-            type: 'string',
-            default: '#7d7e80',
-          }
-        ],
-        itemPropsList: [{
-          propName: 'icon',
-          desc: '图标名称或图片链接',
-          type: 'string',
-          default: '-',
-        }, {
-          propName: 'icon-prefix',
-          desc: '图标类名前缀',
-          type: 'string',
-          default: 'sun-icon',
-        }, {
-          propName: 'dot',
-          desc: '是否显示图标右上角小红点',
-          type: 'boolean',
-          default: 'false',
-        }, {
-          propName: 'badge',
-          desc: '图标右上角徽标的内容',
-          type: 'number | string',
-          default: '-',
-        }, {
-          propName: 'url',
-          desc: '点击后跳转的链接地址',
-          type: 'string',
-          default: '-',
-        }, {
-          propName: 'to',
-          desc: '点击后跳转的目标路由对象，同 vue-router 的 to 属性',
-          type: 'string | object',
-          default: '-',
-        }, {
-          propName: 'replace',
-          desc: '是否在跳转时替换当前页面历史',
-          type: 'boolean',
-          default: 'false',
-        }, ],
-        eventsList: [{
-          eventName: 'change',
-          desc: '切换标签时触发',
-          callParams: 'active: 当前选中标签的索引值',
-        }, ],
-        itemSlotsList: [{
-          slotName: 'icon',
-          desc: '自定义图标'
-        }],
-        cartList: [{
-            title: '基础用法',
-            desc: `<code>v-model</code> 默认绑定选中标签的索引值，通过修改 <code>v-model</code> 即可切换选中的标签。`,
-            code: `<sun-tabbar v-model="active">
-  <sun-tabbar-item icon="home">标签</sun-tabbar-item>
-  <sun-tabbar-item icon="category">标签</sun-tabbar-item>
-  <sun-tabbar-item icon="friends">标签</sun-tabbar-item>
-  <sun-tabbar-item icon="settings">标签</sun-tabbar-item>
-</sun-tabbar>`,
-            jsCode: `export default {
-  data() {
-    return {
-      active: 0,
-    };
-  },
-};`
-          },
-          {
-            title: '徽标提示',
-            desc: '设置 <code>dot</code> 属性后，会在图标右上角展示一个小红点；设置 <code>badge</code> 属性后，会在图标右上角展示相应的徽标。',
-            code: `<sun-tabbar v-model="active">
-    <sun-tabbar-item icon="home">标签</sun-tabbar-item>
-    <sun-tabbar-item icon="category" dot>标签</sun-tabbar-item>
-    <sun-tabbar-item icon="friends" badge="20">标签</sun-tabbar-item>
-    <sun-tabbar-item icon="settings" badge="5">标签</sun-tabbar-item>
-  </sun-tabbar>
-</div>`,
-          },
-          {
-            title: '自定义图标',
-            desc: '通过 icon 插槽自定义图标',
-            code: `<sun-tabbar v-model="active">
-  <sun-tabbar-item icon="home">
-    <span>自定义</span>
-    <template #icon>
-      <sun-icon name="star-f" />
-    </template>
-  </sun-tabbar-item>
-  <sun-tabbar-item icon="category">标签</sun-tabbar-item>
-  <sun-tabbar-item icon="friends">标签</sun-tabbar-item>
-</sun-tabbar>`,
-          },
-          {
-            title: '自定义颜色',
-            desc: '通过 <code>active-color</code>属性设置选中标签的颜色，<code>inactive-color</code>属性设置未选中标签的颜色。',
-            code: `<sun-tabbar v-model="active" active-color="#07c160" inactive-color="#000">
-  <sun-tabbar-item icon="home">标签</sun-tabbar-item>
-  <sun-tabbar-item icon="category">标签</sun-tabbar-item>
-  <sun-tabbar-item icon="friends">标签</sun-tabbar-item>
-  <sun-tabbar-item icon="settings">标签</sun-tabbar-item>
-</sun-tabbar>`,
-          },
-          {
-            title: '监听切换事件',
-            desc: '通过 <code>change</code> 事件监听当前标签改变，接收当前标签的索引。',
-            code: `<sun-tabbar v-model="active" @change="onChange">
-  <sun-tabbar-item icon="home">标签1</sun-tabbar-item>
-  <sun-tabbar-item icon="category">标签2</sun-tabbar-item>
-  <sun-tabbar-item icon="friends">标签3</sun-tabbar-item>
-  <sun-tabbar-item icon="settings">标签4</sun-tabbar-item>
-</sun-tabbar>`,
-            jsCode: `import { Message } from 'vant';
-
-export default {
-  methods: {
-    onChange(index) {
-      Message({ type: 'primary', message: index });
-    },
-  },
-};`
-          }
-        ],
+        ...data.tabbarData
       }
     },
   }
