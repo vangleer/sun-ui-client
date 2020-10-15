@@ -25,23 +25,8 @@
       <!-- Checkbox 事件列表展示 -->
       <events-list :events-list="parentEventsList" title="CheckboxGroup Events"/>
 
-      <div class="card">
-        <h3>Slots</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>事件名</th>
-              <th>说明</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, index) in childSlotsList" :key="index">
-              <td>{{ item.slotName }}</td>
-              <td>{{ item.desc }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <!-- 插槽列表 -->
+      <slots-list :slots-list="childSlotsList" title="Checkbox Slots"/>
 
       <div class="card">
         <h3>CheckboxGroup 方法</h3>

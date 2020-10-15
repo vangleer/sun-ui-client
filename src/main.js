@@ -13,9 +13,11 @@ import Highlight from './assets/js/highlight'
 import ShowCode from './components/ShowCode.vue'
 import PropsList from './components/PropsList.vue'
 import EventsList from './components/EventsList.vue'
+import SlotsList from './components/SlotsList.vue'
 Vue.component('show-code',ShowCode)
 Vue.component('props-list',PropsList)
 Vue.component('events-list',EventsList)
+Vue.component('slots-list',SlotsList)
 
 Vue.use(Highlight)
 // 安装SunUi

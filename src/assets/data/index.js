@@ -1670,7 +1670,7 @@ export default {
           callParams: 'index: number',
           callReturns: 'void',
         }],
-        slotList: [{
+        slotsList: [{
             slotName: 'default',
             desc: '轮播内容',
           },

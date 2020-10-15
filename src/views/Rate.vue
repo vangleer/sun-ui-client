@@ -13,11 +13,10 @@
       <show-code :cart-list="cartList"/>
 
       <!-- API介绍 -->
-      <h2>API</h2>
 
       <!-- 属性列表 -->
       <props-list :props-list="propsList"/>
-      
+
       <!-- 事件列表展示 -->
       <events-list :events-list="eventsList"/>
     </section>

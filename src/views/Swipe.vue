@@ -46,6 +46,9 @@
         </table>
       </div>
 
+      <!-- 插槽列表 -->
+      <slots-list :slots-list="slotsList"/>
+      
       <div class="card">
         <h3>Slots</h3>
         <table>
@@ -56,7 +59,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="(item, index) in slotList" :key="index">
+            <tr v-for="(item, index) in slotsList" :key="index">
               <td>{{ item.slotName }}</td>
               <td>{{ item.desc }}</td>
             </tr>
