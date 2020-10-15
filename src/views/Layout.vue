@@ -19,61 +19,12 @@
       <show-code :cart-list="cartList"/>
 
       <!-- API介绍 -->
-      <h2>API</h2>
-      <div class="card">
-        <h3>Row Props</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>参数</th>
-              <th>说明</th>
-              <th>类型</th>
-              <th>默认值</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, index) in parentPropsList" :key="index">
-              <td>{{ item.propName }}</td>
-              <td v-html="item.desc"></td>
-              <td>
-                <span class="info-string">{{ item.type }}</span>
-              </td>
-              <td>
-                <span v-if="item.default === '-'">{{ item.default }}</span>
-                <code v-else>{{ item.default }}</code>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
 
-      <div class="card">
-        <h3>Col Props</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>参数</th>
-              <th>说明</th>
-              <th>类型</th>
-              <th>默认值</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, index) in childPropsList" :key="index">
-              <td>{{ item.propName }}</td>
-              <td v-html="item.desc"></td>
-              <td>
-                <span class="info-string">{{ item.type }}</span>
-              </td>
-              <td>
-                <span v-if="item.default === '-'">{{ item.default }}</span>
-                <code v-else>{{ item.default }}</code>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <!-- Row 属性列表 -->
+      <props-list :propsList="parentPropsList" title="Row Props"/>
 
+      <!-- Col 属性列表 -->
+      <props-list :propsList="childPropsList" title="Col Props"/>
 
       <div class="card">
         <h3>Events</h3>

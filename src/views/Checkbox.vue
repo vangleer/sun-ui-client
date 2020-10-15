@@ -11,61 +11,13 @@
       <!-- 代码展示 -->
       <show-code :cart-list="cartList"/>
 
-      <!-- API介绍 -->
-      <h2>API</h2>
-      <div class="card">
-        <h3>Checkbox Props</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>参数</th>
-              <th>说明</th>
-              <th>类型</th>
-              <th>默认值</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, index) in childPropsList" :key="index">
-              <td>{{ item.propName }}</td>
-              <td v-html="item.desc"></td>
-              <td>
-                <span class="info-string">{{ item.type }}</span>
-              </td>
-              <td>
-                <span v-if="item.default === '-'">{{ item.default }}</span>
-                <code v-else>{{ item.default }}</code>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <!-- API 介绍 -->
+      
+      <!-- Checkbox 属性列表 -->
+      <props-list :propsList="childPropsList" title="Checkbox Props"/>
 
-      <div class="card">
-        <h3>CheckboxGroup Props</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>参数</th>
-              <th>说明</th>
-              <th>类型</th>
-              <th>默认值</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, index) in parentPropsList" :key="index">
-              <td>{{ item.propName }}</td>
-              <td v-html="item.desc"></td>
-              <td>
-                <span class="info-string">{{ item.type }}</span>
-              </td>
-              <td>
-                <span v-if="item.default === '-'">{{ item.default }}</span>
-                <code v-else>{{ item.default }}</code>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <!-- CheckboxGroup 属性列表 -->
+      <props-list :propsList="parentPropsList" title="CheckboxGroup Props" :is-show-title="false"/>
 
       <div class="card">
         <h3>Checkbox Events</h3>

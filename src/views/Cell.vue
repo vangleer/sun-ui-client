@@ -91,14 +91,3 @@ import data from '../assets/data/index'
     },
   }
 </script>
-
-<style lang="less">
-  .sun-doc-mobile-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100px;
-    height: 100px;
-    background-color: blue;
-  }
-</style>

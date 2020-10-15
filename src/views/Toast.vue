@@ -17,7 +17,6 @@
       
       <!-- 代码展示 -->
      <show-code :cart-list="cartList"/>
-
       <!-- API介绍 -->
       <h2>API</h2>
       <div class="card">
