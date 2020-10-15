@@ -706,18 +706,18 @@ Vue.use(CheckboxGroup);`,
         title: '基础展示',
         desc: 'Layout 组件提供了<code>24列栅格</code>，通过在<code>Col</code>上添加<code>span</code>属性设置列所占的宽度百分比此外，添加<code>offset</code>属性可以设置列的偏移宽度，计算方式与 span 相同',
         code: `<sun-row>
-<sun-col span="8">span: 8</sun-col>
-<sun-col span="8">span: 8</sun-col>
-<sun-col span="8">span: 8</sun-col>
+  <sun-col span="8">span: 8</sun-col>
+  <sun-col span="8">span: 8</sun-col>
+  <sun-col span="8">span: 8</sun-col>
 </sun-row>
 
 <sun-row>
-<sun-col span="4">span: 4</sun-col>
-<sun-col span="10" offset="4">offset: 4, span: 10</sun-col>
+  <sun-col span="4">span: 4</sun-col>
+  <sun-col span="10" offset="4">offset: 4, span: 10</sun-col>
 </sun-row>
 
 <sun-row>
-<sun-col offset="12" span="12">offset: 12, span: 12</sun-col>
+  <sun-col offset="12" span="12">offset: 12, span: 12</sun-col> 
 </sun-row>
 `,
       },
@@ -726,9 +726,9 @@ Vue.use(CheckboxGroup);`,
         title: '设置列元素间距',
         desc: '通过<code>gutter</code>属性可以设置列元素之间的间距，默认间距为 0',
         code: `<sun-row gutter="20">
-<sun-col span="8">span: 8</sun-col>
-<sun-col span="8">span: 8</sun-col>
-<sun-col span="8">span: 8</sun-col>
+  <sun-col span="8">span: 8</sun-col>
+  <sun-col span="8">span: 8</sun-col>
+  <sun-col span="8">span: 8</sun-col>
 </sun-row>`,
       },
       {
@@ -736,37 +736,37 @@ Vue.use(CheckboxGroup);`,
         desc: '将 <code>type</code> 属性设置为 flex 可以启用 flex 布局，便于进行灵活的对齐',
         code: `<!-- 左对齐 -->
 <sun-row type="flex">
-<sun-col span="6">span: 6</sun-col>
-<sun-col span="6">span: 6</sun-col>
-<sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
 </sun-row>
 
 <!-- 居中 -->
 <sun-row type="flex" justify="center">
-<sun-col span="6">span: 6</sun-col>
-<sun-col span="6">span: 6</sun-col>
-<sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
 </sun-row>
 
 <!-- 右对齐 -->
 <sun-row type="flex" justify="end">
-<sun-col span="6">span: 6</sun-col>
-<sun-col span="6">span: 6</sun-col>
-<sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
 </sun-row>
 
 <!-- 两端对齐 -->
 <sun-row type="flex" justify="space-between">
-<sun-col span="6">span: 6</sun-col>
-<sun-col span="6">span: 6</sun-col>
-<sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
 </sun-row>
 
 <!-- 每个元素的两侧间隔相等 -->
 <sun-row type="flex" justify="space-around">
-<sun-col span="6">span: 6</sun-col>
-<sun-col span="6">span: 6</sun-col>
-<sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
+  <sun-col span="6">span: 6</sun-col>
 </sun-row>`,
       },
     ],
@@ -882,12 +882,12 @@ Vue.use(CheckboxGroup);`,
     ],
     cartList: [{
         title: '基础用法',
-        code: `Message('通知内容');`,
+        jsCode: `Message('通知内容');`,
       },
       {
         title: '消息类型',
         desc: '支持 <code>success</code>、<code>error</code>、<code>info</code>、<code>warning</code>、<code>loading</code> 五种通知类型，默认为 success。',
-        code: `// 成功消息
+        jsCode: `// 成功消息
 Message({ type: 'success', message: '通知内容' });
 
 // 危险消息
@@ -905,22 +905,22 @@ Message({ type: 'loading', message: '通知内容' });`,
       {
         title: '自定义配置',
         desc: '自定义消息通知的展示颜色、时长和图标。',
-        code: `// 自定义颜色
+        jsCode: `// 自定义颜色
 Message({
-message: '自定义颜色',
-color: 'pink',
+  message: '自定义颜色',
+  color: 'pink',
 });
 
 // 自定义时长
 Message({
-message: '自定义时长',
-duration: 3000,
+  message: '自定义时长',
+  duration: 3000,
 });
 
 // 自定义图标
 Message({
-message: '自定义图标',
-icon: 'plus',
+  message: '自定义图标',
+  icon: 'plus',
 });`,
       },
 
@@ -997,33 +997,33 @@ icon: 'plus',
     cartList: [{
         title: '基础用法',
         code: `<sun-nav-bar 
-title="标题" 
-left-text="返回" 
-right-text="按钮" 
-left-arrow 
-@click-left="onClickLeft" 
-@click-right="onClickRight" 
+  title="标题" 
+  left-text="返回" 
+  right-text="按钮" 
+  left-arrow 
+  @click-left="onClickLeft" 
+  @click-right="onClickRight" 
 />`,
         jsCode: `import { Toast } from 'vue-sun-ui';
 
 export default {
-methods: {
-onClickLeft() {
-  Toast('返回');
-},
-onClickRight() {
-  Toast('按钮');
-},
-},
+  methods: {
+    onClickLeft() {
+      Toast('返回');
+    },
+    onClickRight() {
+      Toast('按钮');
+    },
+  },
 };`
       },
       {
         title: '使用插槽',
         desc: '通过插槽自定义导航栏两侧的内容。',
         code: `<sun-nav-bar title="标题" left-text="返回" left-arrow>
-<template #right>
-<sun-icon name="plus" size="18" />
-</template>
+  <template #right>
+    <sun-icon name="plus" size="18" />
+  </template>
 </sun-nav-bar>`,
       }
     ],
@@ -1127,17 +1127,17 @@ onClickRight() {
         desc: '通过 <code>v-model</code> 控制弹出层是否展示。',
         code: `<sun-cell is-link bg-cffect @click="showPopup">展示弹出层</sun-cell>\n<sun-popup v-model="show" >内容</sun-popup>`,
         jsCode: `export default {
-data() {
-return {
-  show: false,
-};
-},
+  data() {
+    return {
+      show: false,
+    };
+  },
 
-methods: {
-showPopup() {
-  this.show = true;
-},
-},
+  methods: {
+    showPopup() {
+      this.show = true;
+    },
+  },
 };`
       },
       {
@@ -1149,23 +1149,23 @@ showPopup() {
         title: '关闭图标',
         desc: '设置 <code>closeable</code> 属性后，会在弹出层的右上角显示关闭图标，并且可以通过 <code>close-icon</code> 属性自定义图标，使用 <code>close-icon-position</code> 属性可以自定义图标位置。',
         code: `<sun-popup 
-v-model="show" 
-position="bottom" 
-closeable 
+  v-model="show" 
+  position="bottom" 
+  closeable 
 />
 <!-- 自定义图标 -->
 <sun-popup 
-v-model="show" 
-position="bottom" 
-closeable 
-close-icon="plus" 
+  v-model="show" 
+  position="bottom" 
+  closeable 
+  close-icon="plus" 
 />
 <!-- 图标位置 -->
 <sun-popup 
-v-model="show" 
-position="bottom" 
-closeable 
-close-icon-position="top-left" 
+  v-model="show" 
+  position="bottom" 
+  closeable 
+  close-icon-position="top-left" 
 />`,
       },
       {
@@ -1383,11 +1383,11 @@ export default {
         desc: '使用<code>v-model</code>初始化选中的个数',
         code: `<sun-rate v-model="value" />`,
         jsCode: `export default {
-data() {
-return {
-  value: 3,
-};
-},
+  data() {
+    return {
+      value: 3,
+    };
+  },
 };`
       },
       {
@@ -1421,11 +1421,11 @@ return {
         title: '监听 change 事件',
         code: `<sun-rate v-model="value7" @change="onChange" />`,
         jsCode: `export default {
-method: {
-onChange(value) {
-  this.$toast('当前值：' + value);
-},
-},
+  method: {
+    onChange(value) {
+      this.$toast('当前值：' + value);
+    },
+  },
 };`
       }
     ],
@@ -1543,11 +1543,11 @@ onChange(value) {
         desc: '通过 <code>v-model</code> 绑定输入值，可以通过 <code>change</code> 事件监听到输入值的变化。',
         code: `<sun-stepper v-model="value" />`,
         jsCode: `export default {
-data() {
-return {
-  value: 1,
-};
-},
+  data() {
+    return {
+      value: 1,
+    };
+  },
 };`
       },
       {
@@ -2121,25 +2121,25 @@ export default {
         cartList: [{
             title: '文字提示',
             desc: 'Layout 组件提供了<code>24列栅格</code>，通过在<code>Col</code>上添加<code>span</code>属性设置列所占的宽度百分比此外，添加<code>offset</code>属性可以设置列的偏移宽度，计算方式与 span 相同',
-            code: `Toast('提示内容');`,
+            jsCode: `Toast('提示内容');`,
           },
 
           {
             title: '加载提示',
             desc: '使用 <code>Toast.loading</code> 方法展示加载提示。',
-            code: `Toast.loading({
+            jsCode: `Toast.loading({
   message: '加载中...'
 });`,
           },
           {
             title: '成功/失败提示',
             desc: '使用 <code>Toast.success</code> 方法展示成功提示，使用 <code>Toast.fail</code> 方法展示失败提示。',
-            code: `Toast.success('成功提示');\nToast.fail('失败提示');`,
+            jsCode: `Toast.success('成功提示');\nToast.fail('失败提示');`,
           },
           {
             title: '自定义图标',
             desc: '通过<code>icon</code>选项可以自定义图标，支持传入图标名称或图片链接，如果在loading方法中使用<code>icon</code>属性可以自定义加载图标。',
-            code: `Toast({
+            jsCode: `Toast({
   message: '自定义图标',
   icon: 'like-o',
 });
@@ -2158,7 +2158,7 @@ Toast.loading({
           {
             title: '自定义位置',
             desc: 'Toast 默认渲染在屏幕正中位置，通过<code>position</code>属性可以控制 Toast 展示的位置。',
-            code: `Toast({
+            jsCode: `Toast({
   message: '顶部展示',
   position: 'top',
 });
@@ -2171,7 +2171,7 @@ Toast({
           {
             title: '全局方法',
             desc: '引入 Toast 组件后，会自动在 Vue 的 prototype 上挂载<code>$toast</code>方法，便于在组件内调用。',
-            code: `export default {
+            jsCode: `export default {
   mounted() {
     this.$toast('提示文案');
   },
@@ -2180,7 +2180,7 @@ Toast({
           {
             title: '单例模式',
             desc: 'Toast 采用单例模式，即同一时间只会存在一个 Toast，可以像下面这样手动关闭 Toast',
-            code: `const toast1 = Toast('第一个 Toast');
+            jsCode: `const toast1 = Toast('第一个 Toast');
 const toast2 = Toast.success('第二个 Toast');
 
 toast1.clear();

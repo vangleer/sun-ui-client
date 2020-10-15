@@ -9,11 +9,12 @@ import SunUi from 'vue-sun-ui'
 // 导入vue-sun-ui样式
 import 'vue-sun-ui/dist/vue-sun-ui.css'
 import Highlight from './assets/js/highlight'
+import ShowCode from './components/ShowCode.vue'
+Vue.component('show-code',ShowCode)
 Vue.use(Highlight)
 // 安装SunUi
 Vue.use(SunUi)
 Vue.config.productionTip = false
-
 new Vue({
   router,
   store,
