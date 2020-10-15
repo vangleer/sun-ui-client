@@ -26,7 +26,7 @@ export default {
      },
      title:{
        type:String,
-       default:'Events'
+       default:'Slots'
      }
   }
 }

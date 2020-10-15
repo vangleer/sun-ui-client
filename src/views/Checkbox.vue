@@ -28,32 +28,12 @@
       <!-- 插槽列表 -->
       <slots-list :slots-list="childSlotsList" title="Checkbox Slots"/>
 
-      <div class="card">
-        <h3>CheckboxGroup 方法</h3>
-        <p>通过 ref 可以获取到 CheckboxGroup 实例并调用实例方法</p>
-        <table>
-          <thead>
-            <tr>
-              <th>方法名</th>
-              <th>说明</th>
-              <th>参数</th>
-              <th>返回值</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, index) in parentMethodsList" :key="index">
-              <td>{{ item.eventName }}</td>
-              <td v-html="item.desc"></td>
-              <td>
-                <span class="info-string">{{ item.callParams }}</span>
-              </td>
-              <td>
-                {{ item.callReturns }}
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <!-- 方法列表 -->
+      <methods-list 
+        :methods-list="parentMethodsList" 
+        title="CheckboxGroup 方法" 
+        desc="通过 ref 可以获取到 CheckboxGroup 实例并调用实例方法"
+      />
     </section>
 
   </div>
