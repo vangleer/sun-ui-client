@@ -7,9 +7,9 @@
         <router-view></router-view>
       </keep-alive>
         <!-- 移动端页面 -->
-        <div class="sun-doc-mobile">
+        <div class="sun-doc-mobile sun-doc-mobile-fiexd">
           <!-- <iframe src="https://java0088.github.io/sun/dist/#/button" frameborder="0"></iframe> -->
-          <!-- <iframe :src="childtPath" frameborder="0"></iframe> -->
+          <iframe :src="childtPath" frameborder="0"></iframe>
         </div>
     </div>
   </div>
@@ -45,14 +45,20 @@
 </script>
 
 <style lang="less">
+  @media (max-width: 1100px) {
+    .sun-doc-mobile {
+      right: auto;
+      left: 750px;
+    }
+  }
   .sun-doc {
     width: 100%;
   }
 
   .sun-doc-container {
     padding-left: 220px;
+    padding-right: 390px;
     overflow: hidden;
-    width: 100%;
     height: 100%;
 
     pre {
@@ -61,7 +67,6 @@
   }
 
   .sun-doc-content {
-    max-width: 66%;
     min-width: 500px;
 
     [class^=language-],

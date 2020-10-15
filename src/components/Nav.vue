@@ -2,11 +2,11 @@
   <!-- <div class="sun-doc-nav" :class="{'sun-doc-nav-fiexd':isFiexd}"> -->
   <div class="sun-doc-nav" :style="{top:scrollTop+'px'}">
     <div class="sun-doc-nav-group" v-for="(item,index) in navList" :key="index">
-      <div class="sun-doc-nav-title">{{item.desc}}</div>
+      <div class="sun-doc-nav-title">{{$i18n.locale==='zh'?item.desc:item.enDesc}}</div>
       <div class="sun-doc-nav-item" :class="{active:activeNav.groupIndex==index&&activeNav.navIndex===index2}"
         v-for="(navItem,index2) in item.group" :key="index2" @click="handleNavClick(navItem,index,index2)">
         <a href="javascript:;">
-          {{navItem.text}}
+          {{$i18n.locale==='zh'?navItem.text:navItem.enText}}
         </a>
       </div>
     </div>

@@ -11,7 +11,7 @@
       </a>
       <!-- search -->
       <div class="sun-doc-search">
-        <input type="text" placeholder="搜索文档..." />
+        <input type="text" :placeholder="$t('common.searchPlaceholder')" />
       </div>
     </div>
     <!-- 右侧导航 -->
@@ -33,9 +33,9 @@
             </div>
           </transition>
         </li>
-        <li class="lang" @click="$store.commit('changeLanguage')">
+        <li class="lang" @click="changeLanguage">
           <a href="javascript:;">
-            {{ $store.state.language }}
+            {{ $i18n.locale==='zh'?'中文':$i18n.locale }}
           </a>
         </li>
       </ul>
@@ -58,6 +58,11 @@
           },
         ]
       }
+    },
+    methods: {
+      changeLanguage() {
+        this.$i18n.locale = this.$i18n.locale==='zh'?'en':'zh'
+      }
     }
   }
 </script>
@@ -68,6 +73,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    min-width: 800px;
     height: 60px;
     padding: 0 30px;
     background-color: #001938;
