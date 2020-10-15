@@ -11,7 +11,7 @@
      
       <!-- 代码展示 -->
       <show-code :cart-list="cartList"/>
-      <!-- API -->
+      
       <!-- 属性列表 -->
       <props-list :props-list="propsList"/>
 
@@ -34,6 +34,3 @@
     },
   }
 </script>
-
-<style lang="less">
-</style>

@@ -16,8 +16,6 @@
       <!-- 代码展示 -->
       <show-code :cart-list="cartList"/>
 
-      <!-- API介绍 -->
-
       <!-- 属性列表 -->
       <props-list :props-list="propsList"/>
       <!-- 事件列表展示 -->
@@ -36,6 +34,3 @@
     },
   }
 </script>
-
-<style lang="less">
-</style>

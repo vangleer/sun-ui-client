@@ -31,7 +31,5 @@ import data from '../assets/data/index'
         ...data.buttonData
       }
     },
-    created() {
-    },
   }
 </script> 

@@ -10,8 +10,6 @@
       </div>
       <!-- 代码展示 -->
       <show-code :cart-list="cartList"/>
-
-      <!-- API 介绍 -->
       
       <!-- Checkbox 属性列表 -->
       <props-list :propsList="childPropsList" title="Checkbox Props"/>
@@ -49,5 +47,3 @@
     },
   }
 </script>
-
-<style lang="less"></style>

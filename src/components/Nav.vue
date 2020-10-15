@@ -107,7 +107,7 @@
   .sun-doc-nav-title {
     padding: 8px 0 8px 30px;
     color: #455a64;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 15px;
     line-height: 28px;
   }

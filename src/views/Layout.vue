@@ -18,8 +18,6 @@
       <!-- 代码展示 -->
       <show-code :cart-list="cartList"/>
 
-      <!-- API介绍 -->
-
       <!-- Row 属性列表 -->
       <props-list :props-list="parentPropsList" title="Row Props"/>
 
@@ -43,6 +41,3 @@
     },
   }
 </script>
-
-<style lang="less">
-</style>
