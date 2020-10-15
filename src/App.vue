@@ -9,7 +9,7 @@
         <!-- 移动端页面 -->
         <div class="sun-doc-mobile">
           <!-- <iframe src="https://java0088.github.io/sun/dist/#/button" frameborder="0"></iframe> -->
-          <iframe :src="childtPath" frameborder="0"></iframe>
+          <!-- <iframe :src="childtPath" frameborder="0"></iframe> -->
         </div>
     </div>
   </div>

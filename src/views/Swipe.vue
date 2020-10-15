@@ -14,28 +14,10 @@
 
       <!-- API介绍 -->
       <!-- 属性列表 -->
-      <props-list :propsList="propsList" title="Swipe Props"/>
-      <div class="card">
-        <h3>Swipe Events</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>事件名</th>
-              <th>说明</th>
-              <th>回调参数</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, index) in eventsList" :key="index">
-              <td>{{ item.eventName }}</td>
-              <td>{{ item.desc }}</td>
-              <td>
-                <span class="info-string">{{ item.callParams }}</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <props-list :props-list="propsList" title="Swipe Props"/>
+
+      <!-- 事件列表展示 -->
+      <events-list :events-list="eventsList" title="Swipe Events"/>
 
       <div class="card">
         <h3>Swipe 方法</h3>

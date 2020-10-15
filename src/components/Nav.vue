@@ -122,8 +122,9 @@
     -webkit-transition: color 0.2s;
     transition: color 0.2s;
   }
-
-  .sun-doc-nav-item a:hover,
+  .sun-doc-nav-item a:hover {
+    color: #4fc08d;
+  }
   .sun-doc-nav-item.active a {
     color: #4fc08d;
     background-color: #ebfff0;

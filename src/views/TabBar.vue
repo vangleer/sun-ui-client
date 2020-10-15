@@ -15,32 +15,13 @@
       <!-- API介绍 -->
 
       <!-- Tabbar 属性列表 -->
-      <props-list :propsList="propsList" title="Tabbar Props"/>
+      <props-list :props-list="propsList" title="Tabbar Props"/>
 
       <!-- TabbarItem 属性列表 -->
-      <props-list :propsList="itemPropsList" title="TabbarItem Props" :is-show-title="false"/>
+      <props-list :props-list="itemPropsList" title="TabbarItem Props" :is-show-title="false"/>
 
-      <div class="card">
-        <h3>TabbarItem Slots</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>事件名</th>
-              <th>说明</th>
-              <th>回调参数</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, index) in eventsList" :key="index">
-              <td>{{ item.eventName }}</td>
-              <td>{{ item.desc }}</td>
-              <td>
-                <span class="info-string">{{ item.callParams }}</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <!-- 事件列表展示 -->
+      <events-list :events-list="eventsList" title="TabbarItem Events"/>
 
       <div class="card">
         <h3>Slots</h3>

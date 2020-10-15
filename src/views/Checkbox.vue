@@ -17,50 +17,13 @@
       <props-list :propsList="childPropsList" title="Checkbox Props"/>
 
       <!-- CheckboxGroup 属性列表 -->
-      <props-list :propsList="parentPropsList" title="CheckboxGroup Props" :is-show-title="false"/>
+      <props-list :props-list="parentPropsList" title="CheckboxGroup Props" :is-show-title="false"/>
 
-      <div class="card">
-        <h3>Checkbox Events</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>事件名</th>
-              <th>说明</th>
-              <th>回调参数</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, index) in childEventsList" :key="index">
-              <td>{{ item.eventName }}</td>
-              <td>{{ item.desc }}</td>
-              <td>
-                <span class="info-string">{{ item.callParams }}</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="card">
-        <h3>CheckboxGroup Events</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>事件名</th>
-              <th>说明</th>
-              <th>回调参数</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, index) in parentEventsList" :key="index">
-              <td>{{ item.eventName }}</td>
-              <td>{{ item.desc }}</td>
-              <td>
-                <span class="info-string">{{ item.callParams }}</span>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <!-- Checkbox 事件列表展示 -->
+      <events-list :events-list="childEventsList" title="Checkbox Events"/>
+
+      <!-- Checkbox 事件列表展示 -->
+      <events-list :events-list="parentEventsList" title="CheckboxGroup Events"/>
 
       <div class="card">
         <h3>Slots</h3>
