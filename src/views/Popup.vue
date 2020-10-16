@@ -2,7 +2,7 @@
   <div class="sun-doc-popup sun-doc-content">
     <section>
       <h1>{{title}}</h1>
-      <div class="card">
+      <div class="card" v-if="desc">
         <h3>{{$t('common.recommend')}}</h3>
         <div>
           {{desc}}

@@ -3,8 +3,8 @@
 
     <section>
       <h1>{{title}}</h1>
-      <div class="card" v-if="$i18n.locale==='zh'">
-        <h3>介绍</h3>
+      <div class="card" v-if="desc">
+        <h3>{{$t('common.recommend')}}</h3>
         <div>
           {{desc}}
         </div>

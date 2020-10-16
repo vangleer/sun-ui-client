@@ -4,10 +4,10 @@
     <table>
       <thead>
         <tr>
-          <th>{{$('common.parameter')}}</th>
-          <th>{{$('common.explain')}}</th>
-          <th>{{$('common.type')}}</th>
-          <th>{{$('common.defaultValue')}}</th>
+          <th>{{$t('common.parameter')}}</th>
+          <th>{{$t('common.explain')}}</th>
+          <th>{{$t('common.type')}}</th>
+          <th>{{$t('common.defaultValue')}}</th>
         </tr>
       </thead>
       <tbody>

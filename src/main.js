@@ -30,7 +30,7 @@ Vue.use(SunUi)
 Vue.use(VueI18n)
 
 const i18n = new VueI18n({
-  locale: 'zh', // 定义默认语言为中文 
+  locale: 'en', // 定义默认语言为中文 
   messages: {
     'zh': require('./locale/zh'),
     'en': require('./locale/en')

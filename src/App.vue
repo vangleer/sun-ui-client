@@ -9,7 +9,7 @@
         <!-- 移动端页面 -->
         <div class="sun-doc-mobile sun-doc-mobile-fiexd">
           <!-- <iframe src="https://java0088.github.io/sun/dist/#/button" frameborder="0"></iframe> -->
-          <iframe :src="childtPath" frameborder="0"></iframe>
+          <!-- <iframe :src="childtPath" frameborder="0"></iframe> -->
         </div>
     </div>
   </div>
@@ -30,9 +30,9 @@
     },
      watch:{
       $route(to,from){
-        this.$refs.navRef.changeRouter()
-        // this.childtPath = 'https://java0088.github.io/sun/dist/#'+to.path // 线上
-        this.childtPath = 'http://localhost:8080/#'+to.path // 测试
+        // this.$refs.navRef.changeRouter()
+        // // this.childtPath = 'https://java0088.github.io/sun/dist/#'+to.path // 线上
+        // this.childtPath = 'http://localhost:8080/#'+to.path // 测试
       }
     },
     activated() {

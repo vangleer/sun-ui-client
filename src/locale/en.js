@@ -12,6 +12,6 @@ module.exports = {
     showCode:'Usage',
     sunDesc:'Mobile UI Components built on Vue',
     introduce:'install',
-    recommend:'介绍',
+    recommend:'introduce',
   }
 }
