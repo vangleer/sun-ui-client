@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 代码展示 --> 
-    <h2>代码展示</h2>
+    <h2>{{$t('common.showCode')}}</h2>
     <div class="card" v-for="(item, index) in cartList" :key="index">
       <h3>{{ item.title }}</h3>
       <p v-html="item.desc">

@@ -5,9 +5,9 @@
       <table>
         <thead>
           <tr>
-            <th>事件名</th>
-            <th>说明</th>
-            <th>回调参数</th>
+            <th>{{$t('common.eventName')}}</th>
+            <th>{{$t('common.explain')}}</th>
+            <th>{{$t('common.callbackParameter')}}</th>
           </tr>
         </thead>
         <tbody>

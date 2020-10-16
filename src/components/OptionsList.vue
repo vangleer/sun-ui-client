@@ -4,10 +4,10 @@
     <table>
       <thead>
         <tr>
-          <th>参数</th>
-          <th>说明</th>
-          <th>类型</th>
-          <th>默认值</th>
+          <th>{{$('common.parameter')}}</th>
+          <th>{{$('common.explain')}}</th>
+          <th>{{$('common.type')}}</th>
+          <th>{{$('common.defaultValue')}}</th>
         </tr>
       </thead>
       <tbody>

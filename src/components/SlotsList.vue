@@ -4,8 +4,8 @@
     <table>
       <thead>
         <tr>
-          <th>事件名</th>
-          <th>说明</th>
+          <th>{{$t('common.eventName')}}</th>
+          <th>{{$t('common.explain')}}</th>
         </tr>
       </thead>
       <tbody>

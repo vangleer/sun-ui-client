@@ -5,10 +5,10 @@
     <table>
       <thead>
         <tr>
-          <th>方法名</th>
-          <th>说明</th>
-          <th>参数</th>
-          <th>返回值</th>
+          <th>{{$t('common.methodName')}}</th>
+          <th>{{$t('common.explain')}}</th>
+          <th>{{$t('common.parameter')}}</th>
+          <th>{{$t('common.returnValue')}}</th>
         </tr>
       </thead>
       <tbody>

@@ -3,14 +3,14 @@
 
     <section>
       <h1>{{title}}</h1>
-      <div class="card">
+      <div class="card" v-if="$i18n.locale==='zh'">
         <h3>介绍</h3>
         <div>
           {{desc}}
         </div>
       </div>
       <div class="card">
-        <h3>引入</h3>
+        <h3>{{$t('common.introduce')}}</h3>
         <div v-highlight>
           <pre><code v-html="importCode"></code></pre>
         </div>

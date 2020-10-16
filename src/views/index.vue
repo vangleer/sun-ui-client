@@ -8,7 +8,7 @@
             <img src="../assets/imgs/logo-green.png" alt="sun-ui">
           </div>
           <h1>Sun</h1>
-          <p>轻量、可靠的移动端 Vue 组件库</p>
+          <p>{{$t('common.sunDesc')}}</p>
         </div>
       </div>
     </section>

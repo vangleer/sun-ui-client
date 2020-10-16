@@ -3,14 +3,14 @@
     <section>
       <h1>{{title}}</h1>
       <div class="card">
-        <h3>介绍</h3>
+        <h3>{{$t('common.recommend')}}</h3>
         <div>
           {{desc}}
         </div>
       </div>
       <div class="card">
-        <h3>引入</h3>
-        <p>
+        <h3>{{$t('common.introduce')}}</h3>
+        <p v-if="$i18n.locale==='zh'">
           引入<code>Message</code>可以使用<code>Vue.use(Message)</code>在所有实例添加<code>$message</code>方法，也可以单独使用<code>Message</code>方法。
         </p>
         <div v-highlight>
