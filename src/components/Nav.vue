@@ -1,7 +1,7 @@
 <template>
   <!-- <div class="sun-doc-nav" :class="{'sun-doc-nav-fiexd':isFiexd}"> -->
   <div class="sun-doc-nav" :style="{top:scrollTop+'px'}">
-    <div class="sun-doc-nav-group" v-for="(item,index) in navList" :key="index">
+    <div class="sun-doc-nav-group" v-for="(item,index) in data.navList" :key="index">
       <div class="sun-doc-nav-title">{{item.desc}}</div>
       <div class="sun-doc-nav-item" :class="{active:activeNav.groupIndex==index&&activeNav.navIndex===index2}"
         v-for="(navItem,index2) in item.group" :key="index2" @click="handleNavClick(navItem,index,index2)">
@@ -14,8 +14,11 @@
 </template>
 
 <script>
-  import data from '../assets/data/index.js'
+  import {mapState} from 'vuex'
   export default {
+    computed:{
+      ...mapState(['data'])
+    },
     data() {
       return {
         activeNav: {
@@ -24,7 +27,6 @@
 
         },
         isFiexd: false,
-        navList: data.navList,
         scrollTop: 60
       }
     },
@@ -42,27 +44,31 @@
     },
     methods: {
       changeRouter() {
-        const path = location.hash.substring(1)
-        // 根据当前路由选择nav高亮
-        this.navList.forEach((item, index1) => {
-          let flag = item.group.some((item2, index2) => {
-            if (item2.path === path) {
-              this.activeNav.navIndex = index2
-              return true
+          const path = location.hash.substring(1)
+          // 根据当前路由选择nav高亮
+          this.data.navList.forEach((item, index1) => {
+            let flag = item.group.some((item2, index2) => {
+              if (path.indexOf(item2.path)!==-1) {
+                this.activeNav.navIndex = index2
+                return true
+              }
+              console.log(index2)
+            })
+            if (flag) {
+              this.activeNav.groupIndex = index1
+              return
             }
-            console.log(index2)
-          })
-          if (flag) {
-            this.activeNav.groupIndex = index1
-            return
-          }
         })
       },
       handleNavClick(item, index, index2) {
         document.documentElement.scrollTop = 0
         this.activeNav.groupIndex = index
         this.activeNav.navIndex = index2
-        this.$router.push(item.path)
+        if(this.$i18n.locale==='zh') {
+          this.$router.push('/zh-CN'+item.path)
+        }else {
+          this.$router.push('/en-US'+item.path)
+        }
       }
     }
   }

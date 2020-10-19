@@ -30,10 +30,10 @@ Vue.use(SunUi)
 Vue.use(VueI18n)
 
 const i18n = new VueI18n({
-  locale: 'en', // 定义默认语言为中文 
+  locale: localStorage.getItem('lang')||'zh-CN', // 定义默认语言为中文 
   messages: {
-    'zh': require('./locale/zh'),
-    'en': require('./locale/en')
+    'zh-CN': require('./locale/zh'),
+    'en-US': require('./locale/en')
   },
 });
 Vue.config.productionTip = false

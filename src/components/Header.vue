@@ -35,7 +35,7 @@
         </li>
         <li class="lang" @click="changeLanguage">
           <a href="javascript:;">
-            {{ $i18n.locale==='zh'?'中文':$i18n.locale }}
+            {{ $i18n.locale==='zh-CN'?'中文':'En' }}
           </a>
         </li>
       </ul>
@@ -61,7 +61,11 @@
     },
     methods: {
       changeLanguage() {
-        this.$i18n.locale = this.$i18n.locale==='zh'?'en':'zh'
+        this.$i18n.locale = this.$i18n.locale==='zh-CN'?'en-US':'zh-CN'
+        this.$store.commit('changeLanguage',this.$i18n.locale)
+        localStorage.setItem('lang',this.$i18n.locale)
+        location.hash = this.$i18n.locale+'/button'
+        location.reload()
       }
     }
   }

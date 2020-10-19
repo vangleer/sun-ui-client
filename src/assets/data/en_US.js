@@ -269,7 +269,7 @@ let data = {
     ],
     eventsList: [{
       eventName: 'click',
-      desc: '点击单元格时触发',
+      desc: 'Triggered when a cell is clicked',
       callParams: 'event: Event',
     }],
     slotsList: [{
@@ -473,7 +473,7 @@ Vue.use(CheckboxGroup);`,
           },
           {
             title: 'Disable Label Click',
-            code: `<sun-checkbox v-model="checked" label-disabled>复选框</sun-checkbox>`,
+            code: `<sun-checkbox v-model="checked" label-disabled>Checkbox</sun-checkbox>`,
           },
           {
             title: 'Checkbox Group',
@@ -744,7 +744,7 @@ Vue.use(CheckboxGroup);`,
   messageData:{ // Message 消息提示
     title:'Message',
     desc:'A message prompt is displayed at the top of the page to support function calls.',
-    importCode: `import Vue from 'vue';\nimport { Message } from 'vue-sun-ui';\n\nVue.use(Message);\nthis.$message('提示消息')`,
+    importCode: `import Vue from 'vue';\nimport { Message } from 'vue-sun-ui';\n\nVue.use(Message);\nthis.$message('Show Message')`,
     methodsList: [{
         methodName: 'Message',
         desc: 'Display prompts',
@@ -1950,8 +1950,8 @@ export default {
         ],
   },
   toastData:{// Toast 轻提示
-    title:'Toast 轻提示',
-    desc:'在页面中间弹出黑色半透明提示，用于消息通知、加载提示、操作结果提示等场景。',
+    title:'Toast',
+    desc:'',
     importCode: `import Vue from 'vue';\nimport { Toast } from 'vue-sun-ui';\n\nVue.use(Toast);`,
     methodsList: [{
             methodName: 'Toast',

@@ -3,8 +3,8 @@
     <!-- 代码展示 --> 
     <h2>{{$t('common.showCode')}}</h2>
     <div class="card" v-for="(item, index) in cartList" :key="index">
-      <h3 v-if="item.title">{{ item.title }}</h3>
-      <p v-if="item.desc" v-html="item.desc">
+      <h3>{{ item.title }}</h3>
+      <p v-html="item.desc">
       </p>
       <div v-highlight>
         <pre v-if="item.code"><code  class="language-html" v-text="item.code"></code></pre>

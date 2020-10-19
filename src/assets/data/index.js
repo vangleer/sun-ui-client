@@ -1,268 +1,297 @@
 let data = {
   navList: [{
-      desc: 'Essentials',
+      desc: '开发指南',
+      enDesc:'Essentials',
       group: [{
-        text: 'Introduction',
+        text: '介绍',
+        enText:'Introduction',
         path: '/'
       }]
     }, {
-      desc: 'Basic Components',
+      desc: '基础组件',
+      enDesc:'Basic Components',
       group: [{
-        text:'Button',
+        text: 'Button 按钮',
+        enText:'Button',
         path: '/button'
       }, {
-        text:'Cell',
+        text: 'Cell 单元格',
+        enText:'Cell',
         path: '/cell'
       }, {
-        text:'Icon',
+        text: 'Icon 图标',
+        enText:'Icon',
         path: '/icon'
       }, {
-        text:'Layout',
+        text: 'Layout 布局',
+        enText:'Layout',
         path: '/layout'
       }, {
-        text:'Popup',
+        text: 'Popup 弹出层',
+        enText:'Popup',
         path: '/popup'
       }, {
-        text:'Toast',
+        text: 'Toast 轻提示',
+        enText:'Toast',
         path: '/toast'
       }]
     },
     {
-      desc:'Form Components',
+      desc: '表单组件',
+      enDesc:'Form Components',
       group: [{
-          text:'Checkbox',
+          text: 'Checkbox 复选框',
+          enText:'Checkbox',
           path: '/checkbox'
         }, {
-          text:'Rate',
+          text: 'Rate 评分',
+          enText:'Rate',
           path: '/rate'
         }, {
-          text:'Switch',
+          text: 'Switch 开关',
+          enText:'Switch',
           path: '/switch'
         }, {
-          text:'Message',
+          text: 'Message 消息提示',
+          enText:'Message',
           path: '/message'
         }, {
-          text:'PullRefresh',
+          text: 'PullRefresh 下拉刷新',
+          enText:'PullRefresh',
           path: '/pullRefresh'
         },
         {
-          text:'Stepper',
+          text: 'Stepper 进步器',
+          enText:'Stepper',
           path: '/stepper'
         }
       ]
     },
     {
-      desc:'Display Components',
+      desc: '展示组件',
+      enDesc:'Display Components',
       group: [{
-        text:'Swipe',
+        text: 'Swipe 轮播图',
+        enText:'Swipe',
         path: '/swipe'
       }]
     },
     {
-      desc:'Navigation Components',
+      desc: '导航组件',
+      enDesc:'Navigation Components',
       group: [{
-        text:'NavBar',
+        text: 'NavBar 导航栏',
+        enText:'NavBar',
         path: '/navBar'
       }, {
-        text:'TabBar',
+        text: 'TabBar 标签栏',
+        enText:'TabBar',
         path: '/tabBar'
       }]
     }
   ],
   buttonData:{ // Button 按钮
-    title:'Button',
+    title:'Button 按钮',
     desc:'',
     importCode: `import Vue from 'vue';\nimport { Button } from 'vue-sun-ui';\n\nVue.use(Button);`,
     propsList: [{
         propName: 'type',
-        desc: 'Can be set to<code>primary</code><code>info</code><code>warning</code><code>danger</code>',
+        desc: '类型，可选值为<code>primary</code><code>info</code><code>warning</code><code>danger</code>',
         type: 'string',
         default: 'default',
       },
       {
         propName: 'size',
-        desc: 'Can be set to<code>large</code><code>small</code><code>mini</code>',
+        desc: '尺寸，可选值为<code>large</code><code>small</code><code>mini</code>',
         type: 'string',
         default: 'normal',
       },
       {
         propName: 'color',
-        desc: 'Color, support <code>linear-gradient</code>',
+        desc: '按钮颜色，支持传入 <code>linear-gradient</code> 渐变色',
         type: 'string',
         default: '-',
       },
       {
         propName: 'icon',
-        desc: 'Left Icon',
+        desc: '左侧图标名称或图片链接',
         type: 'string',
         default: 'sun-icon',
       },
       {
         propName: 'tag',
-        desc: 'HTML Tag',
+        desc: '按钮根节点的 HTML 标签',
         type: 'string',
         default: 'button',
       },
       {
         propName: 'block',
-        desc: 'Whether to set display block',
+        desc: '是否为块级元素',
         type: 'boolean',
         default: 'false',
       },
       {
         propName: 'plain',
-        desc: 'Whether to be plain button',
+        desc: '是否为朴素按钮',
         type: 'boolean',
         default: 'false',
       },
       {
         propName: 'text',
-        desc: 'Text',
+        desc: '按钮文字	',
         type: 'string',
         default: '-'
       },
       {
         propName: 'round',
-        desc: 'Whether to be round button',
+        desc: '是否为圆形按钮',
         type: 'boolean',
         default: 'false',
       },
       {
         propName: 'disabled	',
-        desc: 'Whether to disable button',
+        desc: '是否禁用按钮',
         type: 'boolean',
         default: 'false',
       },
       {
         propName: 'isExtra',
-        desc: 'Whether to open and click the border effect',
+        desc: '是否开起点击边框效果',
         type: 'boolean',
         default: 'false',
       },
       {
         propName: 'effectWidth',
-        desc: 'The width of the border effect',
+        desc: '边框效果的宽度	',
         type: 'string | number',
         default: '6px',
       },
     ],
     eventsList: [{
         eventName: 'click',
-        desc: 'Triggered when click button and not disabled or loading',
+        desc: '点击按钮，且按钮状态不为加载或禁用时触发',
         callParams: 'event: Event',
       },
       {
         eventName: 'touchstart',
-        desc:'Triggered when touch start',
+        desc: '开始触摸按钮时触发',
         callParams: 'event: TouchEvent',
       },
     ],
     slotsList: [{
       slotName: 'default',
-      desc: 'Content',
+      desc: '按钮内容'
     }],
     cartList: [{
-        title:'type',
-        code: `<sun-button type="primary">primary</sun-button>\n<sun-button type="info">info</sun-button>\n<sun-button type="default">default</sun-button>\n<sun-button type="danger">danger</sun-button>\n<sun-button type="warning">warning</sun-button>`,
+        title: '按钮类型',
+        desc: ' 按钮支持 <code>default</code>、<code>primary</code>、<code>info</code>、<code>warning</code>、<code>danger</code> 五种类型，默认为 <code>default</code>。',
+        code: `<sun-button type="primary">主要按钮</sun-button>\n<sun-button type="info">信息按钮</sun-button>\n<sun-button type="default">默认按钮</sun-button>\n<sun-button type="danger">危险按钮</sun-button>\n<sun-button type="warning">警告按钮</sun-button>`,
       },
       {
-        title:'Disabled',
-        code: `<sun-button disabled type="primary">Disabled</sun-button>\n<sun-button disabled type="info">Disabled</sun-button>`,
+        title: '禁用状态',
+        desc: '通过 <code>disabled</code> 属性来禁用按钮，禁用状态下按钮不可点击。',
+        code: `<sun-button disabled type="primary">禁用状态</sun-button>\n<sun-button disabled type="info">禁用状态</sun-button>`,
       },
       {
-        title: 'plain',
-        code: `<sun-button type="primary" plain>primary</sun-button>\n<sun-button type="info" plain>info</sun-button>`,
+        title: '朴素按钮',
+        desc: '通过 <code>plain</code> 属性将按钮设置为朴素按钮，朴素按钮的文字为按钮颜色，背景为白色。',
+        code: `<sun-button type="primary" plain>朴素按钮</sun-button>\n<sun-button type="info" plain>朴素按钮</sun-button>`,
       },
       {
-        title: 'Shape',
-        code: `<sun-button type="primary">Square</sun-button>\n<sun-button type="info" round>Round</sun-button>`,
+        title: '按钮形状',
+        desc: '通过 <code>square</code> 设置方形按钮，通过 <code>round</code> 设置圆形按钮。',
+        code: `<sun-button type="primary">方形按钮</sun-button>\n<sun-button type="info" round>圆形按钮</sun-button>`,
       },
 
       {
-        title: 'Icon',
-        code: `<sun-button type="primary" icon="plus"></sun-button>\n<sun-button type="primary" icon="plus">Button</sun-button>\n<sun-button type="info" plain icon="friends">Button</sun-button>`,
+        title: '图标按钮',
+        desc: '通过 <code>icon</code> 属性设置按钮图标，支持 <code>Icon</code> 组件里的所有图标，也可以传入图标 URL。',
+        code: `<sun-button type="primary" icon="plus"></sun-button>\n<sun-button type="primary" icon="plus">按钮</sun-button>\n<sun-button type="info" plain icon="friends">按钮</sun-button>`,
       },
       {
-        title: 'Border Effect',
-        code: `<sun-button type="primary" :isExtra="false">Close Effect</sun-button>\n<sun-button type="info" effectWidth="10px">Change Size</sun-button>`,
+        title: '按钮边框效果',
+        desc: '通过 <code>isExtra</code> 属性设置按钮点击外边框的效果',
+        code: `<sun-button type="primary" :isExtra="false">关闭效果</sun-button>\n<sun-button type="info" effectWidth="10px">调整效果大小</sun-button>`,
       },
       {
-        title: 'Size',
-        code: `<sun-button type="primary" size="large">Large</sun-button>\n<sun-button type="primary" size="normal">Normal</sun-button>\n<sun-button type="info" size="small">Small</sun-button>\n<sun-button type="danger" size="mini">Mini</sun-button>`,
+        title: '按钮尺寸',
+        desc: '支持 <code>large</code>、 <code>normal</code>、 <code>small</code>、 <code>mini</code> 四种尺寸， 默认为 <code>normal</code>。',
+        code: `<sun-button type="primary" size="large">大号按钮</sun-button>\n<sun-button type="primary" size="normal">普通按钮</sun-button>\n<sun-button type="info" size="small">小型按钮</sun-button>\n<sun-button type="danger" size="mini">迷你按钮</sun-button>`,
       },
       {
-        title: 'Custom Color',
-        code: `<sun-button color="#7232dd">Pure</sun-button>\n<sun-button color="#7232dd" plain>Pure</sun-button>\n<sun-button color="linear-gradient(to right, #ff6034, #ee0a24)">Gradient</sun-button>`,
+        title: '自定义颜色',
+        desc: '通过 <code>color</code> 属性可以自定义按钮的颜色。',
+        code: `<sun-button color="#7232dd">单色按钮</sun-button>\n<sun-button color="#7232dd" plain>单色按钮</sun-button>\n<sun-button color="linear-gradient(to right, #ff6034, #ee0a24)">渐变按钮</sun-button>`,
       },
     ],
   },
   cellData:{ // Cell 单元格
-    title:'Cell',
+    title:'Cell 单元格',
     desc:'',
     importCode: `import Vue from 'vue'; \nimport { Cell } from 'vue-sun-ui'; \n \nVue.use(Cell);`,
     propsList: [{
         propName: 'title',
-        desc: 'Title',
+        desc: '左侧标题',
         type: 'number | string',
         default: '-',
       },
       {
         propName: 'value',
-        desc: '	Right text',
+        desc: '	右侧内容',
         type: 'number | string',
         default: '-',
       },
       {
         propName: 'label',
-        desc: 'Description below the title',
+        desc: '标题下方的描述信息',
         type: 'string',
         default: '-',
       },
       {
         propName: 'icon',
-        desc: 'Left Icon',
+        desc: '左侧图标名称或图片链接',
         type: 'string',
         default: 'sun-icon',
       },
       {
         propName: 'border',
-        desc: 'Whether to show inner border',
+        desc: '是否显示内边框	',
         type: 'boolean',
         default: 'true',
       },
       {
         propName: 'is-link',
-        desc: 'Whether to show link icon',
+        desc: '是否展示右侧箭头',
         type: 'boolean',
         default: 'false',
       },
       {
         propName: 'arrow-direction',
-        desc: 'Can be set to <code>left</code> <code>up</code> <code>down</code>',
+        desc: '箭头方向，可选值为 <code>left</code> <code>up</code> <code>down</code>',
         type: 'string',
         default: 'right',
       },
       {
         propName: 'title-style',
-        desc: 'Title style',
+        desc: '左侧标题额外样式',
         type: 'any',
         default: '-'
       },
       {
         propName: 'title-class',
-        desc: 'Title className',
+        desc: '左侧标题额外类名',
         type: 'any',
         default: '-',
       },
       {
-        propName: 'value-class',
-        desc: 'Value className',
+        propName: 'value-class	',
+        desc: '右侧内容额外类名',
         type: 'any',
         default: '-',
       },
       {
         propName: 'label-class',
-        desc: 'Label className',
+        desc: '是否开起点击边框效果',
         type: 'any',
         default: '-',
       }
@@ -274,43 +303,50 @@ let data = {
     }],
     slotsList: [{
         slotName: 'default',
-        desc: 'Custom value',
+        desc: '自定义右侧 value 的内容'
       },
       {
         slotName: 'title',
-        desc: 'Custom title',
+        desc: '自定义左侧 title 的内容'
       },
       {
         slotName: 'icon',
-        desc: 'Custom icon',
+        desc: '自定义左侧图标'
       }
     ],
     cartList: [{
-        title: 'Basic Usage',
-        code: `<sun-cell title="Cell title" value="Content" />\n<sun-cell title="Cell title" value="Content" label="Description" />`,
+        title: '基础展示',
+        desc: '使用<code>Cell</code>自带下边框',
+        code: `<sun-cell title="单元格" value="内容" />\n<sun-cell title="单元格" value="内容" label="描述信息" />`,
+      },
+
+
+      {
+        title: '图标展示',
+        desc: '通过<code>icon</code>属性在标题左侧展示图标。',
+        code: `<sun-cell icon="friends" title="单元格" value="内容" />`,
       },
       {
-        title: 'Left Icon',
-        code: `<sun-cell icon="friends" title="Cell title" value="Content" />`,
-      },
-      {
-        title: 'Link',
-        code: `<sun-cell title="Cell title" is-link />\n<sun-cell title="Cell title" is-link value="Content" />\n<sun-cell title="Cell title" is-link arrow-direction="down" value="Content" />`,
+        title: '展示箭头',
+        desc: '设置 <code>is-link</code> 属性后会在单元格右侧显示箭头，并且可以通过 <code>arrow-direction</code> 属性控制箭头方向。',
+        code: `<sun-cell title="单元格" is-link />\n<sun-cell title="单元格" is-link value="内容" />\n<sun-cell title="单元格" is-link arrow-direction="down" value="内容" />`,
       },
 
       {
-        title: 'Background Effect',
-        code: `<sun-cell title="Cell title" :bgEffect="true" />\n<sun-cell title="Cell title" :bgEffect="false" value="Content" />`,
+        title: '点击背景效果',
+        desc: '通过 <code>bgEffect</code>设置点击单元格背景效果，默认为false',
+        code: `<sun-cell title="单元格" :bgEffect="true" />\n<sun-cell title="单元格" :bgEffect="false" value="内容" />`,
       },
 
       {
-        title: 'Slots',
-        code: `<sun-cell>\n <template #title>\n   <span>Cell title</span>\n   <sun-button size="mini" type="danger">Button</sun-button>\n </template>\n</sun-cell>`,
+        title: '使用插槽',
+        desc: '如以上用法不能满足你的需求，可以使用插槽来自定义内容。',
+        code: `<sun-cell>\n <template #title>\n   <span>这是单元格</span>\n   <sun-button size="mini" type="danger">按钮</sun-button>\n </template>\n</sun-cell>`,
       }
     ],
   },
   checkBoxData:{ // Checkbox 复选框
-        title:'Checkbox',
+        title:'Checkbox 复选框',
         desc:'',
         importCode: `import Vue from 'vue';
 import { Checkbox, CheckboxGroup } from 'sun';
@@ -319,124 +355,125 @@ Vue.use(Checkbox);
 Vue.use(CheckboxGroup);`,
         parentPropsList: [{
             propName: 'v-model (value)',
-            desc: 'Names of all checked checkboxes',
+            desc: '所有选中项的标识符',
             type: 'any[]',
             default: '-',
           },
           {
             propName: 'disabled',
-            desc: 'Whether to disable all checkboxes',
+            desc: '是否禁用所有复选框',
             type: 'boolean',
             default: 'false',
           },
           {
             propName: 'max',
-            desc: 'Maximum amount of checked options',
+            desc: '最大可选数，<code>0</code>为无限制',
             type: 'number | string',
             default: '0',
           },
           {
             propName: 'direction',
-            desc: 'Direction, can be set to<code>horizontal</code>',
+            desc: '排列方向，可选值为<code>horizontal</code>',
             type: 'string',
             default: 'vertical',
           },
           {
             propName: 'icon-size',
-            desc: 'Icon size of all checkboxes',
+            desc: '所有复选框的图标大小，默认单位为<code>px</code>',
             type: 'number | string',
             default: '16px',
           },
           {
             propName: 'checked-color',
-            desc: 'Checked color of all checkboxes',
+            desc: '所有复选框的选中状态颜色',
             type: 'string',
             default: '#1989fa',
           },
         ],
         childPropsList: [{
             propName: 'v-model (value)',
-            desc: 'Check status',
+            desc: '是否为选中状态',
             type: 'boolean',
             default: 'false',
           },
           {
             propName: 'name',
-            desc: 'Checkbox name',
+            desc: '标识符',
             type: 'any',
             default: '-',
           },
           {
             propName: 'shape',
-            desc: 'Can be set to <code>square</code>',
+            desc: '形状，可选值为 <code>square</code>',
             type: 'string',
             default: 'round',
           },
           {
             propName: 'disabled',
-            desc: 'Disable checkbox',
+            desc: '是否禁用复选框',
             type: 'boolean',
             default: 'false',
           },
           {
             propName: 'label-disabled',
-            desc: 'Whether to disable label click',
+            desc: '是否禁用复选框文本点击',
             type: 'boolean',
             default: 'false',
           },
           {
             propName: 'label-position',
-            desc: 'Can be set to <code>left</code>',
+            desc: '文本位置，可选值为 <code>left</code>',
             type: 'string',
             default: 'right',
           },
           {
             propName: 'icon-size',
-            desc: 'Icon size',
+            desc: '图标大小，默认单位为<code>px</code>',
             type: 'number | string',
             default: '16px',
           },
           {
             propName: 'checked-color',
-            desc: 'Checked color',
+            desc: '选中状态颜色',
             type: 'string',
             default: '#1989fa',
           },
         ],
         childEventsList: [{
             eventName: 'change',
-            desc: 'Triggered when value changed',
+            desc: '当绑定值变化时触发的事件',
             callParams: 'checked: boolean',
           },
           {
             eventName: 'click',
-            desc: 'Triggered when click checkbox',
+            desc: '点击图标时触发',
             callParams: 'event: Event',
           },
         ],
         parentEventsList: [{
           eventName: 'change',
-          desc: 'Triggered when value changed',
+          desc: '当绑定值变化时触发的事件',
           callParams: 'names: any[]',
         }, ],
         parentMethodsList: [{
           methodName: 'toggleAll',
-          desc: 'Toggle check status of all checkboxes',
+          desc: '切换选中状态，传<code>true</code>为选中，<code>false</code>为取消选中，不传参为取反',
           callParams: 'checked?: boolean',
           callReturns: '-',
         }, ],
         childSlotsList: [{
             slotName: 'default',
-            desc: 'Custom label',
+            desc: '自定义文本',
           },
           {
             slotName: 'icon',
-            desc: 'Custom Icon',
+            desc: '自定义图标',
           },
         ],
         cartList: [{
-            title: 'Basic Usage',
-            code: `<sun-checkbox v-model="checked">Checkbox</sun-checkbox>`,
+            title: '基础用法',
+            desc: '通过 <code>v-model</code> 绑定复选框的勾选状态。',
+            code: `<sun-checkbox v-model="checked">复选框</sun-checkbox>`,
             jsCode: `export default {
   data() {
     return {
@@ -446,42 +483,47 @@ Vue.use(CheckboxGroup);`,
 };`,
           },
           {
-            title: 'Disabled',
-            code: `<sun-checkbox v-model="checked" disabled>Checkbox</sun-checkbox>`,
+            title: '禁用状态',
+            desc: '通过设置 <code>disabled</code> 属性可以禁用复选框。',
+            code: `<sun-checkbox v-model="checked" disabled>复选框</sun-checkbox>`,
           },
           {
-            title: 'Custom Shape',
-            code: `<sun-checkbox v-model="checked" shape="square">Checkbox</sun-checkbox>`,
+            title: '自定义形状',
+            desc: '将 <code>shape</code> 属性设置为 <code>square</code>，复选框的形状会变成方形。',
+            code: `<sun-checkbox v-model="checked" shape="square">复选框</sun-checkbox>`,
           },
           {
-            title: 'Custom Color',
-            code: `<sun-checkbox v-model="checked" checked-color="#07c160">Checkbox</sun-checkbox>`,
+            title: '自定义颜色',
+            desc: '通过 <code>checked-color</code> 属性设置选中状态的图标颜色。',
+            code: `<sun-checkbox v-model="checked" checked-color="#07c160">复选框</sun-checkbox>`,
           },
           {
-            title: 'Custom Icon Size',
-            code: `<sun-checkbox v-model="checked" icon-size="22px">Checkbox</sun-checkbox>`,
+            title: '自定义大小',
+            desc: '通过 <code>icon-size</code> 属性可以自定义图标的大小。',
+            code: `<sun-checkbox v-model="checked" icon-size="22px">复选框</sun-checkbox>`,
           },
           {
-            title: 'Custom Icon',
-            desc: 'Use icon slot to custom icon.',
+            title: '自定义图标',
+            desc: '通过 <code>icon</code> 插槽自定义图标',
             code: ` <sun-checkbox v-model="checked">
-  Custom Icon
+  自定义图标
   <template #icon>
     <sun-icon name="plus" />
   </template>
 </sun-checkbox>`,
           },
           {
-            title: 'Disable Label Click',
+            title: '禁用文本点击',
+            desc: '设置 <code>label-disabled</code> 属性后，点击图标以外的内容不会触发复选框切换。',
             code: `<sun-checkbox v-model="checked" label-disabled>复选框</sun-checkbox>`,
           },
           {
-            title: 'Checkbox Group',
-            desc: "When Checkboxes are inside a CheckboxGroup, the checked checkboxes's name is an array and bound with CheckboxGroup by v-model.",
+            title: '复选框组',
+            desc: '复选框可以与复选框组一起使用，复选框组通过 <code>v-model</code> 数组绑定复选框的勾选状态。',
             code: `<sun-checkbox-group v-model="result">
-  <sun-checkbox name="a">Checkbox a</sun-checkbox>
-  <sun-checkbox name="b">Checkbox b</sun-checkbox>
-  <sun-checkbox name="c">Checkbox c</sun-checkbox>
+  <sun-checkbox name="a">复选框 a</sun-checkbox>
+  <sun-checkbox name="b">复选框 b</sun-checkbox>
+  <sun-checkbox name="c">复选框 c</sun-checkbox>
 </sun-checkbox-group>`,
             jsCode: `export default {
   data() {
@@ -492,11 +534,12 @@ Vue.use(CheckboxGroup);`,
 };`,
           },
           {
-            title: 'Horizontal',
+            title: '水平排列',
+            desc: '将 <code>direction</code> 属性设置为 <code>horizontal</code> 后，复选框组会变成水平排列。',
             code: `<sun-checkbox-group v-model="result" direction="horizontal">
-  <sun-checkbox name="a">Checkbox a</sun-checkbox>
-  <sun-checkbox name="b">Checkbox b</sun-checkbox>
-  <sun-checkbox name="c">Checkbox c</sun-checkbox>
+  <sun-checkbox name="a">复选框 a</sun-checkbox>
+  <sun-checkbox name="b">复选框 b</sun-checkbox>
+  <sun-checkbox name="c">复选框 c</sun-checkbox>
 </sun-checkbox-group>`,
             jsCode: `export default {
   data() {
@@ -507,23 +550,25 @@ Vue.use(CheckboxGroup);`,
 };`,
           },
           {
-            title: 'Maximum amount of checked options',
+            title: '限制最大可选数',
+            desc: '通过 <code>max</code> 属性可以限制复选框组的最大可选数。',
             code: `<sun-checkbox-group v-model="result" :max="2">
-  <sun-checkbox name="a">Checkbox  a</sun-checkbox>
-  <sun-checkbox name="b">Checkbox  b</sun-checkbox>
-  <sun-checkbox name="c">Checkbox  c</sun-checkbox>
+  <sun-checkbox name="a">复选框 a</sun-checkbox>
+  <sun-checkbox name="b">复选框 b</sun-checkbox>
+  <sun-checkbox name="c">复选框 c</sun-checkbox>
 </sun-checkbox-group>`,
           },
           {
-            title: 'Toggle All',
+            title: '限制最大可选数',
+            desc: '通过 <code>CheckboxGroup</code> 实例上的 <code>toggleAll</code> 方法可以实现全选与反选。',
             code: `<sun-checkbox-group v-model="result4" ref="checkboxGroup">
-  <sun-checkbox name="a">Checkbox a</sun-checkbox>
-  <sun-checkbox name="b">Checkbox b</sun-checkbox>
-  <sun-checkbox name="c">Checkbox c</sun-checkbox>
+  <sun-checkbox name="a">复选框 a</sun-checkbox>
+  <sun-checkbox name="b">复选框 b</sun-checkbox>
+  <sun-checkbox name="c">复选框 c</sun-checkbox>
 </sun-checkbox-group>
 
-<sun-button type="primary" @click="checkAll">Check All</sun-button>
-<sun-button type="info" @click="toggleAll">Toggle All</sun-button>`,
+<sun-button type="primary" @click="checkAll">全选</sun-button>
+<sun-button type="info" @click="toggleAll">反选</sun-button>`,
             jsCode: `export default {
   data() {
     return {
@@ -543,47 +588,48 @@ Vue.use(CheckboxGroup);`,
         ],
   },
   iconData:{ // Icon 图标
-    title:'Icon',
+    title:'Icon 图标',
+    desc:'基于字体的图标集，可以通过 Icon 组件使用，也可以在其他组件中通过icon属性引用',
     importCode: `import Vue from 'vue'; \nimport { Icon } from 'vue-sun-ui'; \n \nVue.use(Icon);`,
     propsList: [{
         propName: 'name',
-        desc: 'Icon name or URL',
+        desc: '图标名称或图片链接	',
         type: 'string',
         default: '-',
       },
       {
         propName: 'dot',
-        desc: '	Whether to show red dot',
+        desc: '	是否显示图标右上角小红点	',
         type: 'boolean',
         default: 'false',
       },
       {
         propName: 'badge',
-        desc: 'Content of the badge',
+        desc: '图标右上角徽标的内容	',
         type: 'number | string',
         default: '-',
       },
       {
         propName: 'color',
-        desc: 'Icon color',
+        desc: '图标颜色	',
         type: 'string',
         default: 'inherit',
       },
       {
         propName: 'size',
-        desc: 'Icon size',
+        desc: '图标大小，如 <code>20px</code> <code>2em</code>，默认单位为<code>px</code>',
         type: 'number | string',
         default: 'inherit',
       },
       {
         propName: 'dot-color',
-        desc: '	ClassName prefix',
+        desc: '徽标的颜色',
         type: 'string',
         default: '#f10',
       },
       {
         propName: 'tag',
-        desc: 'HTML tag',
+        desc: 'HTML 标签',
         type: 'string',
         default: 'i',
       },
@@ -591,63 +637,63 @@ Vue.use(CheckboxGroup);`,
     ],
     eventsList: [{
       eventName: 'click',
-      desc: '	Triggered when click icon',
+      desc: '点击图标时触发',
       callParams: 'event: Event',
     }],
     cartList: [{
-        title: 'Basic Usage',
-        desc: 'Use <code>name</code> prop to set icon name or icon URL.',
+        title: '基础用法',
+        desc: '<code>Icon</code>的<code>name</code>属性支持传入图标名称或图片链接，所有可用的图标名称见右侧示例',
         code: `<sun-icon name="message-o" />\n<sun-icon name="star-o" />`,
       },
       {
-        title: 'Show Badge',
-        desc: 'Use dot prop, a small red dot will be displayed in the upper right corner of the icon. Use badge prop, the badge will be displayed in the upper right corner of the icon.',
+        title: '徽标提示',
+        desc: '设置<code>dot</code>属性后，会在图标右上角展示一个小红点。设置<code>badge</code>属性后，会在图标右上角展示相应的徽标',
         code: `<sun-icon name="message-o" dot />\n<sun-icon name="message-o" badge="8" />\n<sun-icon name="message-o" badge="88+" />`,
       },
       {
-        title: 'Icon Color',
-        desc: 'Use <code>color</code> prop to set icon color.',
+        title: '图标颜色',
+        desc: '<code>Icon</code>的<code>color</code>属性用来设置图标的颜色',
         code: `<sun-icon name="message-o" color="#1989fa" />\n<sun-icon name="message-o" color="#07c160" />`,
       },
 
       {
-        title: 'Icon Size',
-        desc: 'Use <code>size</code> prop to set icon size.',
+        title: '图标大小',
+        desc: '<code>Icon</code>的<code>size</code>属性用来设置图标的尺寸大小，默认单位为px',
         code: `<sun-icon name="message-o" size="40" />\n<sun-icon name="message-o" size="3rem" />`,
       }
     ],
   },
   layoutData:{ // Layout 布局
-    title:'Layout',
-    desc:'Quickly and easily create layouts with <code>sun-row</code> and <code>sun-col</code>.',
+    title:'Layout 布局',
+    desc:'Layout 提供了 van-row 和 van-col 两个组件来进行行列布局。',
     importCode: `import Vue from 'vue';\nimport { Col, Row } from 'vue-sun-ui';\n\nVue.use(Col);\nVue.use(Row);`,
     parentPropsList: [{
         propName: 'type',
-        desc: 'Layout type, can be set to<code>flex</code>',
+        desc: '布局方式，可选值为<code>flex</code>',
         type: 'string',
         default: '-',
       },
       {
         propName: 'gutter',
-        desc: 'Grid spacing（px）',
+        desc: '	列元素之间的间距（单位为 px）',
         type: 'number | string',
         default: '-',
       },
       {
         propName: 'justify',
-        desc: '	Flex main axis，can be set to <code>end</code> <code>center</code> <code>space-around</code> <code>space-between</code>',
+        desc: 'Flex 主轴对齐方式，可选值为 <code>end</code> <code>center</code> <code>space-around</code> <code>space-between</code>',
         type: 'string',
         default: 'start',
       },
       {
         propName: 'align',
-        desc: '	Flex cross axis, be set to <code>center</code> <code>bottom</code>	',
+        desc: 'Flex 交叉轴对齐方式，可选值为 <code>center</code> <code>bottom</code>	',
         type: 'string',
         default: 'inherit',
       },
       {
         propName: 'tag',
-        desc: 'Custom element tag',
+        desc: 'HTML 标签',
         type: 'string',
         default: 'div',
       },
@@ -655,31 +701,31 @@ Vue.use(CheckboxGroup);`,
     ],
     childPropsList: [{
         propName: 'span',
-        desc: 'number of column the grid spans',
+        desc: '列元素宽度',
         type: 'number | string',
         default: '-',
       },
       {
         propName: 'offset',
-        desc: 'number of spacing on the left side of the grid	',
+        desc: '列元素偏移距离	',
         type: 'number | string',
         default: '-',
       },
       {
         propName: 'tag',
-        desc: 'Custom element tag',
+        desc: 'HTML 标签',
         type: 'string',
         default: 'div',
       },
     ],
     eventsList: [{
       eventName: 'click',
-      desc: 'Triggered when click col',
+      desc: '点击图标时触发',
       callParams: 'event: Event',
     }],
     cartList: [{
-        title: 'Basic Usage',
-        desc: 'Layout are based on 24-column. The attribute <code>span</code> in <code>Col</code> means the number of column the grid spans. Of course, You can use <code>offset</code> attribute to set number of spacing on the left side of the grid.',
+        title: '基础展示',
+        desc: 'Layout 组件提供了<code>24列栅格</code>，通过在<code>Col</code>上添加<code>span</code>属性设置列所占的宽度百分比此外，添加<code>offset</code>属性可以设置列的偏移宽度，计算方式与 span 相同',
         code: `<sun-row>
   <sun-col span="8">span: 8</sun-col>
   <sun-col span="8">span: 8</sun-col>
@@ -698,8 +744,8 @@ Vue.use(CheckboxGroup);`,
       },
 
       {
-        title: 'Column Spacing',
-        desc: 'Set grid spacing using <code>gutter</code> attribute. The default value is 0.',
+        title: '设置列元素间距',
+        desc: '通过<code>gutter</code>属性可以设置列元素之间的间距，默认间距为 0',
         code: `<sun-row gutter="20">
   <sun-col span="8">span: 8</sun-col>
   <sun-col span="8">span: 8</sun-col>
@@ -707,32 +753,37 @@ Vue.use(CheckboxGroup);`,
 </sun-row>`,
       },
       {
-        title: 'Flex Layout',
-        desc: 'Setting <code>type</code> to <code>flex</code> to enable flex layout.',
-        code: `<sun-row type="flex">
+        title: 'Flex 布局',
+        desc: '将 <code>type</code> 属性设置为 flex 可以启用 flex 布局，便于进行灵活的对齐',
+        code: `<!-- 左对齐 -->
+<sun-row type="flex">
   <sun-col span="6">span: 6</sun-col>
   <sun-col span="6">span: 6</sun-col>
   <sun-col span="6">span: 6</sun-col>
 </sun-row>
 
+<!-- 居中 -->
 <sun-row type="flex" justify="center">
   <sun-col span="6">span: 6</sun-col>
   <sun-col span="6">span: 6</sun-col>
   <sun-col span="6">span: 6</sun-col>
 </sun-row>
 
+<!-- 右对齐 -->
 <sun-row type="flex" justify="end">
   <sun-col span="6">span: 6</sun-col>
   <sun-col span="6">span: 6</sun-col>
   <sun-col span="6">span: 6</sun-col>
 </sun-row>
 
+<!-- 两端对齐 -->
 <sun-row type="flex" justify="space-between">
   <sun-col span="6">span: 6</sun-col>
   <sun-col span="6">span: 6</sun-col>
   <sun-col span="6">span: 6</sun-col>
 </sun-row>
 
+<!-- 每个元素的两侧间隔相等 -->
 <sun-row type="flex" justify="space-around">
   <sun-col span="6">span: 6</sun-col>
   <sun-col span="6">span: 6</sun-col>
@@ -742,150 +793,154 @@ Vue.use(CheckboxGroup);`,
     ],
   },
   messageData:{ // Message 消息提示
-    title:'Message',
-    desc:'A message prompt is displayed at the top of the page to support function calls.',
+    title:'Message 消息提示',
+    desc:'在页面顶部展示消息提示，支持函数调用。',
     importCode: `import Vue from 'vue';\nimport { Message } from 'vue-sun-ui';\n\nVue.use(Message);\nthis.$message('提示消息')`,
     methodsList: [{
         methodName: 'Message',
-        desc: 'Display prompts',
+        desc: '展示提示	',
         callParams: 'options | message',
-        callReturns: 'message instance',
+        callReturns: 'message 实例',
       },
       {
         methodName: 'Message.success',
-        desc: 'success',
+        desc: '展示成功消息',
         callParams: 'options | message',
-        callReturns: 'message instance',
+        callReturns: 'message 实例',
       },
       {
         methodName: 'Message.error',
-        desc: 'error',
+        desc: '展示错误消息',
         callParams: 'options | message',
-        callReturns: 'message instance',
+        callReturns: 'message 实例',
       },
       {
         methodName: 'Message.info',
-        desc: 'info',
+        desc: '展示信息提示',
         callParams: 'options | message',
-        callReturns: 'message instance',
+        callReturns: 'message 实例',
       },
       {
         methodName: 'Message.warning',
-        desc: 'warning',
+        desc: '展示警告消息',
         callParams: 'options | message',
-        callReturns: 'message instance',
+        callReturns: 'message 实例',
       },
       {
         methodName: 'Message.loading',
-        desc: 'loading',
+        desc: '展示加载消息',
         callParams: 'options | message',
-        callReturns: 'message instance',
+        callReturns: 'message 实例',
       },
       {
         methodName: 'Message.clear',
-        desc: 'clear',
+        desc: '关闭消息',
         callParams: '-',
         callReturns: 'void',
       },
     ],
     optionsList: [{
         optionName: 'type',
-        desc: 'Can be set to <code>success</code> <code>error</code> <code>info</code><code>warning</code><code>loading</code>',
+        desc: '类型，可选值为 <code>success</code> <code>error</code> <code>info</code><code>warning</code><code>loading</code>',
         type: 'string',
         default: 'success',
       },
       {
         optionName: 'message',
-        desc: 'Message',
+        desc: '展示文案，支持通过 \\n 换行',
         type: 'string',
         default: 'center',
       },
       {
         optionName: 'duration',
-        desc: 'Duration(ms)',
+        desc: '展示时长(ms)',
         type: 'number | string',
         default: '1500',
       },
       {
         optionName: 'color',
-        desc: 'Message color',
+        desc: '字体和图标的颜色',
         type: 'string',
         default: '-',
       },
       {
         optionName: 'icon',
-        desc: 'Custom Icon',
+        desc: '之定义图标',
         type: 'string',
         default: '-',
       },
       {
         optionName: 'border',
-        desc: 'border',
+        desc: '是否显示边框',
         type: 'boolean',
         default: 'false',
       },
       {
         optionName: 'position',
-        desc: 'Show the location of the optional values are <code>center</code>、<code>bottom</code>',
+        desc: '展示的位置，可选值有 <code>center</code>、<code>bottom</code>',
         type: 'string',
         default: 'top',
       },
       {
         optionName: 'onClick',
-        desc: 'Click on the callback function',
+        desc: '点击时的回调函数',
         type: 'Function',
         default: '-',
       },
       {
         optionName: 'onOpened',
-        desc: 'The callback function is fully displayed',
+        desc: '完全展示后的回调函数',
         type: 'Function',
         default: '-',
       },
       {
         optionName: 'onClose',
-        desc: 'The callback function when closed',
+        desc: '关闭时的回调函数',
         type: 'Function',
         default: '-',
       },
 
     ],
     cartList: [{
-        title: 'Basic Usage',
-        jsCode: `Message('Content');`,
+        title: '基础用法',
+        jsCode: `Message('通知内容');`,
       },
       {
-        title: 'Message Type',
-        desc: 'support <code>success</code>、<code>error</code>、<code>info</code>、<code>warning</code>、<code>loading</code> five types of notification，default is success。',
-        jsCode: `// Success Message
-Message({ type: 'success', message: 'Success Message' });
+        title: '消息类型',
+        desc: '支持 <code>success</code>、<code>error</code>、<code>info</code>、<code>warning</code>、<code>loading</code> 五种通知类型，默认为 success。',
+        jsCode: `// 成功消息
+Message({ type: 'success', message: '通知内容' });
 
-// error Message
-Message({ type: 'error', message: 'error Message' });
+// 危险消息
+Message({ type: 'error', message: '通知内容' });
 
-// info Message
-Message({ type: 'info', message: 'info Message' });
+// 信息消息
+Message({ type: 'info', message: '通知内容' });
 
-// warning Message
-Message({ type: 'warning', message: 'warning Message' });
+// 警告消息
+Message({ type: 'warning', message: '通知内容' });
 
-// errloadingor Message
-Message({ type: 'loading', message: 'loading Message' });`,
+// 加载消息
+Message({ type: 'loading', message: '通知内容' });`,
       },
       {
-        title: 'Custom Notify',
-        jsCode: `Message({
-  message: 'Custom Color',
+        title: '自定义配置',
+        desc: '自定义消息通知的展示颜色、时长和图标。',
+        jsCode: `// 自定义颜色
+Message({
+  message: '自定义颜色',
   color: 'pink',
 });
 
+// 自定义时长
 Message({
-  message: 'Custom Duration',
+  message: '自定义时长',
   duration: 3000,
 });
 
+// 自定义图标
 Message({
-  message: 'Custom Icon',
+  message: '自定义图标',
   icon: 'plus',
 });`,
       },
@@ -893,79 +948,79 @@ Message({
     ],
   },
   navBarData:{ // NavBar 导航栏
-    title:'NavBar',
+    title:'NavBar 导航栏',
     desc:'',
     importCode: `import Vue from 'vue';\nimport { NavBar } from 'vue-sun-ui';\n\nVue.use(NavBar);`,
     propsList: [{
         propName: 'title',
-        desc: 'Title',
+        desc: '标题',
         type: 'string',
         default: '"',
       },
       {
         propName: 'left-text',
-        desc: 'Left Text',
+        desc: '左侧文案',
         type: 'string',
         default: '"',
       },
       {
         propName: 'right-text',
-        desc: 'Right Text',
+        desc: '右侧文案',
         type: 'string',
         default: '"',
       },
       {
         propName: 'left-arrow',
-        desc: 'Whether to show left arrow',
+        desc: '是否显示左侧箭头',
         type: 'boolean',
         default: 'false',
       },
       {
         propName: 'border',
-        desc: 'Whether to show bottom border',
+        desc: '是否显示下边框',
         type: 'boolean',
         default: 'true',
       },
       {
         propName: 'fixed',
-        desc: 'Whether to fixed top	',
+        desc: '是否固定在顶部	',
         type: 'boolean',
         default: 'false',
       },
       {
         propName: 'z-index',
-        desc: 'Z-index',
+        desc: '元素 z-index',
         type: 'number | string',
         default: '1',
       },
     ],
     eventsList: [{
         eventName: 'click-left',
-        desc: 'Triggered when click left button	',
+        desc: '点击左侧按钮时触发	',
         callParams: '-',
       },
       {
         eventName: 'click-right',
-        desc: 'Triggered when click right button',
+        desc: '点击右侧按钮时触发',
         callParams: '-',
       },
     ],
     slotsList: [{
       slotName: 'title',
-      desc: 'Custom title '
+      desc: '自定义标题'
     }, {
       slotName: 'left',
-      desc: 'Custom left side content'
+      desc: '自定义左侧区域内容'
     }, {
       slotName: 'right',
-      desc: 'Custom right side content'
+      desc: '自定义右侧区域内容'
     }],
     cartList: [{
-        title: 'Basic Usage',
+        title: '基础用法',
         code: `<sun-nav-bar 
-  title="Title" 
-  left-text="Back" 
-  right-text="Button" 
+  title="标题" 
+  left-text="返回" 
+  right-text="按钮" 
   left-arrow 
   @click-left="onClickLeft" 
   @click-right="onClickRight" 
@@ -975,17 +1030,18 @@ Message({
 export default {
   methods: {
     onClickLeft() {
-      Toast('Back');
+      Toast('返回');
     },
     onClickRight() {
-      Toast('Button');
+      Toast('按钮');
     },
   },
 };`
       },
       {
-        title: 'Use Slot',
-        code: `<sun-nav-bar title="Title" left-text="Back" left-arrow>
+        title: '使用插槽',
+        desc: '通过插槽自定义导航栏两侧的内容。',
+        code: `<sun-nav-bar title="标题" left-text="返回" left-arrow>
   <template #right>
     <sun-icon name="plus" size="18" />
   </template>
@@ -994,69 +1050,69 @@ export default {
     ],
   },
   popupData:{ // Popup 弹出层
-    title:'Popup',
-    desc:'Pop-up layer container, used to display pop-ups, information tips and other content.',
+    title:'Popup 弹出层',
+    desc:'弹出层容器，用于展示弹窗、信息提示等内容。',
     importCode: `import Vue from 'vue';\nimport { Popup } from 'vue-sun-ui';\n\nVue.use(Popup);`,
     propsList: [{
         propName: 'v-model (value)',
-        desc: 'Whether to show popup',
+        desc: '是否显示弹出层',
         type: 'boolean',
         default: 'false',
       },
       {
         propName: 'overlay',
-        desc: 'Whether to show overlay',
+        desc: '是否显示遮罩层	',
         type: 'boolean',
         default: 'true',
       },
       {
         propName: 'position',
-        desc: 'Can be set to <code>top</code> <code>bottom</code> <code>right</code> <code>left</code>',
+        desc: '弹出位置，可选值为 <code>top</code> <code>bottom</code> <code>right</code> <code>left</code>',
         type: 'string',
         default: 'center',
       },
       {
         propName: 'overlay-class',
-        desc: 'Custom overlay class',
+        desc: '自定义遮罩层类名',
         type: 'string',
         default: '-',
       },
       {
         propName: 'overlay-style',
-        desc: 'Custom overlay style',
+        desc: '自定义遮罩层样式',
         type: 'object',
         default: '-',
       },
       {
         propName: 'duration',
-        desc: 'Transition duration, unit second',
+        desc: '动画时长，单位秒',
         type: 'number | string',
         default: '0.3',
       },
 
       {
         propName: 'closeable',
-        desc: 'Whether to show close icon',
+        desc: '是否显示关闭图标',
         type: 'boolean',
         default: 'false',
       },
 
       {
         propName: 'close-icon',
-        desc: 'Close icon name',
+        desc: '关闭图标名称或图片链接',
         type: 'string',
         default: 'cross',
       },
 
       {
         propName: 'close-icon-position',
-        desc: 'Close Icon Position，can be set to <code>top-left</code> <code>bottom-left</code> <code>bottom-right</code>',
+        desc: '关闭图标位置，可选值为<code>top-left</code> <code>bottom-left</code> <code>bottom-right</code>',
         type: 'string',
         default: 'top-right',
       },
       {
         propName: 'tag',
-        desc: 'HTML tag',
+        desc: 'HTML 标签',
         type: 'string',
         default: 'div',
       },
@@ -1064,32 +1120,33 @@ export default {
     ],
     eventsList: [{
       eventName: 'click',
-      desc: 'Triggered when click Popup',
+      desc: '点击弹出层时触发',
       callParams: 'event: Event',
     }, {
       eventName: 'open',
-      desc: 'Triggered when open Popup',
+      desc: '打开弹出层时触发',
       callParams: '-',
     }, {
       eventName: 'close',
-      desc: 'Triggered when close Popup	',
+      desc: '关闭弹出层时触发	',
       callParams: '-',
     }, {
       eventName: 'opened',
-      desc: 'Triggered when opened Popup',
+      desc: '打开弹出层且动画结束后触发',
       callParams: '-',
     }, {
       eventName: 'closed',
-      desc: 'Triggered when closed Popup',
+      desc: '关闭弹出层且动画结束后触发',
       callParams: '-',
     }, {
       eventName: 'click-overlay',
-      desc: 'Triggered when click overlay',
+      desc: '点击遮罩层时触发',
       callParams: '-',
     }],
     cartList: [{
-        title: 'Basic Usage',
-        code: `<sun-cell is-link bg-cffect @click="showPopup">Show Popup</sun-cell>\n<sun-popup v-model="show" >Content</sun-popup>`,
+        title: '基础用法',
+        desc: '通过 <code>v-model</code> 控制弹出层是否展示。',
+        code: `<sun-cell is-link bg-cffect @click="showPopup">展示弹出层</sun-cell>\n<sun-popup v-model="show" >内容</sun-popup>`,
         jsCode: `export default {
   data() {
     return {
@@ -1105,25 +1162,26 @@ export default {
 };`
       },
       {
-        title: 'Position',
-        desc: 'Use <code>position</code>  prop to set popup display position.',
+        title: '弹出位置',
+        desc: '通过 <code>position</code> 属性设置弹出位置，默认居中弹出，可以设置为 <code>top</code>、<code>bottom</code>、<code>left</code>、<code>right</code>。',
         code: `<sun-popup v-model="show" position="top" :style="{ height: '30%' }" />`,
       },
       {
-        title: 'Close Icon',
+        title: '关闭图标',
+        desc: '设置 <code>closeable</code> 属性后，会在弹出层的右上角显示关闭图标，并且可以通过 <code>close-icon</code> 属性自定义图标，使用 <code>close-icon-position</code> 属性可以自定义图标位置。',
         code: `<sun-popup 
   v-model="show" 
   position="bottom" 
   closeable 
 />
-<!-- Custom Icon -->
+<!-- 自定义图标 -->
 <sun-popup 
   v-model="show" 
   position="bottom" 
   closeable 
   close-icon="plus" 
 />
-<!-- Icon Position -->
+<!-- 图标位置 -->
 <sun-popup 
   v-model="show" 
   position="bottom" 
@@ -1132,89 +1190,90 @@ export default {
 />`,
       },
       {
-        title: 'Round Corner',
+        title: '圆角弹窗',
+        desc: '设置 <code>round</code> 属性后，弹窗会根据弹出位置添加不同的圆角样式。',
         code: `<sun-popup v-model="showRound" position="bottom" round />`,
       }
     ],
   },
   pullRefreshData:{ // PullRefresh 下拉刷新
-    title:'PullRefresh',
+    title:'PullRefresh 下拉刷新',
     desc:'',
     importCode: `import Vue from 'vue'; \nimport { PullRefresh } from 'vue-sun-ui'; \n \nVue.use(PullRefresh);`,
         propsList: [{
             propName: 'v-model',
-            desc: 'Loading status',
+            desc: '是否处于加载中状态',
             type: 'boolean',
             default: '-',
           },
           {
             propName: 'pulling-text',
-            desc: 'Text to show when pulling',
+            desc: '	下拉过程提示文案',
             type: 'string',
-            default: 'Pull to refresh...',
+            default: '下拉即可刷新...',
           },
           {
             propName: 'loosing-text',
-            desc: 'Text to show when loosing',
+            desc: '释放过程提示文案',
             type: 'string',
-            default: 'Loose to refresh...',
+            default: '释放即可刷新...',
           },
           {
             propName: 'loading-text',
-            desc: 'Text to show when loading',
+            desc: '加载过程提示文案',
             type: 'string',
-            default: 'Loading...',
+            default: '加载中...',
           },
           {
             propName: 'success-text',
-            desc: 'Text to show when loading success',
+            desc: '刷新成功提示文案',
             type: 'string',
             default: '-',
           },
           {
             propName: 'success-duration',
-            desc: 'Success text display duration(ms)',
+            desc: '刷新成功提示展示时长(ms)',
             type: 'number | string',
             default: '500',
           },
           {
             propName: 'head-height',
-            desc: 'Height of head',
+            desc: '顶部内容高度',
             type: 'number | string',
             default: '50',
           },
         ],
         eventsList: [{
           eventName: 'refresh',
-          desc: 'Triggered when pull refresh',
+          desc: '下拉刷新时触发',
           callParams: '-',
         }],
         slotsList: [{
             slotName: 'default',
-            desc: 'Default slot'
+            desc: '自定义内容'
           },
           {
             slotName: 'pulling',
-            desc: 'Content of head when at pulling'
+            desc: '下拉过程中顶部内容'
           },
           {
             slotName: 'loosing',
-            desc: 'Content of head when at loosing'
+            desc: '释放过程中顶部内容'
           },
           {
             slotName: 'loading',
-            desc: 'Content of head when at loading'
+            desc: '加载过程中顶部内容'
           },
           {
             slotName: 'success',
-            desc: 'Content of head when succeed'
+            desc: '刷新成功提示内容'
           },
         ],
         cartList: [{
-            title: 'Basic Usage',
-            desc: 'The refresh event will be triggered when pull <code>refresh</code>, you should set <code>v-model</code> to <code>false</code> to reset loading status after process refresh event.',
+            title: '基础用法',
+            desc: '下拉刷新时会触发 <code>refresh</code> 事件，在事件的回调函数中可以进行同步或异步操作，操作完成后将 <code>v-model</code> 设置为 <code>false</code>，表示加载完成。',
             code: `<van-pull-refresh v-model="isLoading" @refresh="onRefresh">
-  <p>Refresh Count: {{ count }}</p>
+  <p>刷新次数: {{ count }}</p>
 </van-pull-refresh>`,
             jsCode: `import { Toast } from 'vue-sun-ui';
 
@@ -1227,34 +1286,36 @@ export default {
   },
   methods: {
     onRefresh() {
-     console.log('Refresh Success')
+     console.log('刷新完成回调')
     },
   },
 };`
           },
           {
-            title: 'Success Tip',
-            desc: 'Use <code>success-text</code> to set the success prompt after the refresh is successful',
+            title: '成功提示',
+            desc: '通过 <code>success-text</code> 可以设置刷新成功后的顶部提示文案。',
             code: `<van-pull-refresh
   v-model="isLoading"
-  success-text="Refresh success"
+  success-text="刷新成功"
   @refresh="onRefresh"
 >
-  <p>Refresh Count: {{ count }}</p>
+  <p>刷新次数: {{ count }}</p>
 </van-pull-refresh>`,
           },
           {
-            title: 'Custom Tips',
-            desc: 'Use slots to custom tips.',
+            title: '自定义提示',
+            desc: '通过插槽可以自定义下拉刷新过程中的提示内容。',
             code: `<van-pull-refresh v-model="isLoading" :head-height="80" @refresh="onRefresh">
+  <!-- 释放提示 -->
   <template #loosing>
     <img class="doge" src="https://img.yzcdn.cn/vant/doge.png" />
   </template>
 
+  <!-- 加载提示 -->
   <template #loading>
     <img class="doge" src="https://img.yzcdn.cn/vant/doge-fire.jpg" />
   </template>
-  <p>Refresh Count: {{ count }}</p>
+  <p>刷新次数: {{ count }}</p>
 </van-pull-refresh>
 
 <style>
@@ -1269,77 +1330,78 @@ export default {
         ],
   },
   rateData:{ // Rate 评分
-    title:'Rate',
+    title:'Rate 评分',
     desc:'',
     importCode: `import Vue from 'vue'; \nimport { Rate } from 'vue-sun-ui'; \n \nVue.use(Rate);`,
     propsList: [{
         propName: 'v-model',
-        desc: 'Current rate',
+        desc: '当前分值',
         type: 'number',
         default: '-',
       },
       {
         propName: 'count',
-        desc: '	Count',
+        desc: '	图标总数',
         type: 'number | string',
         default: '5',
       },
       {
         propName: 'size',
-        desc: 'Icon size',
+        desc: '图标大小，默认单位为<code>px</code>',
         type: 'number | string',
         default: '20px',
       },
       {
         propName: 'gutter',
-        desc: 'Icon gutter',
+        desc: '图标间距，默认单位为<code>px</code>',
         type: 'number | string',
         default: '4px',
       },
       {
         propName: 'color',
-        desc: 'Selected color',
+        desc: '选中的颜色	',
         type: 'string',
         default: '#ee0a24',
       },
       {
         propName: 'void-color',
-        desc: 'Void color',
+        desc: '未选中时的颜色',
         type: 'string',
         default: '#c8c9cc',
       },
       {
         propName: 'disabled-color',
-        desc: 'Disabled color',
+        desc: '禁用时的颜色',
         type: 'string',
         default: '#c8c9cc',
       },
       {
         propName: 'icon',
-        desc: '	Selected icon',
+        desc: '选中时的<a href="#/icon">图标名称</a>',
         type: 'string',
         default: 'star-f'
       },
       {
         propName: 'readonly',
-        desc: 'Whether to be readonly',
+        desc: '是否为只读状态',
         type: 'boolean',
         default: 'false',
       },
       {
         propName: 'disabled',
-        desc: 'Whether to disable rate',
+        desc: '是否禁用评分',
         type: 'boolean	',
         default: 'false',
       }
     ],
     eventsList: [{
       eventName: 'change',
-      desc: 'Triggered when rate changed',
-      callParams: 'value: current rate',
+      desc: '当前分值变化时触发的事件',
+      callParams: 'value: 当前分值',
     }],
     cartList: [{
-        title: 'Basic Usage',
+        title: '基础用法',
+        desc: '使用<code>v-model</code>初始化选中的个数',
         code: `<sun-rate v-model="value" />`,
         jsCode: `export default {
   data() {
@@ -1350,34 +1412,39 @@ export default {
 };`
       },
       {
-        title: 'Custom Icon',
+        title: '自定义图标',
+        desc: '通过<code>icon</code>属性设置选中的图标，<code>void-icon</code>设置未选中的图标',
         code: `<sun-rate v-model="value" icon="like" void-icon="like-o" />`,
       },
       {
-        title: 'Custom Style',
+        title: '自定义样式',
+        desc: '通过<code>size</code>属性设置大小，<code>color</code>设置选中的颜色，<code>void-color</code>设置未选中的颜色',
         code: `<sun-rate v-model="value" :size="25" color="#ffd21e" void-icon="star-f" void-color="#eee" />`,
       },
 
       {
-        title: 'Custom Count',
+        title: '自定义数量',
+        desc: '通过 <code>count</code>设置图标的个数',
         code: `<sun-rate v-model="value" :count="6" />`,
       },
 
       {
-        title: 'Disabled',
+        title: '禁用状态',
+        desc: '通过<code>disabled</code>属性设置禁止选择',
         code: `<sun-rate v-model="value" disabled />`,
       },
       {
-        title: 'Readonly',
+        title: '只读状态',
+        desc: '通过<code>readonly</code>属性设置只读状态，效果和<code>disabled</code>一样，不过颜色不会变',
         code: `<sun-rate v-model="value" readonly />`,
       },
       {
-        title: 'Change Event',
+        title: '监听 change 事件',
         code: `<sun-rate v-model="value7" @change="onChange" />`,
         jsCode: `export default {
   method: {
     onChange(value) {
-      this.$toast('current value: ' + value);
+      this.$toast('当前值：' + value);
     },
   },
 };`
@@ -1385,114 +1452,116 @@ export default {
     ],
   },
   stepperData:{ // Stepper 步进器
-    title:'Stepper',
+    title:'Stepper 步进器',
+    desc:'步进器由增加按钮、减少按钮和输入框组成，用于在一定范围内输入、调整数字。',
     importCode: `import Vue from 'vue'; \nimport { Stepper } from 'vue-sun-ui'; \n \nVue.use(Stepper);`,
     propsList: [{
         propName: 'v-model',
-        desc: 'Current value',
+        desc: '当前分值',
         type: 'number | string',
         default: '-',
       },
       {
         propName: 'min',
-        desc: 'Min value',
+        desc: '最小值',
         type: 'number | string',
         default: '1',
       },
       {
         propName: 'max',
-        desc: 'Max value',
+        desc: '最大值',
         type: 'number | string',
         default: '-',
       },
       {
         propName: 'step',
-        desc: 'Value change step',
+        desc: '步长，每次点击时改变的值',
         type: 'number | string',
         default: '1',
       },
       {
         propName: 'input-width',
-        desc: 'Input width',
+        desc: '输入框宽度，默认单位为<code>px</code>',
         type: 'number | string',
         default: '32px',
       },
       {
         propName: 'button-size',
-        desc: 'Button size',
+        desc: '按钮大小以及输入框高度，默认单位为<code>px</code>',
         type: 'number | string',
         default: '28px',
       },
       {
         propName: 'theme',
-        desc: 'Theme, can be set to <code>round</code>',
+        desc: '样式风格，可选值为 <code>round</code>',
         type: 'string',
         default: '-',
       },
       {
         propName: 'disabled',
-        desc: 'Whether to disable value change',
+        desc: '是否禁用步进器',
         type: 'boolean',
         default: 'false'
       },
       {
         propName: 'disable-plus',
-        desc: 'Whether to disable plus button',
+        desc: '是否禁用增加按钮',
         type: 'boolean',
         default: 'false',
       },
       {
         propName: 'disable-minus',
-        desc: 'Whether to disable minus button',
+        desc: '是否禁用减少按钮',
         type: 'boolean	',
         default: 'false',
       },
       {
         propName: 'disable-input',
-        desc: 'Whether to disable input',
+        desc: '是否禁用输入框',
         type: 'boolean	',
         default: 'false',
       },
       {
         propName: 'show-plus',
-        desc: 'Whether to show plus button',
+        desc: '是否显示增加按钮	',
         type: 'boolean	',
         default: 'true',
       },
       {
         propName: 'show-minus',
-        desc: 'Whether to show minus button	',
+        desc: '是否显示减少按钮	',
         type: 'boolean	',
         default: 'true',
       }
     ],
     eventsList: [{
       eventName: 'change',
-      desc: 'Triggered when value change',
+      desc: '当绑定值变化时触发的事件',
       callParams: 'value: string',
     }, {
       eventName: 'overlimit',
-      desc: 'Triggered when click disabled button',
+      desc: '点击不可用的按钮时触发',
       callParams: '-',
     }, {
       eventName: 'plus',
-      desc: 'Triggered when click plus button',
+      desc: '点击增加按钮时触发',
       callParams: '-',
     }, {
       eventName: 'minus',
-      desc: 'Triggered when click minus button',
+      desc: '点击减少按钮时触发',
       callParams: '-',
     }, {
       eventName: 'focus',
-      desc: 'Triggered when input focused',
+      desc: '输入框聚焦时触发',
       callParams: 'event: Event',
     }, {
       eventName: 'blur',
-      desc: 'Triggered when input blured',
+      desc: '输入框失焦时触发',
       callParams: 'event: Event',
     }],
     cartList: [{
-        title: 'Basic Usage',
+        title: '基础用法',
+        desc: '通过 <code>v-model</code> 绑定输入值，可以通过 <code>change</code> 事件监听到输入值的变化。',
         code: `<sun-stepper v-model="value" />`,
         jsCode: `export default {
   data() {
@@ -1503,131 +1572,137 @@ export default {
 };`
       },
       {
-        title: 'Step',
+        title: '步长设置',
+        desc: '通过 <code>step</code> 属性设置每次点击增加或减少按钮时变化的值，默认为 <code>1</code>。',
         code: `<sun-stepper v-model="value" step="2" />`,
       },
       {
-        title: 'Range',
+        title: '限制输入范围',
+        desc: '通过 <code>min</code> 和 <code>max</code> 属性限制输入值的范围。',
         code: `<sun-stepper v-model="value" min="5" max="8" />`,
       },
 
       {
-        title: 'Disabled',
+        title: '禁用状态',
+        desc: '通过设置 <code>disabled</code> 属性来禁用步进器，禁用状态下无法点击按钮或修改输入框。',
         code: `<sun-stepper v-model="value" disabled />`,
       },
 
       {
-        title: 'Disable Input',
+        title: '禁用输入框',
+        desc: '通过设置 <code>disable-input</code> 属性来禁用输入框，此时按钮仍然可以点击。',
         code: `<sun-stepper v-model="value" disable-input />`,
       },
       {
-        title: 'Custom Size',
+        title: '自定义大小',
+        desc: '通过 <code>input-width</code> 属性设置输入框宽度，通过 <code>button-size</code> 属性设置按钮大小和输入框高度。',
         code: `<sun-stepper v-model="value" input-width="40px" button-size="32px" />`,
       },
       {
-        title: 'Round Theme',
+        title: '圆角风格',
+        desc: `将 <code>theme</code> 设置为 <code>round</code> 来展示圆角风格的步进器。`,
         code: `<sun-stepper v-model="value" theme="round" button-size="22" disable-input />`
       }
     ],
   },
   swipeData:{ // Swipe 轮播
-    title:'Swipe',
+    title:'Swipe 轮播',
     desc:'',
     importCode: `import Vue from 'vue'; \nimport { Swipe, SwipeItem } from 'vue-sun-ui'; \n \nVue.use(Swipe);\nVue.use(SwipeItem);`,
         propsList: [{
             propName: 'autoplay',
-            desc: '	Autoplay interval (ms)',
+            desc: '自动轮播间隔，单位为 ms',
             type: 'number | string',
             default: '-',
           },
           {
             propName: 'duration',
-            desc: 'Animation duration (ms)',
+            desc: '动画时长，单位为 ms',
             type: 'number | string',
             default: '500',
           },
           {
             propName: 'initial-swipe',
-            desc: 'Index of initial swipe, start from 0',
+            desc: '初始位置索引值',
             type: 'number | string',
             default: '-',
           },
           {
             propName: 'width',
-            desc: 'Set Swiper Item Width',
+            desc: '滑块宽度，单位为<code>px</code>',
             type: 'number | string',
             default: 'auto',
           },
           {
             propName: 'height',
-            desc: 'Set Swiper Item Height',
+            desc: '滑块高度，单位为<code>px</code>',
             type: 'number | string',
             default: 'auto',
           },
           {
             propName: 'show-indicators',
-            desc: 'Whether to show indicators',
+            desc: '是否显示指示器',
             type: 'boolean',
             default: 'true',
           },
           {
             propName: 'vertical',
-            desc: 'Whether to be vertical Scrolling',
+            desc: '是否为纵向滚动',
             type: 'boolean',
             default: 'false'
           },
           {
             propName: 'touchable',
-            desc: 'Whether to allow swipe by touch gesture',
+            desc: '是否可以通过手势滑动',
             type: 'boolean',
             default: 'true',
           },
           {
             propName: 'stop-propagation',
-            desc: 'Whether to stop touchmove event propagation',
+            desc: '是否阻止滑动事件冒泡',
             type: 'boolean',
             default: 'true',
           },
           {
             propName: 'indicator-color',
-            desc: 'Indicator color',
+            desc: '指示器颜色',
             type: 'string',
             default: '#1989fa',
           }
         ],
         eventsList: [{
           eventName: 'change',
-          desc: 'Triggered when current swipe change',
-          callParams: 'index, current index',
+          desc: '每一页轮播结束后触发',
+          callParams: 'index, 当前页的索引',
         }],
         methodsList: [{
           methodName: 'prev',
-          desc: 'Swipe to prev item',
+          desc: '切换到上一轮播',
           callParams: '-',
           callReturns: '-',
         }, {
           methodName: 'next',
-          desc: 'Swipe to next item',
+          desc: '切换到下一轮播',
           callParams: '-',
           callReturns: '-',
         }, {
           methodName: 'swipeTo',
-          desc: 'Swipe to target index',
+          desc: '切换到指定位置',
           callParams: 'index: number',
           callReturns: 'void',
         }],
         slotsList: [{
             slotName: 'default',
-            desc: 'Content',
+            desc: '轮播内容',
           },
           {
             slotName: 'indicator',
-            desc: 'Custom indicator',
+            desc: '自定义指示器',
           },
         ],
         cartList: [{
-            title: 'Basic Usage',
-            desc: 'Use autoplay prop to set autoplay interval.',
+            title: '基础用法',
+            desc: '每个 SwipeItem 代表一张轮播卡片，可以通过 <code>autoplay</code> 属性设置自动轮播的间隔。',
             code: `<sun-swipe class="my-swipe" :autoplay="3000">
   <sun-swipe-item>1</sun-swipe-item>
   <sun-swipe-item>2</sun-swipe-item>
@@ -1646,7 +1721,7 @@ export default {
 </style>`,
           },
           {
-            title: 'Change Event',
+            title: '监听 change 事件',
             code: `<van-swipe @change="onChange">
   <van-swipe-item>1</van-swipe-item>
   <van-swipe-item>2</van-swipe-item>
@@ -1658,13 +1733,14 @@ export default {
 export default {
   methods: {
     onChange(index) {
-      Toast('Current Swipe index: ' + index);
+      Toast('当前 Swipe 索引：' + index);
     },
   },
 };`,
           },
           {
-            title: 'Current Swipe index:',
+            title: '纵向滚动',
+            desc: '设置 <code>vertical</code> 属性后滑块会纵向排列，此时需要指定滑块容器的高度。',
             code: `<sun-swipe class="my-swipe" vertical>
   <sun-swipe-item>1</sun-swipe-item>
   <sun-swipe-item>2</sun-swipe-item>
@@ -1674,7 +1750,8 @@ export default {
           },
 
           {
-            title: 'Custom Indicator',
+            title: '自定义指示器',
+            desc: '通过 <code>indicator</code> 插槽可以自定义指示器的样式。',
             code: `<sun-swipe class="my-swipe" @change="onChange">
   <sun-swipe-item>1</sun-swipe-item>
   <sun-swipe-item>2</sun-swipe-item>
@@ -1715,57 +1792,58 @@ export default {
         ],
   },
   switchData:{ // Switch 开关
-    title:'Switch',
+    title:'Switch 开关',
     desc:'',
     importCode: `import Vue from 'vue'; \nimport { Switch } from 'vue-sun-ui'; \n \nVue.use(Switch);`,
         propsList: [{
             propName: 'v-model',
-            desc: 'Check status of Switch',
+            desc: '开关选中状态',
             type: 'boolean',
             default: 'false',
           },
           {
             propName: 'loading',
-            desc: '	Whether to show loading icon',
+            desc: '	是否为加载状态	',
             type: 'boolean',
             default: 'false',
           },
           {
             propName: 'disabled',
-            desc: 'Whether to disable switch',
+            desc: '是否为禁用状态',
             type: 'boolean',
             default: 'false',
           },
           {
             propName: 'size',
-            desc: 'Size of switch',
+            desc: '开关尺寸，默认单位为<code>px</code>',
             type: 'number | string',
             default: '30px',
           },
           {
             propName: 'active-color',
-            desc: 'Background color when active',
+            desc: '打开时的背景色	',
             type: 'string',
             default: '#1989fa',
           },
           {
             propName: 'inactive-color',
-            desc: 'Background color when inactive',
+            desc: '关闭时的背景色',
             type: 'string',
             default: 'white',
           }
         ],
         eventsList: [{
           eventName: 'change',
-          desc: 'Triggered when check status changed',
+          desc: '开关状态切换时触发',
           callParams: 'value: boolean',
         }, {
           eventName: 'click',
-          desc: 'Triggered when clicked',
+          desc: '点击时触发',
           callParams: 'event: Event',
         }],
         cartList: [{
-            title: 'Basic Usage',
+            title: '基础用法',
+            desc: '通过 <code>v-model</code> 绑定开关的选中状态，<code>true</code> 表示开，<code>false</code> 表示关。',
             code: `<sun-switch v-model="checked" />`,
             jsCode: `export default {
   data() {
@@ -1776,118 +1854,123 @@ export default {
 };`
           },
           {
-            title: 'Disabled',
+            title: '禁用状态',
+            desc: '通过 <code>disabled</code> 属性来禁用开关，禁用状态下开关不可点击。',
             code: `<sun-switch v-model="checked" disabled />`,
           },
           {
-            title: 'Loading',
+            title: '加载状态',
+            desc: '通过 <code>loading</code> 属性设置开关为加载状态，加载状态下开关不可点击。',
             code: `<sun-switch v-model="checked" loading />`,
           },
 
           {
-            title: 'Custom Size',
+            title: '自定义大小',
+            desc: '通过 <code>size</code> 属性自定义开关的大小。',
             code: `<sun-switch v-model="checked" size="24px" />`,
           },
 
           {
-            title: 'Custom Color',
+            title: '自定义颜色',
+            desc: '<code>active-color</code> 属性表示打开时的背景色，<code>inactive-color</code> 表示关闭时的背景色。',
             code: `<sun-switch v-model="checked" active-color="#07c160" inactive-color="#ee0a24" />`,
           }
         ],
   },
   tabbarData:{// Tabbar 标签栏
-    title:'Tabbar',
+    title:'Tabbar 标签栏',
     desc:'',
     importCode: `import Vue from 'vue';\nimport { Tabbar, TabbarItem } from 'vue-sun-ui';\n\nVue.use(Tabbar);\nVue.use(TabbarItem);`,
         propsList: [{
             propName: 'v-model',
-            desc: 'Identifier of current tab',
+            desc: '当前选中标签的索引值',
             type: 'number | string',
             default: '0',
           },
           {
             propName: 'fixed',
-            desc: 'Whether to fixed bottom',
+            desc: '是否固定在底部',
             type: 'boolean',
             default: 'true',
           },
           {
             propName: 'border',
-            desc: 'Whether to show border',
+            desc: '是否显示外边框',
             type: 'boolean',
             default: 'true',
           },
           {
             propName: 'z-index',
-            desc: 'Z-index',
+            desc: '元素 z-index',
             type: 'number | string',
             default: '1',
           },
           {
             propName: 'active-color',
-            desc: 'Color of active tab item',
+            desc: '选中标签的颜色',
             type: 'string',
             default: '#1989fa',
           },
           {
             propName: 'inactive-color',
-            desc: 'Color of inactive tab item',
+            desc: '未选中标签的颜色',
             type: 'string',
             default: '#7d7e80',
           }
         ],
         itemPropsList: [{
           propName: 'icon',
-          desc: 'Icon name',
+          desc: '图标名称或图片链接',
           type: 'string',
           default: '-',
         }, {
           propName: 'icon-prefix',
-          desc: 'Icon className prefix',
+          desc: '图标类名前缀',
           type: 'string',
           default: 'sun-icon',
         }, {
           propName: 'dot',
-          desc: 'Whether to show red dot',
+          desc: '是否显示图标右上角小红点',
           type: 'boolean',
           default: 'false',
         }, {
           propName: 'badge',
-          desc: 'Content of the badge',
+          desc: '图标右上角徽标的内容',
           type: 'number | string',
           default: '-',
         }, {
           propName: 'url',
-          desc: 'Link',
+          desc: '点击后跳转的链接地址',
           type: 'string',
           default: '-',
         }, {
           propName: 'to',
-          desc: 'Target route of the link, same as to of vue-router',
+          desc: '点击后跳转的目标路由对象，同 vue-router 的 to 属性',
           type: 'string | object',
           default: '-',
         }, {
           propName: 'replace',
-          desc: 'If true, the navigation will not leave a history record',
+          desc: '是否在跳转时替换当前页面历史',
           type: 'boolean',
           default: 'false',
         }, ],
         eventsList: [{
           eventName: 'change',
-          desc: 'Triggered when change active tab',
-          callParams: 'active: index of current tab',
+          desc: '切换标签时触发',
+          callParams: 'active: 当前选中标签的索引值',
         }, ],
         itemSlotsList: [{
           slotName: 'icon',
-          desc: 'Custom icon'
+          desc: '自定义图标'
         }],
         cartList: [{
-            title: 'Basic Usage',
+            title: '基础用法',
+            desc: `<code>v-model</code> 默认绑定选中标签的索引值，通过修改 <code>v-model</code> 即可切换选中的标签。`,
             code: `<sun-tabbar v-model="active">
-  <sun-tabbar-item icon="home">Tab</sun-tabbar-item>
-  <sun-tabbar-item icon="category">Tab</sun-tabbar-item>
-  <sun-tabbar-item icon="friends">Tab</sun-tabbar-item>
-  <sun-tabbar-item icon="settings">Tab</sun-tabbar-item>
+  <sun-tabbar-item icon="home">标签</sun-tabbar-item>
+  <sun-tabbar-item icon="category">标签</sun-tabbar-item>
+  <sun-tabbar-item icon="friends">标签</sun-tabbar-item>
+  <sun-tabbar-item icon="settings">标签</sun-tabbar-item>
 </sun-tabbar>`,
             jsCode: `export default {
   data() {
@@ -1898,44 +1981,48 @@ export default {
 };`
           },
           {
-            title: 'Show Badge',
+            title: '徽标提示',
+            desc: '设置 <code>dot</code> 属性后，会在图标右上角展示一个小红点；设置 <code>badge</code> 属性后，会在图标右上角展示相应的徽标。',
             code: `<sun-tabbar v-model="active">
-    <sun-tabbar-item icon="home">Tab</sun-tabbar-item>
-    <sun-tabbar-item icon="category" dot>Tab</sun-tabbar-item>
-    <sun-tabbar-item icon="friends" badge="20">Tab</sun-tabbar-item>
-    <sun-tabbar-item icon="settings" badge="5">Tab</sun-tabbar-item>
+    <sun-tabbar-item icon="home">标签</sun-tabbar-item>
+    <sun-tabbar-item icon="category" dot>标签</sun-tabbar-item>
+    <sun-tabbar-item icon="friends" badge="20">标签</sun-tabbar-item>
+    <sun-tabbar-item icon="settings" badge="5">标签</sun-tabbar-item>
   </sun-tabbar>
 </div>`,
           },
           {
-            title: 'Custom Icon',
+            title: '自定义图标',
+            desc: '通过 icon 插槽自定义图标',
             code: `<sun-tabbar v-model="active">
   <sun-tabbar-item icon="home">
-    <span>Custom</span>
+    <span>自定义</span>
     <template #icon>
       <sun-icon name="star-f" />
     </template>
   </sun-tabbar-item>
-  <sun-tabbar-item icon="category">Tab</sun-tabbar-item>
-  <sun-tabbar-item icon="friends">Tab</sun-tabbar-item>
+  <sun-tabbar-item icon="category">标签</sun-tabbar-item>
+  <sun-tabbar-item icon="friends">标签</sun-tabbar-item>
 </sun-tabbar>`,
           },
           {
-            title: 'Custom Color',
+            title: '自定义颜色',
+            desc: '通过 <code>active-color</code>属性设置选中标签的颜色，<code>inactive-color</code>属性设置未选中标签的颜色。',
             code: `<sun-tabbar v-model="active" active-color="#07c160" inactive-color="#000">
-  <sun-tabbar-item icon="home">Tab</sun-tabbar-item>
-  <sun-tabbar-item icon="category">Tab</sun-tabbar-item>
-  <sun-tabbar-item icon="friends">Tab</sun-tabbar-item>
-  <sun-tabbar-item icon="settings">Tab</sun-tabbar-item>
+  <sun-tabbar-item icon="home">标签</sun-tabbar-item>
+  <sun-tabbar-item icon="category">标签</sun-tabbar-item>
+  <sun-tabbar-item icon="friends">标签</sun-tabbar-item>
+  <sun-tabbar-item icon="settings">标签</sun-tabbar-item>
 </sun-tabbar>`,
           },
           {
-            title: 'Change Event',
+            title: '监听切换事件',
+            desc: '通过 <code>change</code> 事件监听当前标签改变，接收当前标签的索引。',
             code: `<sun-tabbar v-model="active" @change="onChange">
-  <sun-tabbar-item icon="home">Tab1</sun-tabbar-item>
-  <sun-tabbar-item icon="category">Tab2</sun-tabbar-item>
-  <sun-tabbar-item icon="friends">Tab3</sun-tabbar-item>
-  <sun-tabbar-item icon="settings">Tab4</sun-tabbar-item>
+  <sun-tabbar-item icon="home">标签1</sun-tabbar-item>
+  <sun-tabbar-item icon="category">标签2</sun-tabbar-item>
+  <sun-tabbar-item icon="friends">标签3</sun-tabbar-item>
+  <sun-tabbar-item icon="settings">标签4</sun-tabbar-item>
 </sun-tabbar>`,
             jsCode: `import { Message } from 'vant';
 
@@ -1955,161 +2042,167 @@ export default {
     importCode: `import Vue from 'vue';\nimport { Toast } from 'vue-sun-ui';\n\nVue.use(Toast);`,
     methodsList: [{
             methodName: 'Toast',
-            desc: 'Show toast	',
+            desc: '展示提示	',
             callParams: 'options | message',
-            callReturns: 'toast instance',
+            callReturns: 'toast 实例',
           },
           {
             methodName: 'Toast.loading',
-            desc: 'Show loading toast	',
+            desc: '展示加载提示	',
             callParams: 'options | message',
-            callReturns: 'toast instance',
+            callReturns: 'toast 实例',
           },
           {
             methodName: 'Toast.success',
-            desc: 'Show success toast',
+            desc: '展示成功提示',
             callParams: 'options | message',
-            callReturns: 'toast instance',
+            callReturns: 'toast 实例',
           },
           {
             methodName: 'Toast.fail',
-            desc: 'Show fail toast	',
+            desc: '展示失败提示	',
             callParams: 'options | message',
-            callReturns: 'toast instance',
+            callReturns: 'toast 实例',
           },
           {
             methodName: 'Toast.clear',
-            desc: 'Close toast',
+            desc: '关闭提示',
             callParams: '-',
             callReturns: 'void',
           },
         ],
         optionsList: [{
             optionName: 'type',
-            desc: 'Can be set to <code>loading</code> <code>success</code> <code>fail</code>',
+            desc: '提示类型，可选值为 <code>loading</code> <code>success</code> <code>fail</code>',
             type: 'string',
             default: 'text',
           },
           {
             optionName: 'position',
-            desc: 'Can be set to <code>top</code> <code>bottom</code>	',
+            desc: '位置，可选值为 <code>top</code> <code>bottom</code>	',
             type: 'string',
             default: 'center',
           },
           {
             optionName: 'message',
-            desc: 'Message',
+            desc: '文本内容',
             type: 'string',
             default: '"',
           },
           {
             optionName: 'icon',
-            desc: 'Custom icon',
+            desc: '自定义图标，支持传入<a href="#/icon">图标名称</a>或图片链接',
             type: 'string',
             default: '"',
           },
           {
             optionName: 'iconPrefix',
-            desc: 'Icon className prefix',
+            desc: '图标类名前缀',
             type: 'string',
             default: 'sun-icon',
           },
           {
             optionName: 'overlay',
-            desc: 'Whether to show overlay',
+            desc: '是否显示背景遮罩层',
             type: 'boolean',
             default: 'false',
           },
 
           {
             optionName: 'closeOnClick',
-            desc: 'Whether to close after clicked',
+            desc: '是否在点击后关闭',
             type: 'boolean',
             default: 'false',
           },
           {
             optionName: 'duration',
-            desc: "Toast duration(ms), won't disappear if value is 0",
+            desc: '展示时长(ms)',
             type: 'number',
             default: '1500',
           },
           {
             optionName: 'className',
-            desc: 'Custom className',
+            desc: '自定义类名',
             type: 'string',
             default: 'sun-toast',
           },
           {
             optionName: 'onOpened',
-            desc: 'Callback function after opened',
+            desc: '完全展示后的回调函数',
             type: 'Function',
             default: '-',
           },
           {
             optionName: 'onClose',
-            desc: 'Callback function after close',
+            desc: '关闭时的回调函数',
             type: 'Function',
             default: '-',
           },
         ],
         cartList: [{
-            title: 'Text',
-            jsCode: `Toast('Some messages');`,
+            title: '文字提示',
+            desc: 'Layout 组件提供了<code>24列栅格</code>，通过在<code>Col</code>上添加<code>span</code>属性设置列所占的宽度百分比此外，添加<code>offset</code>属性可以设置列的偏移宽度，计算方式与 span 相同',
+            jsCode: `Toast('提示内容');`,
           },
 
           {
-            title: 'Loading',
+            title: '加载提示',
+            desc: '使用 <code>Toast.loading</code> 方法展示加载提示。',
             jsCode: `Toast.loading({
-  message: 'Loading...'
+  message: '加载中...'
 });`,
           },
           {
-            title: 'Success/Fail',
-            jsCode: `Toast.success('Success');\nToast.fail('Fail');`,
+            title: '成功/失败提示',
+            desc: '使用 <code>Toast.success</code> 方法展示成功提示，使用 <code>Toast.fail</code> 方法展示失败提示。',
+            jsCode: `Toast.success('成功提示');\nToast.fail('失败提示');`,
           },
           {
-            title: 'Custom Icon',
+            title: '自定义图标',
+            desc: '通过<code>icon</code>选项可以自定义图标，支持传入图标名称或图片链接，如果在loading方法中使用<code>icon</code>属性可以自定义加载图标。',
             jsCode: `Toast({
-  message: 'Custom Icon',
+  message: '自定义图标',
   icon: 'like-o',
 });
 
 Toast({
-  message: 'Custom Image',
+  message: '自定义图片',
   icon: 'https://img.yzcdn.cn/vant/logo.png',
 });
 
+// 自定义加载图标
 Toast.loading({
-  message: 'Loading...',
+  message: '加载中...',
   icon:'loading2'
 });`,
           },
           {
-            title: 'Custom Position',
+            title: '自定义位置',
+            desc: 'Toast 默认渲染在屏幕正中位置，通过<code>position</code>属性可以控制 Toast 展示的位置。',
             jsCode: `Toast({
-  message: 'Top',
+  message: '顶部展示',
   position: 'top',
 });
 
 Toast({
-  message: 'Bottom',
+  message: '底部展示',
   position: 'bottom',
 });`,
           },
           {
-            title: 'Global Method',
-            desc: 'After import the Toast component, the <code>$toast</code> method is automatically mounted on Vue.prototype, making it easy to call within a vue component.',
+            title: '全局方法',
+            desc: '引入 Toast 组件后，会自动在 Vue 的 prototype 上挂载<code>$toast</code>方法，便于在组件内调用。',
             jsCode: `export default {
   mounted() {
-    this.$toast('Some messages');
+    this.$toast('提示文案');
   },
 };`,
           },
           {
-            title: 'Singleton',
-            desc: 'Toast use singleton mode by default, if you need to pop multiple Toast at the same time, you can refer to the following example:',
-            jsCode: `const toast1 = Toast('First Toast');
-const toast2 = Toast.success('Second Toast');
+            title: '单例模式',
+            desc: 'Toast 采用单例模式，即同一时间只会存在一个 Toast，可以像下面这样手动关闭 Toast',
+            jsCode: `const toast1 = Toast('第一个 Toast');
+const toast2 = Toast.success('第二个 Toast');
 
 toast1.clear();
 toast2.clear();`,
