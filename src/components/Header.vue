@@ -11,7 +11,19 @@
       </a>
       <!-- search -->
       <div class="sun-doc-search">
-        <input type="text" :placeholder="$t('common.searchPlaceholder')" />
+        <input v-model="searchValue" type="text" :placeholder="$t('common.searchPlaceholder')" @input="handleSearch"/>
+        <div v-show="showSearchBox" class="sun-doc-search-box">
+          <div class="title">Documentation</div>
+          <div class="search-list">
+            <div class="search-item" v-for="(item,index) in searchArr" :key="index" @click="handleSearchClick(item)">
+              <div class="left">{{item.title}}</div>
+              <div class="right" :class="{active:currentSearch===index}">
+                <span v-if="item.subTitle">{{item.subTitle}}</span>
+                <p>{{item.desc}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <!-- 右侧导航 -->
@@ -44,10 +56,19 @@
 </template>
 
 <script>
+  import {mapState} from 'vuex'
   export default {
+    computed:{
+      ...mapState(['data'])
+    },
     data() {
       return {
+        searchValue:'',
         showVersionBox: false,
+        showSearchBox:false,
+        currentSearch:1,
+        searchArr:[],
+        timerId:'',
         versionList: [{
             id: 0,
             text: '0.1.0'
@@ -66,6 +87,39 @@
         localStorage.setItem('lang',this.$i18n.locale)
         location.hash = this.$i18n.locale+'/button'
         location.reload()
+      },
+      handleSearchClick(item) {
+        let path = '/'+this.$i18n.locale+item.path
+        this.$router.push(path)
+        // 关闭弹框
+        this.showSearchBox = false
+        // 清空数据
+        this.searchValue = ''
+      },
+      handleSearch() {
+        if(this.timerId) {
+          clearTimeout(this.timerId)
+        }
+        if(this.searchValue.trim().length>0) {
+            let arr = []
+            let navList = this.data.navList
+              this.timerId = setTimeout(()=>{
+                navList.forEach(item=>{
+                item.group.forEach(navItem=>{
+                  if(navItem.text.indexOf(this.searchValue)!==-1||navItem.desc.indexOf(this.searchValue)!==-1) {
+                    let obj = {title:navItem.text,desc:navItem.desc,path:navItem.path}
+                    arr.push(obj)
+                  }
+                })
+              })
+              // 搜索
+              this.showSearchBox = true
+              this.searchArr = arr
+              console.log(arr)
+            },800)
+        }else {
+           this.showSearchBox = false
+        }
       }
     }
   }
@@ -107,6 +161,7 @@
 
   // 搜索
   .sun-doc-search {
+    position: relative;
     input {
       width: 200px;
       height: 60px;
@@ -118,6 +173,53 @@
 
       &::placeholder {
         color: #aaafb8;
+      }
+    }
+    .sun-doc-search-box {
+      position: absolute;
+      top: 50px;
+      border-radius: 4px;
+      margin: 6px 0 0;
+      padding: 10px;
+      text-align: left;
+      background: #fff;
+      border: none;
+      z-index: 999;
+      max-width: 600px;
+      min-width: 500px;
+      box-shadow: 0 4px 12px #ebedf0;
+      cursor: pointer;
+      .title {
+        border-bottom: 1px solid #eee;
+        height: 28px;
+      }
+      .search-item {
+        margin-top: 10px;
+        display: flex;
+        .left {
+          width: 30%;
+          color: #58727e;
+          text-align: right;
+          padding: 5px 10px;
+          font-size: 16px;
+        }
+        .right {
+          width: 70%;
+          padding: 5px 10px;
+          border-left: 1px solid #4994df;
+          span {
+            color: #02060c;
+            font-size: 16px;
+            font-weight: 700;
+          }
+          p {
+            color: #63676d;
+          }
+        }
+        .active,
+        .right:hover {
+          background-color: #f6f9fd;
+        }
       }
     }
   }

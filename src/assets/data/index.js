@@ -1,91 +1,86 @@
 let data = {
   navList: [{
       desc: '开发指南',
-      enDesc:'Essentials',
       group: [{
         text: '介绍',
-        enText:'Introduction',
-        path: '/'
+        path: '/',
+        desc:'轻量、可靠的移动端 Vue 组件库',
       }]
     }, {
       desc: '基础组件',
-      enDesc:'Basic Components',
       group: [{
         text: 'Button 按钮',
-        enText:'Button',
+        desc:'按钮支持 default、primary、info、warning、danger 五种类型，默认为 default。',
         path: '/button'
       }, {
         text: 'Cell 单元格',
-        enText:'Cell',
+        desc:'使用 Cell 单元格列表展示',
         path: '/cell'
       }, {
         text: 'Icon 图标',
-        enText:'Icon',
+        desc:'Icon 图标组件，支持图片链接',
         path: '/icon'
       }, {
         text: 'Layout 布局',
-        enText:'Layout',
+        desc:'Layout 组件提供了24列栅格，通过在Col上添加span属性设置列所占的宽度百分比此外，添加offset属性可以设置列的偏移宽度，计算方式与 span 相同',
         path: '/layout'
       }, {
         text: 'Popup 弹出层',
-        enText:'Popup',
+        desc:'弹出层容器，用于展示弹窗、信息提示等内容。',
         path: '/popup'
       }, {
         text: 'Toast 轻提示',
-        enText:'Toast',
+        desc:'在页面中间弹出黑色半透明提示，用于消息通知、加载提示、操作结果提示等场景。',
         path: '/toast'
       }]
     },
     {
       desc: '表单组件',
-      enDesc:'Form Components',
       group: [{
           text: 'Checkbox 复选框',
-          enText:'Checkbox',
+          desc:'通过 v-model 绑定复选框的勾选状态。',
           path: '/checkbox'
         }, {
           text: 'Rate 评分',
-          enText:'Rate',
+          desc:'评分组件，支持自定义图标。',
           path: '/rate'
         }, {
           text: 'Switch 开关',
-          enText:'Switch',
+          desc:'通过 v-model 绑定开关的选中状态，true 表示开，false 表示关。',
           path: '/switch'
         }, {
           text: 'Message 消息提示',
-          enText:'Message',
+          desc:'在页面顶部展示消息提示，支持函数调用。',
           path: '/message'
         }, {
           text: 'PullRefresh 下拉刷新',
-          enText:'PullRefresh',
+          desc:'下拉刷新时会触发 refresh 事件，在事件的回调函数中可以进行同步或异步操作，操作完成后将 v-model 设置为 false，表示加载完成。',
           path: '/pullRefresh'
         },
         {
           text: 'Stepper 进步器',
-          enText:'Stepper',
+          desc:'步进器由增加按钮、减少按钮和输入框组成，用于在一定范围内输入、调整数字。',
           path: '/stepper'
         }
       ]
     },
     {
       desc: '展示组件',
-      enDesc:'Display Components',
       group: [{
         text: 'Swipe 轮播图',
-        enText:'Swipe',
+        desc:'每个 SwipeItem 代表一张轮播卡片，可以通过 autoplay 属性设置自动轮播的间隔。',
         path: '/swipe'
       }]
     },
     {
       desc: '导航组件',
-      enDesc:'Navigation Components',
       group: [{
         text: 'NavBar 导航栏',
-        enText:'NavBar',
+        desc:'通过插槽自定义导航栏两侧的内容。',
         path: '/navBar'
       }, {
         text: 'TabBar 标签栏',
-        enText:'TabBar',
+        desc:'v-model 默认绑定选中标签的索引值，通过修改 v-model 即可切换选中的标签。',
         path: '/tabBar'
       }]
     }
@@ -319,8 +314,6 @@ let data = {
         desc: '使用<code>Cell</code>自带下边框',
         code: `<sun-cell title="单元格" value="内容" />\n<sun-cell title="单元格" value="内容" label="描述信息" />`,
       },
-
-
       {
         title: '图标展示',
         desc: '通过<code>icon</code>属性在标题左侧展示图标。',

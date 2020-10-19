@@ -3,51 +3,64 @@ let data = {
       desc: 'Essentials',
       group: [{
         text: 'Introduction',
-        path: '/'
+        path: '/',
+        desc:'Mobile UI Components built on Vue'
       }]
     }, {
       desc: 'Basic Components',
       group: [{
         text:'Button',
-        path: '/button'
+        path: '/button',
+        desc:'按钮支持 default、primary、info、warning、danger 五种类型，默认为 default。'
       }, {
         text:'Cell',
-        path: '/cell'
+        path: '/cell',
+        desc:'Use a list of Cell cells'
       }, {
         text:'Icon',
-        path: '/icon'
+        path: '/icon',
+        desc:'Icon Icon component, supporting image links'
       }, {
         text:'Layout',
-        path: '/layout'
+        path: '/layout',
+        desc:'The Layout component provides 24 columns of grids, and sets the percentage of columns width by adding the span attribute to the Col. In addition, add the offset attribute to set the offset width of the columns in the same way as the span'
       }, {
         text:'Popup',
-        path: '/popup'
+        path: '/popup',
+        desc:'Pop-up layer container, used to display pop-ups, information tips and other content.'
       }, {
         text:'Toast',
-        path: '/toast'
+        path: '/toast',
+        desc:'Black translucent prompt appears in the middle of the page for message notification, loading prompt, operation result prompt and other scenarios.'
       }]
     },
     {
       desc:'Form Components',
       group: [{
           text:'Checkbox',
-          path: '/checkbox'
+          path: '/checkbox',
+          desc:'Check the state by v-Model binding check box.'
         }, {
           text:'Rate',
-          path: '/rate'
+          path: '/rate',
+          desc:'Rating components, support for custom ICONS.'
         }, {
           text:'Switch',
-          path: '/switch'
+          path: '/switch',
+          desc:'With the v-Model binding switch selected, true means on and false means off.'
         }, {
           text:'Message',
-          path: '/message'
+          path: '/message',
+          desc:'A message prompt is displayed at the top of the page to support function calls.'
         }, {
           text:'PullRefresh',
-          path: '/pullRefresh'
+          path: '/pullRefresh',
+          desc:"The Refresh event is triggered when the pull down refreshes and can be performed synchronously or asynchronously in the event's callback function. When the operation is complete, the V-Model is set to false to indicate that the load is complete."
         },
         {
           text:'Stepper',
-          path: '/stepper'
+          path: '/stepper',
+          desc:'The stepper is composed of add button, reduce button and input box, which is used to input and adjust Numbers within a certain range.'
         }
       ]
     },
@@ -55,17 +68,20 @@ let data = {
       desc:'Display Components',
       group: [{
         text:'Swipe',
-        path: '/swipe'
+        path: '/swipe',
+        desc:'Each SwipeItem represents a rotations card, and the interval of automatic rotations can be set through the AutoPlay property.'
       }]
     },
     {
       desc:'Navigation Components',
       group: [{
         text:'NavBar',
-        path: '/navBar'
+        path: '/navBar',
+        desc:'Customize the content on either side of the navigation bar through the slot.'
       }, {
         text:'TabBar',
-        path: '/tabBar'
+        path: '/tabBar',
+        desc:'The v-Model default binding selects the index value of the label, and the selected label can be switched by modifying the V-Model.'
       }]
     }
   ],
