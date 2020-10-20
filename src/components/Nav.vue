@@ -64,7 +64,7 @@
         document.documentElement.scrollTop = 0
         this.activeNav.groupIndex = index
         this.activeNav.navIndex = index2
-        if(this.$i18n.locale==='zh') {
+        if(this.$i18n.locale==='zh-CN') {
           this.$router.push('/zh-CN'+item.path)
         }else {
           this.$router.push('/en-US'+item.path)

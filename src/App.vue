@@ -36,7 +36,8 @@
       }
     },
     mounted() {
-      this.childtPath = 'http://localhost:8080/#/'
+      this.$router.push('/'+this.$i18n.locale)
+      this.childtPath = 'http://localhost:8080/#/'+this.$i18n.locale
     },
   }
 </script>

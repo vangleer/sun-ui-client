@@ -106,7 +106,7 @@
               this.timerId = setTimeout(()=>{
                 navList.forEach(item=>{
                 item.group.forEach(navItem=>{
-                  if(navItem.text.indexOf(this.searchValue)!==-1||navItem.desc.indexOf(this.searchValue)!==-1) {
+                  if(navItem.text.toLowerCase().indexOf(this.searchValue.toLowerCase())!==-1||navItem.desc.indexOf(this.searchValue)!==-1) {
                     let obj = {title:navItem.text,desc:navItem.desc,path:navItem.path}
                     arr.push(obj)
                   }
