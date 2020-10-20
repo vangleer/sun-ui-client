@@ -33,7 +33,7 @@
           <a href="javascript:;"><img class="weapp-logo" src="../assets/imgs/weapp.png" alt="" /></a>
         </li>
         <li>
-          <a href="javascript:;"><img class="github-logo" src="../assets/imgs/github-logo.png" alt="" /></a>
+          <a href="https://github.com/java0088/sun" target="_blank"><img class="github-logo" src="../assets/imgs/github-logo.png" alt="" /></a>
         </li>
         <li class="version" @click="showVersionBox=!showVersionBox">
           <a href="javascript:;">
