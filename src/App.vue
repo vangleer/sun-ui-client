@@ -37,7 +37,7 @@
     },
     mounted() {
       this.$router.push('/'+this.$i18n.locale)
-      this.childtPath = 'https://java0088.github.io/sun/dist/#'+this.$i18n.locale // 线上
+      this.childtPath = 'https://java0088.github.io/sun/dist/#/'+this.$i18n.locale // 线上
       //  this.childtPath = 'http://localhost:8080/#/'+this.$i18n.locale // 测试
     },
   }
