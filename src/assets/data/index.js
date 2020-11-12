@@ -668,7 +668,7 @@ Vue.use(CheckboxGroup);`,
   },
   layoutData:{ // Layout 布局
     title:'Layout 布局',
-    desc:'Layout 提供了 van-row 和 van-col 两个组件来进行行列布局。',
+    desc:'Layout 提供了 sun-row 和 sun-col 两个组件来进行行列布局。',
     importCode: `import Vue from 'vue';\nimport { Col, Row } from 'vue-sun-ui';\n\nVue.use(Col);\nVue.use(Row);`,
     parentPropsList: [{
         propName: 'type',
@@ -1275,9 +1275,9 @@ export default {
         cartList: [{
             title: '基础用法',
             desc: '下拉刷新时会触发 <code>refresh</code> 事件，在事件的回调函数中可以进行同步或异步操作，操作完成后将 <code>v-model</code> 设置为 <code>false</code>，表示加载完成。',
-            code: `<van-pull-refresh v-model="isLoading" @refresh="onRefresh">
+            code: `<sun-pull-refresh v-model="isLoading" @refresh="onRefresh">
   <p>刷新次数: {{ count }}</p>
-</van-pull-refresh>`,
+</sun-pull-refresh>`,
             jsCode: `import { Toast } from 'vue-sun-ui';
 
 export default {
@@ -1297,18 +1297,18 @@ export default {
           {
             title: '成功提示',
             desc: '通过 <code>success-text</code> 可以设置刷新成功后的顶部提示文案。',
-            code: `<van-pull-refresh
+            code: `<sun-pull-refresh
   v-model="isLoading"
   success-text="刷新成功"
   @refresh="onRefresh"
 >
   <p>刷新次数: {{ count }}</p>
-</van-pull-refresh>`,
+</sun-pull-refresh>`,
           },
           {
             title: '自定义提示',
             desc: '通过插槽可以自定义下拉刷新过程中的提示内容。',
-            code: `<van-pull-refresh v-model="isLoading" :head-height="80" @refresh="onRefresh">
+            code: `<sun-pull-refresh v-model="isLoading" :head-height="80" @refresh="onRefresh">
   <!-- 释放提示 -->
   <template #loosing>
     <img class="doge" src="https://img.yzcdn.cn/vant/doge.png" />
@@ -1319,7 +1319,7 @@ export default {
     <img class="doge" src="https://img.yzcdn.cn/vant/doge-fire.jpg" />
   </template>
   <p>刷新次数: {{ count }}</p>
-</van-pull-refresh>
+</sun-pull-refresh>
 
 <style>
   .doge {
@@ -1725,12 +1725,12 @@ export default {
           },
           {
             title: '监听 change 事件',
-            code: `<van-swipe @change="onChange">
-  <van-swipe-item>1</van-swipe-item>
-  <van-swipe-item>2</van-swipe-item>
-  <van-swipe-item>3</van-swipe-item>
-  <van-swipe-item>4</van-swipe-item>
-</van-swipe>`,
+            code: `<sun-swipe @change="onChange">
+  <sun-swipe-item>1</sun-swipe-item>
+  <sun-swipe-item>2</sun-swipe-item>
+  <sun-swipe-item>3</sun-swipe-item>
+  <sun-swipe-item>4</sun-swipe-item>
+</sun-swipe>`,
             jsCode: `import { Toast } from 'vue-sun-ui';
 
 export default {
@@ -2366,6 +2366,127 @@ toast2.clear();`,
         {
           slotName: 'title',
           desc: '自定义标题',
+        },
+      ],
+  },
+  paginationData:{ // Pagination 分页
+    title:'Pagination 分页',
+    desc:'',
+    importCode: `import Vue from 'vue'; \nimport { Pagination } from 'vue-sun-ui'; \n \nVue.use(Pagination);`,
+        propsList: [{
+            propName: 'v-model',
+            desc: '当前页码',
+            type: 'number',
+            default: '-',
+          },
+          {
+            propName: 'mode',
+            desc: '显示模式，可选值为 <code>simple</code>',
+            type: 'string',
+            default: 'multi',
+          },
+          {
+            propName: 'prev-text',
+            desc: '上一页按钮文字',
+            type: 'string',
+            default: '上一页',
+          },
+          {
+            propName: 'next-text',
+            desc: '下一页按钮文字',
+            type: 'string',
+            default: '下一页',
+          },
+          {
+            propName: 'page-count',
+            desc: '总页数',
+            type: 'number | string',
+            default: '根据页数计算',
+          },
+          {
+            propName: 'total-items',
+            desc: '总记录数',
+            type: 'number | string',
+            default: '0',
+          },
+          {
+            propName: 'items-per-page',
+            desc: '每页记录数',
+            type: 'number | string',
+            default: '10',
+          },
+          {
+            propName: 'show-page-size',
+            desc: '显示的页码个数',
+            type: 'number | string',
+            default: '5',
+          },
+          {
+            propName: 'force-ellipses',
+            desc: '是否显示省略号',
+            type: 'boolean',
+            default: 'false',
+          }
+        ],
+        eventsList: [
+          {
+            eventName: 'change',
+            desc: '页码改变时触发',
+            callParams: '-',
+          }
+        ],
+        cartList: [{
+            title: '基础用法',
+            desc: '通过 <code>v-model</code> 来绑定当前页码。',
+            code: `<sun-pagination v-model="currentPage" :total-items="24" :items-per-page="5" />`,
+            jsCode: `export default {
+  data() {
+    return {
+      currentPage: 1
+    };
+  },
+};`
+          },
+          {
+            title: '简单模式',
+            desc: '将 <code>mode</code> 设置为 <code>simple</code> 来切换到简单模式，此时分页器不会展示具体的页码按钮。',
+            code: `<sun-pagination v-model="currentPage" :page-count="12" mode="simple" />`,
+          },
+          {
+            title: '显示省略号',
+            desc: '设置 <code>force-ellipses</code> 后会展示省略号按钮，点击后可以快速跳转。',
+            code: `<sun-pagination
+  v-model="currentPage"
+  :total-items="125"
+  :show-page-size="3"
+  force-ellipses
+/>`,
+          },
+          {
+            title: '自定义按钮',
+            desc: '通过 <code>prev-text</code>、<code>next-text</code> 等插槽来自定义分页按钮的内容。',
+            code: `<sun-pagination v-model="currentPage" :total-items="50" :show-page-size="5">
+  <template #prev-text>
+    <sun-icon name="arrow-left" />
+  </template>
+  <template #next-text>
+    <sun-icon name="arrow-right" />
+  </template>
+  <template #page="scope">{{ scope.text }}</template>
+</sun-pagination>`,
+          },
+        ],
+        slotsList: [{
+          slotName: 'page',
+          desc: '自定义页码',
+        },
+        {
+          slotName: 'prev-text',
+          desc: '自定义上一页按钮文字',
+        },
+        {
+          slotName: 'next-text',
+          desc: '自定义下一页按钮文字'
         },
       ],
   },

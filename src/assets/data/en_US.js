@@ -1239,9 +1239,9 @@ export default {
         cartList: [{
             title: 'Basic Usage',
             desc: 'The refresh event will be triggered when pull <code>refresh</code>, you should set <code>v-model</code> to <code>false</code> to reset loading status after process refresh event.',
-            code: `<van-pull-refresh v-model="isLoading" @refresh="onRefresh">
+            code: `<sun-pull-refresh v-model="isLoading" @refresh="onRefresh">
   <p>Refresh Count: {{ count }}</p>
-</van-pull-refresh>`,
+</sun-pull-refresh>`,
             jsCode: `import { Toast } from 'vue-sun-ui';
 
 export default {
@@ -1261,18 +1261,18 @@ export default {
           {
             title: 'Success Tip',
             desc: 'Use <code>success-text</code> to set the success prompt after the refresh is successful',
-            code: `<van-pull-refresh
+            code: `<sun-pull-refresh
   v-model="isLoading"
   success-text="Refresh success"
   @refresh="onRefresh"
 >
   <p>Refresh Count: {{ count }}</p>
-</van-pull-refresh>`,
+</sun-pull-refresh>`,
           },
           {
             title: 'Custom Tips',
             desc: 'Use slots to custom tips.',
-            code: `<van-pull-refresh v-model="isLoading" :head-height="80" @refresh="onRefresh">
+            code: `<sun-pull-refresh v-model="isLoading" :head-height="80" @refresh="onRefresh">
   <template #loosing>
     <img class="doge" src="https://img.yzcdn.cn/vant/doge.png" />
   </template>
@@ -1281,7 +1281,7 @@ export default {
     <img class="doge" src="https://img.yzcdn.cn/vant/doge-fire.jpg" />
   </template>
   <p>Refresh Count: {{ count }}</p>
-</van-pull-refresh>
+</sun-pull-refresh>
 
 <style>
   .doge {
@@ -1673,12 +1673,12 @@ export default {
           },
           {
             title: 'Change Event',
-            code: `<van-swipe @change="onChange">
-  <van-swipe-item>1</van-swipe-item>
-  <van-swipe-item>2</van-swipe-item>
-  <van-swipe-item>3</van-swipe-item>
-  <van-swipe-item>4</van-swipe-item>
-</van-swipe>`,
+            code: `<sun-swipe @change="onChange">
+  <sun-swipe-item>1</sun-swipe-item>
+  <sun-swipe-item>2</sun-swipe-item>
+  <sun-swipe-item>3</sun-swipe-item>
+  <sun-swipe-item>4</sun-swipe-item>
+</sun-swipe>`,
             jsCode: `import { Toast } from 'vue-sun-ui';
 
 export default {
@@ -2296,6 +2296,123 @@ toast2.clear();`,
         {
           slotName: 'title',
           desc: 'Custom title',
+        },
+      ],
+  },
+  paginationData:{ // Pagination 
+    title:'Pagination',
+    desc:'',
+    importCode: `import Vue from 'vue'; \nimport { Pagination } from 'vue-sun-ui'; \n \nVue.use(Pagination);`,
+        propsList: [{
+            propName: 'v-model',
+            desc: 'Current page number',
+            type: 'number',
+            default: '-',
+          },
+          {
+            propName: 'mode',
+            desc: 'Mode, can be set to <code>simple</code> <code>multi</code>',
+            type: 'string',
+            default: 'multi',
+          },
+          {
+            propName: 'prev-text',
+            desc: 'Previous text',
+            type: 'string',
+            default: 'Previous',
+          },
+          {
+            propName: 'next-text',
+            desc: 'Next text',
+            type: 'string',
+            default: 'Next',
+          },
+          {
+            propName: 'page-count',
+            desc: 'The total number of pages, if not set, will be calculated based on <code>total-items</code> and <code>items-per-page</code>',
+            type: 'number | string',
+            default: '-',
+          },
+          {
+            propName: 'total-items',
+            desc: 'Total items',
+            type: 'number | string',
+            default: '0',
+          },
+          {
+            propName: 'items-per-page',
+            desc: 'Item number per page',
+            type: 'number | string',
+            default: '10',
+          },
+          {
+            propName: 'show-page-size',
+            desc: 'Count of page size to show',
+            type: 'number | string',
+            default: '5',
+          },
+          {
+            propName: 'force-ellipses',
+            desc: 'Whether to show ellipses',
+            type: 'boolean',
+            default: 'false',
+          }
+        ],
+        eventsList: [
+          {
+            eventName: 'change',
+            desc: 'Triggered on page change',
+            callParams: '-',
+          }
+        ],
+        cartList: [{
+            title: 'Basic Usage',
+            code: `<sun-pagination v-model="currentPage" :total-items="24" :items-per-page="5" />`,
+            jsCode: `export default {
+  data() {
+    return {
+      currentPage: 1
+    };
+  },
+};`
+          },
+          {
+            title: 'Simple mode',
+            code: `<sun-pagination v-model="currentPage" :page-count="12" mode="simple" />`,
+          },
+          {
+            title: 'Show ellipses',
+            code: `<sun-pagination
+  v-model="currentPage"
+  :total-items="125"
+  :show-page-size="3"
+  force-ellipses
+/>`,
+          },
+          {
+            title: 'Custom Button',
+            code: `<sun-pagination v-model="currentPage" :total-items="50" :show-page-size="5">
+  <template #prev-text>
+    <sun-icon name="arrow-left" />
+  </template>
+  <template #next-text>
+    <sun-icon name="arrow-right" />
+  </template>
+  <template #page="scope">{{ scope.text }}</template>
+</sun-pagination>`,
+          },
+        ],
+        slotsList: [{
+          slotName: 'page',
+          desc: 'Custom pagination item',
+        },
+        {
+          slotName: 'prev-text',
+          desc: 'Custom prev text',
+        },
+        {
+          slotName: 'next-text',
+          desc: 'Custom next text'
         },
       ],
   },
