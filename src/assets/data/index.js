@@ -2490,5 +2490,163 @@ toast2.clear();`,
         },
       ],
   },
+  collapseData:{ // Collapse 折叠面板
+    title:'Collapse 折叠面板',
+    desc:'将一组内容放置在多个折叠面板中，点击面板的标题可以展开或收缩其内容。',
+    importCode: `import Vue from 'vue'; \nimport { Collapse, CollapseItem } from 'vue-sun-ui'; \n \nVue.use(Collapse);\nVue.use(CollapseItem);`,
+    parentPropsList: [{
+            propName: 'v-model',
+            desc: '当前展开面板的 name',
+            type: '手风琴模式：number | string, 非手风琴模式：(number | string)[]',
+            default: '-',
+          },
+          {
+            propName: 'accordion',
+            desc: '是否开启手风琴模式',
+            type: 'boolean',
+            default: 'false',
+          },
+          {
+            propName: 'border',
+            desc: '是否显示外边框',
+            type: 'boolean',
+            default: 'true',
+          }
+        ],
+        childPropsList: [{
+          propName: 'name',
+          desc: '唯一标识符，默认为索引值',
+          type: 'number | string',
+          default: '-',
+        },
+        {
+          propName: 'icon',
+          desc: '标题栏左侧图标名称',
+          type: 'string',
+          default: '-',
+        },
+        {
+          propName: 'title',
+          desc: '标题栏左侧内容',
+          type: 'number | string',
+          default: '-',
+        },
+        {
+          propName: 'value',
+          desc: '标题栏右侧内容',
+          type: 'number | string',
+          default: '-',
+        },
+        {
+          propName: 'is-link',
+          desc: '是否展示标题栏右侧箭头并开启点击反馈',
+          type: 'boolean',
+          default: 'true',
+        },
+        {
+          propName: 'disabled',
+          desc: '是否禁用面板',
+          type: 'boolean',
+          default: 'false',
+        },
+        {
+          propName: 'title-class',
+          desc: '左侧标题额外类名',
+          type: 'string',
+          default: '-',
+        },
+        {
+          propName: 'value-class',
+          desc: '右侧内容额外类名',
+          type: 'string',
+          default: '-',
+        },
+      ],
+        eventsList: [
+          {
+            eventName: 'change',
+            desc: '切换面板时触发',
+            callParams: 'activeNames: 类型与 v-model 绑定的值一致',
+          }
+        ],
+        cartList: [{
+            title: '基础用法',
+            desc: '通过 <code>v-model</code> 控制展开的面板列表，<code>activeNames</code> 为数组格式。',
+            code: `<sun-collapse v-model="activeNames">
+  <sun-collapse-item title="标题1" name="1">内容</sun-collapse-item>
+  <sun-collapse-item title="标题2" name="2">内容</sun-collapse-item>
+  <sun-collapse-item title="标题3" name="3">内容</sun-collapse-item>
+</sun-collapse>`,
+            jsCode: `export default {
+  data() {
+    return {
+      activeNames: ['1']
+    };
+  },
+};`
+          },
+          {
+            title: '手风琴',
+            desc: '通过 <code>accordion</code> 可以设置为手风琴模式，最多展开一个面板，此时 <code>activeName</code> 为字符串格式。',
+            code: `<sun-collapse v-model="activeName" accordion>
+  <sun-collapse-item title="标题1" name="1">内容</sun-collapse-item>
+  <sun-collapse-item title="标题2" name="2">内容</sun-collapse-item>
+  <sun-collapse-item title="标题3" name="3">内容</sun-collapse-item>
+</sun-collapse>`,
+            jsCode: `export default {
+  data() {
+    return {
+      activeNames: '1'
+    };
+  },
+};`
+          },
+          {
+            title: '禁用状态',
+            desc: '通过 <code>disabled</code> 属性来禁用单个面板。',
+            code: `<van-collapse v-model="activeNames">
+  <van-collapse-item title="标题1" name="1">内容</van-collapse-item>
+  <van-collapse-item title="标题2" name="2" disabled>内容</van-collapse-item>
+  <van-collapse-item title="标题3" name="3" disabled>内容</van-collapse-item>
+</van-collapse>`,
+          },
+          {
+            title: '自定义标题内容',
+            desc: '通过 <code>title</code> 插槽可以自定义标题栏的内容。',
+            code: `<sun-collapse v-model="activeNames">
+  <sun-collapse-item name="1">
+    <template #title>
+      <div>标题1 <sun-icon name="success-o" /></div>
+    </template>
+    内容
+  </sun-collapse-item>
+  <sun-collapse-item title="标题2" name="2" icon="category-o">
+    内容
+  </sun-collapse-item>
+</sun-collapse>`,
+          },
+        ],
+        slotsList: [{
+          slotName: 'default',
+          desc: '面板内容',
+        },
+        {
+          slotName: 'value',
+          desc: '自定义显示内容',
+        },
+        {
+          slotName: 'icon',
+          desc: '自定义 icon'
+        },
+        {
+          slotName: 'title',
+          desc: '自定义 title'
+        },
+        {
+          slotName: 'right-icon',
+          desc: '自定义右侧按钮，默认是 arrow'
+        },
+      ],
+  },
 }
 export default data

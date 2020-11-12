@@ -2416,5 +2416,163 @@ toast2.clear();`,
         },
       ],
   },
+  collapseData:{ // Collapse
+    title:'Collapse',
+    desc:'',
+    importCode: `import Vue from 'vue'; \nimport { Collapse, CollapseItem } from 'vue-sun-ui'; \n \nVue.use(Collapse);\nVue.use(CollapseItem);`,
+    parentPropsList: [{
+            propName: 'v-model',
+            desc: 'Names of current active panels',
+            type: 'accordion mode： number | string, non-accordion mode：(number | string)[]',
+            default: '-',
+          },
+          {
+            propName: 'accordion',
+            desc: 'Whether to be accordion mode',
+            type: 'boolean',
+            default: 'false',
+          },
+          {
+            propName: 'border',
+            desc: 'Whether to show outer border',
+            type: 'boolean',
+            default: 'true',
+          }
+        ],
+        childPropsList: [{
+          propName: 'name',
+          desc: 'Name',
+          type: 'number | string',
+          default: '-',
+        },
+        {
+          propName: 'icon',
+          desc: 'Left Icon',
+          type: 'string',
+          default: '-',
+        },
+        {
+          propName: 'title',
+          desc: 'Title',
+          type: 'number | string',
+          default: '-',
+        },
+        {
+          propName: 'value',
+          desc: 'Right text',
+          type: 'number | string',
+          default: '-',
+        },
+        {
+          propName: 'is-link',
+          desc: '	Whether to show link icon',
+          type: 'boolean',
+          default: 'true',
+        },
+        {
+          propName: 'disabled',
+          desc: 'Whether to disabled collapse',
+          type: 'boolean',
+          default: 'false',
+        },
+        {
+          propName: 'title-class',
+          desc: 'Title className',
+          type: 'string',
+          default: '-',
+        },
+        {
+          propName: 'value-class',
+          desc: 'Value className',
+          type: 'string',
+          default: '-',
+        },
+      ],
+        eventsList: [
+          {
+            eventName: 'change',
+            desc: 'Triggered when switch panel',
+            callParams: 'activeNames',
+          }
+        ],
+        cartList: [{
+            title: 'Basic Usage',
+            desc: 'Use <code>v-model</code> to control the name of active panels.',
+            code: `<sun-collapse v-model="activeNames">
+  <sun-collapse-item title="Title1" name="1">Content</sun-collapse-item>
+  <sun-collapse-item title="Title2" name="2">Content</sun-collapse-item>
+  <sun-collapse-item title="Title3" name="3">Content</sun-collapse-item>
+</sun-collapse>`,
+            jsCode: `export default {
+  data() {
+    return {
+      activeNames: ['1']
+    };
+  },
+};`
+          },
+          {
+            title: 'Accordion',
+            desc: 'In <code>accordion</code> mode, only one panel can be expanded at the same time.',
+            code: `<sun-collapse v-model="activeName" accordion>
+  <sun-collapse-item title="Title1" name="1">Content</sun-collapse-item>
+  <sun-collapse-item title="Title2" name="2">Content</sun-collapse-item>
+  <sun-collapse-item title="Title3" name="3">Content</sun-collapse-item>
+</sun-collapse>`,
+            jsCode: `export default {
+  data() {
+    return {
+      activeNames: '1'
+    };
+  },
+};`
+          },
+          {
+            title: 'Disabled',
+            desc: 'Use the <code>disabled</code> prop to disable CollaseItem.',
+            code: `<van-collapse v-model="activeNames">
+  <van-collapse-item title="Title1" name="1">Content</van-collapse-item>
+  <van-collapse-item title="Title2" name="2" disabled>Content</van-collapse-item>
+  <van-collapse-item title="Title3" name="3" disabled>Content</van-collapse-item>
+</van-collapse>`,
+          },
+          {
+            title: 'Custom title',
+            desc: '',
+            code: ` <sun-collapse v-model="activeNames">
+  <sun-collapse-item name="1">
+    <template #title>
+      <div>Title1 <sun-icon name="success-o" /></div>
+    </template>
+    Content
+  </sun-collapse-item>
+  <sun-collapse-item title="Title2" name="2" icon="category-o">
+    Content
+  </sun-collapse-item>
+</sun-collapse>`,
+          },
+        ],
+        slotsList: [{
+          slotName: 'default',
+          desc: 'Content',
+        },
+        {
+          slotName: 'value',
+          desc: 'Custom value',
+        },
+        {
+          slotName: 'icon',
+          desc: '	Custom icon'
+        },
+        {
+          slotName: 'title',
+          desc: 'Custom title'
+        },
+        {
+          slotName: 'right-icon',
+          desc: 'Custom right icon'
+        },
+      ],
+  },
 }
 export default data
