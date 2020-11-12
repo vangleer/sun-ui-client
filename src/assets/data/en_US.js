@@ -11,7 +11,7 @@ let data = {
       group: [{
         text:'Button',
         path: '/button',
-        desc:'按钮支持 default、primary、info、warning、danger 五种类型，默认为 default。'
+        desc:'Support default、primary、info、warning、danger ，Default is default。'
       }, {
         text:'Cell',
         path: '/cell',
@@ -32,6 +32,10 @@ let data = {
         text:'Toast',
         path: '/toast',
         desc:'Black translucent prompt appears in the middle of the page for message notification, loading prompt, operation result prompt and other scenarios.'
+      },{
+        text: 'Dialog',
+        desc:'Pop-up modal boxes, often used for message prompts, message acknowledgements, or to complete specific interactions within the current page.The pop-up component supports both function calls and component calls.',
+        path: '/dialog'
       }]
     },
     {
@@ -70,6 +74,12 @@ let data = {
         text:'Swipe',
         path: '/swipe',
         desc:'Each SwipeItem represents a rotations card, and the interval of automatic rotations can be set through the AutoPlay property.'
+      },{
+        text:'Collapse',
+        path: '/collapse',
+      },{
+        text:'Pagination',
+        path: '/pagination',
       }]
     },
     {
@@ -2131,6 +2141,163 @@ toast1.clear();
 toast2.clear();`,
           },
         ],
-  }
+  },
+  dialogData:{ // Dialog 
+    title:'Dialog',
+    desc:'',
+    importCode: `import Vue from 'vue'; \nimport { Dialog } from 'vue-sun-ui'; \n \nVue.use(Dialog);`,
+        propsList: [{
+            propName: 'v-model',
+            desc: 'Whether to show dialog',
+            type: 'boolean',
+            default: 'false',
+          },
+          {
+            propName: 'title',
+            desc: 'Title',
+            type: 'string',
+            default: '-',
+          },
+          {
+            propName: 'width',
+            desc: 'Width',
+            type: 'number | string',
+            default: '320px',
+          },
+          {
+            propName: 'message',
+            desc: 'Message',
+            type: 'string',
+            default: '-',
+          },
+          {
+            propName: 'theme',
+            desc: 'theme style，can be set to <code>round-button</code>',
+            type: 'string',
+            default: 'default',
+          },
+          {
+            propName: 'show-confirm-button',
+            desc: 'Whether to show confirm button	',
+            type: 'boolean',
+            default: 'true',
+          },
+          {
+            propName: 'show-cancel-button',
+            desc: 'Whether to show cancel button',
+            type: 'boolean',
+            default: 'false',
+          },
+          {
+            propName: 'confirm-button-text',
+            desc: 'Confirm button text',
+            type: 'string',
+            default: 'Confirm',
+          },
+          {
+            propName: 'confirm-button-color',
+            desc: 'Confirm button color',
+            type: 'string',
+            default: '#ee0a24',
+          },
+
+          {
+            propName: 'cancel-button-text',
+            desc: 'Cancel button text',
+            type: 'string',
+            default: 'Cancel',
+          },
+          {
+            propName: 'cancel-button-color',
+            desc: 'Cancel button color',
+            type: 'string',
+            default: 'black',
+          },
+          {
+            propName: 'overlay',
+            desc: 'Whether to show overlay',
+            type: 'boolean',
+            default: 'true',
+          },
+          {
+            propName: 'overlay-class',
+            desc: 'Custom overlay class',
+            type: 'string',
+            default: '-',
+          },
+          {
+            propName: 'overlay-style',
+            desc: 'Custom overlay style',
+            type: 'object',
+            default: '-',
+          },
+          {
+            propName: 'close-on-click-overlay',
+            desc: 'Whether to close when click overlay',
+            type: 'boolean',
+            default: 'false',
+          },
+          {
+            propName: 'tag',
+            desc: 'Dialog tag',
+            type: 'string',
+            default: 'div',
+          },
+        ],
+        eventsList: [
+          {
+            eventName: 'confirm',
+            desc: 'Triggered when click confirm button',
+            callParams: '-',
+          },
+          {
+            eventName: 'cancel',
+            desc: 'Triggered when click cancel button',
+            callParams: '-',
+          }, 
+          {
+            eventName: 'open',
+            desc: 'Triggered when open Dialog',
+            callParams: '-',
+          }, 
+          {
+            eventName: 'close',
+            desc: 'Triggered when close Dialog',
+            callParams: '-',
+          }
+        ],
+        cartList: [{
+            title: 'Alert dialog',
+            desc: 'Used to prompt for some messages, only including one confirm button.',
+            code: `<sun-dialog v-model="show" title="Title" message="Content"></sun-dialog>`,
+            jsCode: `export default {
+  data() {
+    return {
+      show: true
+    };
+  },
+};`
+          },
+          {
+            title: 'Confirm dialog',
+            desc: 'Used to confirm some messages, including a confirm button and a cancel button.',
+            code: `<sun-dialog v-model="show" title="Title" message="Content" show-cancel-button></sun-dialog>`,
+          },
+          {
+            title: 'Round Button Style',
+            desc: 'Use round button style.',
+            code: `<sun-dialog v-model="show" theme="round-button" title="Title" message="Content" show-cancel-button></sun-dialog>`,
+          }
+        ],
+        slotsList: [{
+          slotName: 'default',
+          desc: 'Custom message',
+        },
+        {
+          slotName: 'title',
+          desc: 'Custom title',
+        },
+      ],
+  },
 }
 export default data

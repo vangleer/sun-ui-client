@@ -72,6 +72,18 @@ const routes = [{
     component: () => import('../views/TabBar.vue')
   },
   {
+    path: '/zh-CN/dialog',
+    component: () => import('../views/Dialog.vue')
+  },
+  {
+    path: '/zh-CN/collapse',
+    component: () => import('../views/Collapse.vue')
+  },
+  {
+    path: '/zh-CN/pagination',
+    component: () => import('../views/Pagination.vue')
+  },
+  {
     path: '/en-US',
     component: Index,
   },
@@ -135,7 +147,19 @@ const routes = [{
   {
     path: '/en-US/tabBar',
     component: () => import('../views/TabBar.vue')
-  }
+  },
+  {
+    path: '/en-US/dialog',
+    component: () => import('../views/Dialog.vue')
+  },
+  {
+    path: '/en-US/collapse',
+    component: () => import('../views/Collapse.vue')
+  },
+  {
+    path: '/en-US/pagination',
+    component: () => import('../views/Pagination.vue')
+  },
 ]
 
 const router = new VueRouter({

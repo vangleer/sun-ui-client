@@ -32,6 +32,10 @@ let data = {
         text: 'Toast 轻提示',
         desc:'在页面中间弹出黑色半透明提示，用于消息通知、加载提示、操作结果提示等场景。',
         path: '/toast'
+      },{
+        text: 'Dialog 弹出框',
+        desc:'弹出模态框，常用于消息提示、消息确认，或在当前页面内完成特定的交互操作。弹出框组件支持函数调用和组件调用两种方式。',
+        path: '/dialog'
       }]
     },
     {
@@ -70,6 +74,12 @@ let data = {
         text: 'Swipe 轮播图',
         desc:'每个 SwipeItem 代表一张轮播卡片，可以通过 autoplay 属性设置自动轮播的间隔。',
         path: '/swipe'
+      },{
+        text:'Collapse 折叠面板',
+        path: '/collapse',
+      },{
+        text:'Pagination 分页',
+        path: '/pagination',
       }]
     },
     {
@@ -2201,6 +2211,163 @@ toast1.clear();
 toast2.clear();`,
           },
         ],
-  }
+  },
+  dialogData:{ // Dialog 弹框
+    title:'Dialog 弹框',
+    desc:'弹出模态框，常用于消息提示、消息确认，或在当前页面内完成特定的交互操作。弹出框组件支持函数调用和组件调用两种方式。',
+    importCode: `import Vue from 'vue'; \nimport { Dialog } from 'vue-sun-ui'; \n \nVue.use(Dialog);`,
+        propsList: [{
+            propName: 'v-model',
+            desc: '是否显示弹窗',
+            type: 'boolean',
+            default: 'false',
+          },
+          {
+            propName: 'title',
+            desc: '标题',
+            type: 'string',
+            default: '-',
+          },
+          {
+            propName: 'width',
+            desc: '弹窗宽度，默认单位为 <code>px</code>',
+            type: 'number | string',
+            default: '320px',
+          },
+          {
+            propName: 'message',
+            desc: '文本内容',
+            type: 'string',
+            default: '-',
+          },
+          {
+            propName: 'theme',
+            desc: '样式风格，可选值为 <code>round-button</code>',
+            type: 'string',
+            default: 'default',
+          },
+          {
+            propName: 'show-confirm-button',
+            desc: '是否展示确认按钮',
+            type: 'boolean',
+            default: 'true',
+          },
+          {
+            propName: 'show-cancel-button',
+            desc: '是否展示取消按钮',
+            type: 'boolean',
+            default: 'false',
+          },
+          {
+            propName: 'confirm-button-text',
+            desc: '确认按钮文案',
+            type: 'string',
+            default: '确认',
+          },
+          {
+            propName: 'confirm-button-color',
+            desc: '确认按钮颜色',
+            type: 'string',
+            default: '#ee0a24',
+          },
+
+          {
+            propName: 'cancel-button-text',
+            desc: '取消按钮文案',
+            type: 'string',
+            default: '取消',
+          },
+          {
+            propName: 'cancel-button-color',
+            desc: '取消按钮颜色',
+            type: 'string',
+            default: 'black',
+          },
+          {
+            propName: 'overlay',
+            desc: '是否展示遮罩层',
+            type: 'boolean',
+            default: 'true',
+          },
+          {
+            propName: 'overlay-class',
+            desc: '自定义遮罩层类名',
+            type: 'string',
+            default: '-',
+          },
+          {
+            propName: 'overlay-style',
+            desc: '自定义遮罩层样式',
+            type: 'object',
+            default: '-',
+          },
+          {
+            propName: 'close-on-click-overlay',
+            desc: '是否在点击遮罩层后关闭弹窗',
+            type: 'boolean',
+            default: 'false',
+          },
+          {
+            propName: 'tag',
+            desc: 'Dialog 渲染标签',
+            type: 'string',
+            default: 'div',
+          },
+        ],
+        eventsList: [
+          {
+            eventName: 'confirm',
+            desc: '点击确认按钮时触发',
+            callParams: '-',
+          },
+          {
+            eventName: 'cancel',
+            desc: '点击取消按钮时触发',
+            callParams: '-',
+          }, 
+          {
+            eventName: 'open',
+            desc: '打开弹窗时触发',
+            callParams: '-',
+          }, 
+          {
+            eventName: 'close',
+            desc: '关闭弹窗时触发',
+            callParams: '-',
+          }
+        ],
+        cartList: [{
+            title: '消息提示',
+            desc: '用于提示一些消息，只包含一个确认按钮。',
+            code: `<sun-dialog v-model="show" title="标题" message="代码是写出来给人看的，附带能在机器上运行"></sun-dialog>`,
+            jsCode: `export default {
+  data() {
+    return {
+      show: true
+    };
+  },
+};`
+          },
+          {
+            title: '消息确认',
+            desc: '用于确认消息，包含取消和确认按钮。',
+            code: `<sun-dialog v-model="show" title="标题" message="代码是写出来给人看的，附带能在机器上运行" show-cancel-button></sun-dialog>`,
+          },
+          {
+            title: '圆角按钮风格',
+            desc: '将 theme 选项设置为 <code>round-button</code> 可以展示圆角按钮风格的弹窗。',
+            code: `<sun-dialog v-model="show" theme="round-button" title="标题" message="代码是写出来给人看的，附带能在机器上运行" show-cancel-button></sun-dialog>`,
+          }
+        ],
+        slotsList: [{
+          slotName: 'default',
+          desc: '自定义内容',
+        },
+        {
+          slotName: 'title',
+          desc: '自定义标题',
+        },
+      ],
+  },
 }
 export default data
