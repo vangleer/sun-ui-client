@@ -1667,6 +1667,12 @@ export default {
             default: 'true',
           },
           {
+            propName: 'square-indicators',
+            desc: '是否使用方形指示器',
+            type: 'boolean',
+            default: 'false',
+          },
+          {
             propName: 'indicator-color',
             desc: '指示器颜色',
             type: 'string',
@@ -1751,7 +1757,16 @@ export default {
   <sun-swipe-item>4</sun-swipe-item>
 </sun-swipe>`,
           },
-
+          {
+            title: '方形指示器',
+            desc: '通过 <code>square-indicators</code> 设置方形指示器',
+            code: `<sun-swipe class="my-swipe" square-indicators>
+  <sun-swipe-item>1</sun-swipe-item>
+  <sun-swipe-item>2</sun-swipe-item>
+  <sun-swipe-item>3</sun-swipe-item>
+  <sun-swipe-item>4</sun-swipe-item>
+</sun-swipe>`,
+          },
           {
             title: '自定义指示器',
             desc: '通过 <code>indicator</code> 插槽可以自定义指示器的样式。',

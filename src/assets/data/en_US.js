@@ -1615,6 +1615,12 @@ export default {
             default: 'true',
           },
           {
+            propName: 'square-indicators',
+            desc: 'Whether to use a square indicato',
+            type: 'boolean',
+            default: 'false',
+          },
+          {
             propName: 'indicator-color',
             desc: 'Indicator color',
             type: 'string',
@@ -1690,7 +1696,7 @@ export default {
 };`,
           },
           {
-            title: 'Current Swipe index:',
+            title: 'Vertical',
             code: `<sun-swipe class="my-swipe" vertical>
   <sun-swipe-item>1</sun-swipe-item>
   <sun-swipe-item>2</sun-swipe-item>
@@ -1698,7 +1704,15 @@ export default {
   <sun-swipe-item>4</sun-swipe-item>
 </sun-swipe>`,
           },
-
+          {
+            title: 'Square Indicator',
+            code: `<sun-swipe class="my-swipe" square-indicators>
+  <sun-swipe-item>1</sun-swipe-item>
+  <sun-swipe-item>2</sun-swipe-item>
+  <sun-swipe-item>3</sun-swipe-item>
+  <sun-swipe-item>4</sun-swipe-item>
+</sun-swipe>`,
+          },
           {
             title: 'Custom Indicator',
             code: `<sun-swipe class="my-swipe" @change="onChange">

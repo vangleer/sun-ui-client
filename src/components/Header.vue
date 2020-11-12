@@ -85,7 +85,7 @@
         this.$i18n.locale = this.$i18n.locale==='zh-CN'?'en-US':'zh-CN'
         this.$store.commit('changeLanguage',this.$i18n.locale)
         localStorage.setItem('lang',this.$i18n.locale)
-        location.hash = this.$i18n.locale+'/button'
+        location.hash = this.$i18n.locale+'/'
         location.reload()
       },
       handleSearchClick(item) {
