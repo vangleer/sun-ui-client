@@ -8,7 +8,10 @@
             <img src="../assets/imgs/logo.png" alt="sun-ui">
           </div>
           <h1>Sun</h1>
-          <p>{{$t('common.sunDesc')}}</p>
+          <p class="home-tip">{{$t('common.sunDesc')}}</p>
+          <div class="erweima">
+            <img src="/erweima.png" alt="sun-ui">
+          </div>
         </div>
       </div>
     </section>
@@ -38,5 +41,14 @@
     h1 {
       margin: 10px 0;
     }
+  }
+  .erweima {
+    img {
+      width: 120px;
+      height: 120px;
+    }
+  }
+  .home-tip {
+    margin-bottom: 20px;
   }
 </style>
