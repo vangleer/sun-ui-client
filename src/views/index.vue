@@ -10,7 +10,7 @@
           <h1>Sun</h1>
           <p class="home-tip">{{$t('common.sunDesc')}}</p>
           <div class="erweima">
-            <img src="/erweima.png" alt="sun-ui">
+            <img src="../assets/imgs/erweima.png" alt="sun-ui">
           </div>
         </div>
       </div>
