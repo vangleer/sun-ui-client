@@ -5,7 +5,7 @@
       <div class="card">
         <div class="home-card">
           <div class="logo">
-            <img src="../assets/imgs/logo-green.png" alt="sun-ui">
+            <img src="../assets/imgs/logo.png" alt="sun-ui">
           </div>
           <h1>Sun</h1>
           <p>{{$t('common.sunDesc')}}</p>
