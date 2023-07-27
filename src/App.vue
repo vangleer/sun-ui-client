@@ -8,7 +8,7 @@
       </keep-alive>
         <!-- 移动端页面 -->
         <div class="sun-doc-mobile sun-doc-mobile-fiexd">
-          <!-- <iframe src="https://java0088.github.io/sun/dist/#/button" frameborder="0"></iframe> -->
+          <!-- <iframe src="https://vangleer.github.io/sun/#/button" frameborder="0"></iframe> -->
           <iframe :src="childtPath" frameborder="0"></iframe>
         </div>
     </div>
@@ -31,13 +31,13 @@
      watch:{
       $route(to,from){
         this.$refs.navRef.changeRouter()
-        this.childtPath = 'https://java0088.github.io/sun/dist/#'+to.path // 线上
+        this.childtPath = 'https://vangleer.github.io/sun/#'+to.path // 线上
         // this.childtPath = 'http://localhost:8080/#'+to.path // 测试
       }
     },
     mounted() {
       // this.$router.push('/'+this.$i18n.locale)
-      this.childtPath = 'https://java0088.github.io/sun/dist/#/'+this.$i18n.locale // 线上
+      this.childtPath = 'https://vangleer.github.io/sun/#/'+this.$i18n.locale // 线上
       // this.childtPath = 'http://localhost:8080/#/'+this.$i18n.locale // 测试
     },
   }
