@@ -8,5 +8,5 @@
 ## 手机预览
 
 <div align="center">
-  <img src="https://java0088.github.io/sun-ui-client/dist/erweima.png" alt="二维码" />
+  <img src="https://vangleer.github.io/sun-ui-client/erweima.png" alt="二维码" />
 </div>
